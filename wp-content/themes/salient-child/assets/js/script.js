@@ -148,14 +148,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, 1000);
 });
-console.log("Salve!")
 
 window.addEventListener('scroll', () => {
-    const top = document.querySelector('#top');
-
-    if (window.scrollY >= 80) {
-        top.classList.add('scrolled');
-    } else {
-        top.classList.remove('scrolled');
-    }
+  const top = document.querySelector('#top');
+  const bodyTop = document.body.getBoundingClientRect().top;
+  if (Math.abs(bodyTop) >= 80) {
+    top.classList.add('scrolled');
+  } else {
+    top.classList.remove('scrolled');
+  }
 });

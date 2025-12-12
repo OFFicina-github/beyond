@@ -37,7 +37,7 @@ if (!empty($nectar_options['header-menu-label']) && $nectar_options['header-menu
 }
 
 ?>
-
+<div id="scroll-sentinel"></div>
 <header id="top">
 	<div class="container">
 		<div class="row">

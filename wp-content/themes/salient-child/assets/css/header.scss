@@ -2,24 +2,45 @@
 
     #top {
         min-height: 70px;
-        align-content: center;
         position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
         padding-bottom: 30px;
-        transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+        align-content: center;
+        z-index: 1000;
 
-        &.scrolled {
+        background: transparent;
 
-            background-color: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
-
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background-color: rgba(0, 0, 0, 0);
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
             mask-image: linear-gradient(to bottom,
                     rgba(0, 0, 0, 1) 70%,
                     rgba(0, 0, 0, 0) 100%);
+            transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+            pointer-events: none;
+        }
 
-            -webkit-mask-image: linear-gradient(to bottom,
-                    rgba(0, 0, 0, 1) 70%,
-                    rgba(0, 0, 0, 0) 100%);
+        &.scrolled {
+            &::before {
+                background-color: rgba(0, 0, 0, 0.6);
+                backdrop-filter: saturate(180%) blur(10px);
+                -webkit-backdrop-filter: saturate(180%) blur(10px);
+
+                mask-image: linear-gradient(to bottom,
+                        rgba(0, 0, 0, 1) 70%,
+                        rgba(0, 0, 0, 0) 100%);
+
+                -webkit-mask-image: linear-gradient(to bottom,
+                        rgba(0, 0, 0, 1) 70%,
+                        rgba(0, 0, 0, 0) 100%);
+            }
         }
 
         .row {
@@ -145,6 +166,11 @@
             padding-top: 16px !important;
             padding-left: 8px;
         }
+    }
+
+    #header-outer #top .row {
+        padding-top: 42px;
+        margin-top: 24px;
     }
 
 }
