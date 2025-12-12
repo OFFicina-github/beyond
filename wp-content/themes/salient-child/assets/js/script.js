@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, 1000);
 });
-
+console.log("Salve!")
 
 window.addEventListener('scroll', () => {
     const top = document.querySelector('#top');

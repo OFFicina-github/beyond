@@ -1,0 +1,32 @@
+name: Manual Deploy to Plesk
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Scegli l’ambiente di deploy'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - staging
+          - production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Plesk
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          server: ${{ secrets.PLESK_HOST }}
+          username: ${{ secrets.PLESK_USER }}
+          password: ${{ secrets.PLESK_PASS }}
+          port: 22
+          local_path: ./wp-content/themes/salient-child/*
+          remote_path: ${{ inputs.environment == 'staging' && '/var/www/vhosts/offdevelop.it/httpdocs/beyond/wp-content/themes/salient-child/' || '/var/www/vhosts/offdevelop.it/httpdocs/beyond/wp-content/themes/salient-child/' }}
+          delete_remote_files: false
