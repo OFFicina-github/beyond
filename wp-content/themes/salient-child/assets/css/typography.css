@@ -110,7 +110,7 @@ select {
 .icon::after {
   margin-left: 4px;
   margin-right: 2px;
-  content: url("../assets/img/segno_grafico.svg");
+  content: url("../img/segno_grafico.svg");
 }
 
 .visione-container h2 {
@@ -149,7 +149,7 @@ select {
   top: 3px;
   display: block;
   background-repeat: repeat-x;
-  background-image: url("../assets/img/scribble.svg");
+  background-image: url("../img/scribble.svg");
   background-position: center center;
   background-size: auto;
   border-radius: 5px;

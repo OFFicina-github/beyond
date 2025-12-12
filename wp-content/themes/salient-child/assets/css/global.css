@@ -116,7 +116,7 @@ html {
   gap: 20px;
 }
 #servizi .nectar-post-grid-wrap .nectar-post-grid-item .inner .item-main .item-meta-extra::after {
-  content: url("../assets/img/arrow_cta.svg");
+  content: url("../img/arrow_cta.svg");
   height: 24px;
 }
 #servizi .nectar-post-grid-wrap .nectar-post-grid-item .inner .item-main .item-meta-extra span {
