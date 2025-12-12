@@ -1,0 +1,97 @@
+/* Polymath Regular */
+.regular {
+    font-family: "polymath", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Polymath Italic */
+.italic {
+    font-family: "polymath", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Polymath Bold */
+.bold {
+    font-family: "polymath", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Polymath Bold Italic */
+.bold.italic {
+    font-family: "polymath", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Polymath Display Regular */
+.regular {
+    font-family: "polymath-display", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Polymath Display Italic */
+.display.italic {
+    font-family: "polymath-display", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Polymath Display Bold */
+.display.bold {
+    font-family: "polymath-display", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Polymath Display Bold Italic */
+.display.bold.italic {
+    font-family: "polymath-display", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Polymath Text Regular */
+.text.regular {
+    font-family: "polymath-text", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Polymath Text Italic */
+.text.italic {
+    font-family: "polymath-text", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Polymath Text Bold */
+.text.bold {
+    font-family: "polymath-text", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Polymath Text Bold Italic */
+.text.bold.italic {
+    font-family: "polymath-text", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Georgia Regular */
+.georgia {
+    font-family: "georgia", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Georgia Italic */
+.georgia.italic {
+    font-family: "georgia", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}

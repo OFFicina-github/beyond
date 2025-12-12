@@ -1,0 +1,162 @@
+#super h1, #superh1,
+#super .h1, #super.h1,
+.super h1,
+.superh1,
+.super .h1,
+.super.h1 {
+  font-family: "polymath-text", sans-serif;
+  font-size: 90px !important;
+  font-weight: 300 !important;
+  line-height: 1;
+}
+#super h1 strong,
+#super h1 em, #superh1 strong,
+#superh1 em,
+#super .h1 strong,
+#super .h1 em, #super.h1 strong,
+#super.h1 em,
+.super h1 strong,
+.super h1 em,
+.superh1 strong,
+.superh1 em,
+.super .h1 strong,
+.super .h1 em,
+.super.h1 strong,
+.super.h1 em {
+  font-family: "georgia", sans-serif !important;
+  font-weight: 400 !important;
+}
+
+h1,
+.h1 {
+  font-family: "georgia", sans-serif;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 1;
+}
+
+h2,
+.h2 {
+  font-family: "georgia", sans-serif;
+  font-size: 48px;
+  line-height: 1;
+}
+
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+p,
+label,
+input,
+select,
+a,
+body {
+  font-family: "polymath-text", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h3,
+.h3,
+.h3 p,
+.h3 span {
+  font-size: 32px;
+  line-height: 1;
+}
+
+h4,
+.h4 {
+  font-size: 24px;
+  line-height: 1;
+}
+
+h5,
+.h5 {
+  font-size: 20px;
+  line-height: 1;
+}
+
+p,
+label,
+input,
+select {
+  font-size: 16px;
+}
+
+.poly,
+.poly * {
+  font-family: "polymath-text", sans-serif !important;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.yellow {
+  color: #f6e937 !important;
+}
+.yellow * {
+  color: #f6e937 !important;
+}
+
+.icon {
+  content: "";
+}
+.icon::after {
+  margin-left: 4px;
+  margin-right: 2px;
+  content: url("/wp-content/uploads/2025/12/segno_grafico.svg");
+}
+
+.visione-container h2 {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  font-size: 8rem;
+  line-height: 1;
+}
+.visione-container h2 img {
+  margin-left: 4px;
+  margin-right: 2px;
+  max-width: 8vw !important;
+}
+
+.scribble-container {
+  background-color: #1A1A1A;
+}
+.scribble-container i.icon {
+  display: inline-block;
+  width: unset;
+  height: unset;
+  line-height: 1;
+  vertical-align: unset;
+  margin-left: 0;
+}
+.scribble-container .scribble {
+  position: relative;
+}
+.scribble-container .scribble::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: calc(100% - 4px);
+  left: 0px;
+  top: 3px;
+  display: block;
+  background-repeat: repeat-x;
+  background-image: url(http://beyondpress.local/wp-content/themes/salient-child/assets/img/scribble.svg);
+  background-position: center center;
+  background-size: auto;
+  border-radius: 5px;
+  will-change: width;
+  transition: width 1s ease-in-out;
+  mix-blend-mode: multiply;
+}
+.scribble-container .scribble.started::after {
+  width: 100%;
+}/*# sourceMappingURL=typography.css.map */
