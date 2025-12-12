@@ -110,7 +110,7 @@ select {
 .icon::after {
   margin-left: 4px;
   margin-right: 2px;
-  content: url("/wp-content/uploads/2025/12/segno_grafico.svg");
+  content: url("./wp-content/uploads/2025/12/segno_grafico.svg");
 }
 
 .visione-container h2 {
@@ -149,7 +149,7 @@ select {
   top: 3px;
   display: block;
   background-repeat: repeat-x;
-  background-image: url(http://beyondpress.local/wp-content/themes/salient-child/assets/img/scribble.svg);
+  background-image: url("./wp-content/themes/salient-child/assets/img/scribble.svg");
   background-position: center center;
   background-size: auto;
   border-radius: 5px;
