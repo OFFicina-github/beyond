@@ -102,35 +102,6 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-
-
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     setTimeout(() => {
-//         const scribbles = document.querySelectorAll(".scribble");
-//         if (!scribbles.length) return;
-
-//         const observer = new IntersectionObserver(
-//             (entries, obs) => {
-//                 entries.forEach(entry => {
-//                     if (entry.isIntersecting) {
-//                         entry.target.classList.add("started");
-//                         obs.unobserve(entry.target); // 🔥 una sola volta
-//                     }
-//                 });
-//             },
-//             {
-//                 root: null,          // viewport
-//                 threshold: 0.3       // % visibile prima di attivare
-//             }
-//         );
-
-//         scribbles.forEach(el => observer.observe(el));
-//     }, 1000);
-// });
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
         document.querySelectorAll(".scribble").forEach(el => {
@@ -150,11 +121,124 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener('scroll', () => {
-  const top = document.querySelector('#top');
-  const bodyTop = document.body.getBoundingClientRect().top;
-  if (Math.abs(bodyTop) >= 80) {
-    top.classList.add('scrolled');
-  } else {
-    top.classList.remove('scrolled');
-  }
+    const top = document.querySelector('#top');
+    const bodyTop = document.body.getBoundingClientRect().top;
+    if (Math.abs(bodyTop) >= 80) {
+        top.classList.add('scrolled');
+    } else {
+        top.classList.remove('scrolled');
+    }
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    if (typeof SplitType === "undefined" || typeof gsap === "undefined") return;
+
+    const titles = document.querySelectorAll(".reveal-text");
+
+    titles.forEach(title => {
+
+        gsap.set(title, { opacity: 0 });
+
+        const split = new SplitType(title, {
+            types: "lines, words, chars",
+            lineClass: "split-line",
+            wordClass: "split-word",
+            charClass: "split-char"
+        });
+
+        gsap.set(title, { opacity: 1 });
+
+        gsap.set(split.chars, {
+            y: "100%",
+            opacity: 0
+        });
+
+        gsap.to(split.chars, {
+            y: "0%",
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+            stagger: 0.025,
+            scrollTrigger: {
+                trigger: title,
+                start: "top 80%",
+                once: true
+            }
+        });
+    });
+
+    setTimeout(() => {
+        if(document.querySelector('.experience-intro'))
+        document
+            .querySelector('.experience-intro')
+            .classList.add('first-animation');
+    }, 1000);
+
+    setTimeout(() => {
+        if(document.querySelector('.experience-intro'))
+        document
+            .querySelector('.experience-intro')
+            .classList.add('second-animation');
+    }, 2500);
+
+
+    setTimeout(() => {
+        if(document.querySelector('.experience-intro'))
+        document
+            .querySelector('.experience-intro')
+            .classList.add('is-ready');
+    }, 3000);
+});
+
+gsap.registerPlugin(ScrollTrigger);
+
+/* POSIZIONI INIZIALI */
+gsap.set(".word-metodo", { x: -200 });
+gsap.set(".word-consapevolezza", { x: 40 });
+gsap.set(".word-immagine", { x: -80 });
+
+/* helper preciso centro-centro */
+function moveWordToSlot(wordSelector, slotSelector) {
+  const word = document.querySelector(wordSelector);
+  const slot = document.querySelector(slotSelector);
+
+  const getDelta = () => {
+    const w = word.getBoundingClientRect();
+    const s = slot.getBoundingClientRect();
+
+    return {
+      x: s.left + s.width / 2 - (w.left + w.width / 2),
+      y: s.top + s.height / 2 - (w.top + w.height / 2)
+    };
+  };
+
+  gsap.to(word, {
+    x: () => `+=${getDelta().x}`,
+    y: () => `+=${getDelta().y}`,
+    ease: "power3.inOut",
+    scrollTrigger: {
+      trigger: ".sentence-block",
+      start: "top 75%",
+      end: "top 55%",
+      scrub: true,
+      snap: 1
+    }
+  });
+}
+
+/* highlight slot */
+ScrollTrigger.create({
+  trigger: ".sentence-block",
+  start: "top 75%",
+  onEnter: () =>
+    document
+      .querySelector(".sentence-block")
+      .classList.add("is-active")
+});
+
+/* associazioni */
+moveWordToSlot(".word-metodo", ".slot-metodo");
+moveWordToSlot(".word-consapevolezza", ".slot-consapevolezza");
+moveWordToSlot(".word-immagine", ".slot-immagine");

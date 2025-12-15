@@ -1,10 +1,14 @@
+#header-outer {
+  -webkit-backdrop-filter: unset !important;
+  backdrop-filter: unset !important;
+}
 #header-outer #top {
   min-height: 70px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
   align-content: center;
   z-index: 1000;
   background: transparent;
@@ -22,19 +26,33 @@
   transition: background-color 0.3s ease, -webkit-backdrop-filter 0.3s ease;
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
-  pointer-events: none;
 }
 #header-outer #top.scrolled::before {
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: saturate(180%) blur(10px);
-  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: saturate(180%) blur(24px);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
   mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
   -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
 }
+#header-outer #top.scrolled .header-name,
+#header-outer #top.scrolled .super {
+  font-size: 45px !important;
+}
+#header-outer #top .header-name,
+#header-outer #top .super {
+  transition: all 0.3s ease-in-out;
+}
 #header-outer #top .row {
   border-top: 1px solid white;
-  padding-top: 24px;
   margin-top: 32px;
+  justify-content: space-between;
+  align-items: center;
+}
+#header-outer #top .row a {
+  color: white;
+}
+#header-outer #top .row::before, #header-outer #top .row::after {
+  content: none;
 }
 #header-outer #top .header-beyond {
   margin-left: 0 !important;
@@ -53,6 +71,8 @@
   color: white;
   text-transform: uppercase;
   font-weight: 500;
+  margin-left: 0 !important;
+  margin-right: 20px !important;
 }
 #header-outer #top .header-beyond ul li a span {
   font-size: 13px;
@@ -101,21 +121,89 @@
   padding: 0 5% !important;
 }
 
-.page-template-default:not(.home) .container-wrap {
-  padding-top: 24vh;
-}
-
 #breadcrumbs {
   display: none;
+}
+
+.footer-inner {
+  margin: 0 auto;
+  padding-bottom: 9vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+.footer-inner .row-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.footer-inner .row-info a {
+  font-size: 12px;
+  color: white;
+  padding-left: 8px;
+}
+.footer-inner .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer-inner .row a {
+  color: white;
+}
+.footer-inner .row ul a {
+  color: white;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.footer-inner .row .col-6 {
+  width: 50%;
+}
+.footer-inner .row .col-3 {
+  width: 25%;
+}
+.footer-inner .row .footer-info {
+  font-size: 18px;
+}
+.footer-inner .row .footer-info a {
+  text-transform: none !important;
+}
+@media screen and (max-width: 1000px) {
+  .footer-inner .row .col-6,
+  .footer-inner .row .col-3 {
+    width: 33%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer-inner .row .col-6,
+  .footer-inner .row .col-3 {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 1000px) {
   #header-outer {
     top: 0 !important;
   }
-  #top .row {
-    padding-top: 50px;
-    margin-top: 0;
+  #header-outer #top {
+    padding-bottom: 30px !important;
+  }
+  #header-outer #top .row {
+    display: flex;
+    flex-direction: row;
+    padding-top: 0px;
+    margin-top: 12px !important;
+  }
+  #header-outer #top .row .col {
+    padding-top: 12px !important;
+  }
+  #header-outer #top .row .col-3 {
+    width: 75% !important;
+  }
+  #header-outer #top .row .header-name,
+  #header-outer #top .row .super {
+    font-size: 16vw !important;
+  }
+  #header-outer #top.scrolled .header-name,
+  #header-outer #top.scrolled .super {
+    font-size: 24px !important;
   }
   #linea-con-occhi {
     bottom: 0;
@@ -128,8 +216,22 @@
     padding-top: 16px !important;
     padding-left: 8px;
   }
-  #header-outer #top .row {
-    padding-top: 42px;
-    margin-top: 24px;
+}
+@media screen and (max-width: 1000px) {
+  .footer-inner {
+    padding-bottom: 15vh;
+  }
+  .footer-inner ul {
+    margin-bottom: 20px !important;
+  }
+  .footer-inner ul a {
+    font-size: 18px !important;
+  }
+  .footer-inner .row-info {
+    flex-direction: column;
+  }
+  .footer-inner .row-info a {
+    display: block;
+    padding-left: 0;
   }
 }/*# sourceMappingURL=header.css.map */

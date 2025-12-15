@@ -1,28 +1,26 @@
-#super h1, #superh1,
-#super .h1, #super.h1,
-.super h1,
-.superh1,
+#super,
+.super,
 .super .h1,
-.super.h1 {
+.super h1,
+.super h2,
+.super .h2 {
   font-family: "polymath-text", sans-serif;
   font-size: 90px !important;
   font-weight: 300 !important;
   line-height: 1;
 }
-#super h1 strong,
-#super h1 em, #superh1 strong,
-#superh1 em,
-#super .h1 strong,
-#super .h1 em, #super.h1 strong,
-#super.h1 em,
-.super h1 strong,
-.super h1 em,
-.superh1 strong,
-.superh1 em,
+#super strong,
+#super em,
+.super strong,
+.super em,
 .super .h1 strong,
 .super .h1 em,
-.super.h1 strong,
-.super.h1 em {
+.super h1 strong,
+.super h1 em,
+.super h2 strong,
+.super h2 em,
+.super .h2 strong,
+.super .h2 em {
   font-family: "georgia", sans-serif !important;
   font-weight: 400 !important;
 }
@@ -126,6 +124,17 @@ select {
   max-width: 8vw !important;
 }
 
+.h2.scribble-container .scribble,
+h2.scribble-container .scribble {
+  position: relative;
+}
+.h2.scribble-container .scribble::after,
+h2.scribble-container .scribble::after {
+  background-size: cover;
+  height: calc(100% - 14px);
+  top: 11px;
+}
+
 .scribble-container {
   background-color: #1A1A1A;
 }
@@ -159,4 +168,11 @@ select {
 }
 .scribble-container .scribble.started::after {
   width: 100%;
+}
+
+.reveal-title {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  opacity: 0;
 }/*# sourceMappingURL=typography.css.map */

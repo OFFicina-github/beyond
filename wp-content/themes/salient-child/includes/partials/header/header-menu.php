@@ -43,110 +43,6 @@ if (!empty($nectar_options['header-menu-label']) && $nectar_options['header-menu
 		<div class="row">
 
 
-			<?php /*  
-<div class="col span_3">
-	  <?php
-
-	  do_action('nectar_hook_before_logo');
-
-	  if (has_action('nectar_hook_mobile_header_before_logo')) { ?>
-		  <span class="nectar-mobile-only"><?php nectar_hook_mobile_header_before_logo(); ?></span>
-	  <?php }
-	  $nectar_logo_url = apply_filters('nectar_logo_url', esc_url(home_url()));
-	  ?>
-	  <a id="logo" href="<?php echo esc_url($nectar_logo_url); ?>"
-		  data-supplied-ml-starting-dark="<?php echo esc_attr($nectar_header_options['using_mobile_logo_starting_dark']); ?>"
-		  data-supplied-ml-starting="<?php echo esc_attr($nectar_header_options['using_mobile_logo_starting']); ?>"
-		  data-supplied-ml="<?php echo esc_attr($nectar_header_options['using_mobile_logo']); ?>" <?php echo wp_kses_post($nectar_header_options['logo_class']); ?>>
-		  <?php nectar_logo_output($nectar_header_options['activate_transparency'], $nectar_header_options['side_widget_class'], $nectar_header_options['using_mobile_logo']); ?>
-	  </a>
-	  <?php
-
-	  $menu_label = false;
-	  $menu_label_class = '';
-
-	  if (!empty($nectar_options['header-menu-label']) && $nectar_options['header-menu-label'] === '1') {
-		  $menu_label = true;
-		  $menu_label_class = ' using-label';
-	  }
-
-	  if ($nectar_header_format === 'centered-menu-bottom-bar') {
-
-		  $has_pull_left_menu = (has_nav_menu('top_nav_pull_left')) ? 'true' : 'false';
-		  ?>
-		  <nav class="left-side" data-using-pull-menu="<?php echo esc_attr($has_pull_left_menu); ?>">
-			  <?php
-			  // Pull left menu.
-
-			  do_action('nectar_hook_before_pull_left_items');
-
-			  if (has_nav_menu('top_nav_pull_left')) {
-				  wp_nav_menu(
-					  array(
-						  'walker' => new Nectar_Arrow_Walker_Nav_Menu(),
-						  'theme_location' => 'top_nav_pull_left',
-						  'container' => '',
-						  'container_class' => 'pull-left-wrap',
-						  'items_wrap' => '<ul id="%1$s" class="sf-menu">%3$s</ul>',
-					  )
-				  );
-			  }
-			  nectar_hook_pull_left_menu_items();
-
-			  if (!empty($nectar_options['enable_social_in_header']) && $nectar_options['enable_social_in_header'] === '1') {
-				  ?>
-				  <ul class="nectar-social">
-					  <li id="social-in-menu" class="button_social_group">
-						  <?php nectar_header_social_icons('main-nav'); ?> </li>
-				  </ul>
-			  <?php } ?>
-		  </nav>
-		  <nav class="right-side">
-			  <?php
-			  if (has_nav_menu('top_nav_pull_right')) {
-				  wp_nav_menu(
-					  array(
-						  'walker' => new Nectar_Arrow_Walker_Nav_Menu(),
-						  'theme_location' => 'top_nav_pull_right',
-						  'container' => '',
-						  'container_class' => 'pull-left-wrap',
-						  'items_wrap' => '<ul id="%1$s" class="sf-menu">%3$s</ul>',
-					  )
-				  );
-			  }
-			  nectar_hook_pull_right_menu_items();
-			  if (true === $alt_button_location) {
-				  ?>
-				  <ul class="buttons"
-					  data-user-set-ocm="<?php echo esc_attr($nectar_header_options['user_set_side_widget_area']); ?>">
-					  <?php nectar_header_button_items(); ?></ul>
-			  <?php } ?>
-			  <?php if ($nectar_header_options['side_widget_area'] === '1' || $nectar_header_options['side_widget_class'] === 'simple') {
-				  $ocm_anchor = (NectarThemeManager::$ocm_style !== 'simple') ? '#slide-out-widget-area' : '#mobile-menu';
-				  ?>
-				  <div class="slide-out-widget-area-toggle mobile-icon <?php echo esc_attr($nectar_header_options['side_widget_class']); ?>"
-					  data-custom-color="<?php echo esc_attr($nectar_header_options['ocm_menu_btn_color']); ?>"
-					  data-icon-animation="simple-transform">
-					  <div> <a href="<?php echo esc_attr($ocm_anchor); ?>" role="button"
-							  aria-label="<?php echo esc_attr__('Navigation Menu', 'salient'); ?>"
-							  aria-expanded="false" class="<?php echo 'closed' . esc_attr($menu_label_class); ?>">
-							  <?php if (true === $menu_label) {
-								  echo '<i class="label">' . esc_html__('Menu', 'salient') . '</i>';
-							  } else {
-								  echo '<span class="screen-reader-text">' . esc_html__('Menu', 'salient') . '</span>';
-							  }
-							  $icon_variant_attr = (isset($nectar_options['header-slide-out-widget-area-icon-variant']) && $nectar_options['header-slide-out-widget-area-icon-variant'] !== 'default') ?
-								  ' data-variant="' . esc_attr($nectar_options['header-slide-out-widget-area-icon-variant']) . '"' :
-								  '';
-							  echo '<span aria-hidden="true"> <i class="lines-button x2"' . $icon_variant_attr . '> <i class="lines"></i> </i> </span> </a> </div>';
-							  ?>
-					  </div>
-				  <?php } ?>
-		  </nav>
-	  <?php } ?>
-  </div>
-
-  */ ?>
 
 			<div class="col span_9 col_last header-beyond">
 				<?php
@@ -398,6 +294,117 @@ if (!empty($nectar_options['header-menu-label']) && $nectar_options['header-menu
 				}
 			}
 			?>
+
+
+			<div class="col span_3">
+				<?php
+
+				do_action('nectar_hook_before_logo');
+
+				if (has_action('nectar_hook_mobile_header_before_logo')) { ?>
+					<span class="nectar-mobile-only"><?php nectar_hook_mobile_header_before_logo(); ?></span>
+				<?php }
+				$nectar_logo_url = apply_filters('nectar_logo_url', esc_url(home_url()));
+				?>
+				<!-- <a id="logo" href="<?php echo esc_url($nectar_logo_url); ?>"
+					data-supplied-ml-starting-dark="<?php echo esc_attr($nectar_header_options['using_mobile_logo_starting_dark']); ?>"
+					data-supplied-ml-starting="<?php echo esc_attr($nectar_header_options['using_mobile_logo_starting']); ?>"
+					data-supplied-ml="<?php echo esc_attr($nectar_header_options['using_mobile_logo']); ?>" <?php echo wp_kses_post($nectar_header_options['logo_class']); ?>>
+					<?php nectar_logo_output($nectar_header_options['activate_transparency'], $nectar_header_options['side_widget_class'], $nectar_header_options['using_mobile_logo']); ?>
+				</a> -->
+				<p class="header-name super h1">
+					<a href="<?php echo esc_url($nectar_logo_url); ?>" class="accessed">
+						be<em><strong>yo</strong></em>nd
+					</a>
+				</p>
+				<?php
+
+				$menu_label = false;
+				$menu_label_class = '';
+
+				if (!empty($nectar_options['header-menu-label']) && $nectar_options['header-menu-label'] === '1') {
+					$menu_label = true;
+					$menu_label_class = ' using-label';
+				}
+
+				if ($nectar_header_format === 'centered-menu-bottom-bar') {
+
+					$has_pull_left_menu = (has_nav_menu('top_nav_pull_left')) ? 'true' : 'false';
+					?>
+					<nav class="left-side" data-using-pull-menu="<?php echo esc_attr($has_pull_left_menu); ?>">
+						<?php
+						// Pull left menu.
+					
+						do_action('nectar_hook_before_pull_left_items');
+
+						if (has_nav_menu('top_nav_pull_left')) {
+							wp_nav_menu(
+								array(
+									'walker' => new Nectar_Arrow_Walker_Nav_Menu(),
+									'theme_location' => 'top_nav_pull_left',
+									'container' => '',
+									'container_class' => 'pull-left-wrap',
+									'items_wrap' => '<ul id="%1$s" class="sf-menu">%3$s</ul>',
+								)
+							);
+						}
+						nectar_hook_pull_left_menu_items();
+
+						if (!empty($nectar_options['enable_social_in_header']) && $nectar_options['enable_social_in_header'] === '1') {
+							?>
+							<ul class="nectar-social">
+								<li id="social-in-menu" class="button_social_group">
+									<?php nectar_header_social_icons('main-nav'); ?>
+								</li>
+							</ul>
+						<?php } ?>
+					</nav>
+					<nav class="right-side">
+						<?php
+						if (has_nav_menu('top_nav_pull_right')) {
+							wp_nav_menu(
+								array(
+									'walker' => new Nectar_Arrow_Walker_Nav_Menu(),
+									'theme_location' => 'top_nav_pull_right',
+									'container' => '',
+									'container_class' => 'pull-left-wrap',
+									'items_wrap' => '<ul id="%1$s" class="sf-menu">%3$s</ul>',
+								)
+							);
+						}
+						nectar_hook_pull_right_menu_items();
+						if (true === $alt_button_location) {
+							?>
+							<ul class="buttons"
+								data-user-set-ocm="<?php echo esc_attr($nectar_header_options['user_set_side_widget_area']); ?>">
+								<?php nectar_header_button_items(); ?>
+							</ul>
+						<?php } ?>
+						<?php if ($nectar_header_options['side_widget_area'] === '1' || $nectar_header_options['side_widget_class'] === 'simple') {
+							$ocm_anchor = (NectarThemeManager::$ocm_style !== 'simple') ? '#slide-out-widget-area' : '#mobile-menu';
+							?>
+							<div class="slide-out-widget-area-toggle mobile-icon <?php echo esc_attr($nectar_header_options['side_widget_class']); ?>"
+								data-custom-color="<?php echo esc_attr($nectar_header_options['ocm_menu_btn_color']); ?>"
+								data-icon-animation="simple-transform">
+								<div> <a href="<?php echo esc_attr($ocm_anchor); ?>" role="button"
+										aria-label="<?php echo esc_attr__('Navigation Menu', 'salient'); ?>"
+										aria-expanded="false" class="<?php echo 'closed' . esc_attr($menu_label_class); ?>">
+										<?php if (true === $menu_label) {
+											echo '<i class="label">' . esc_html__('Menu', 'salient') . '</i>';
+										} else {
+											echo '<span class="screen-reader-text">' . esc_html__('Menu', 'salient') . '</span>';
+										}
+										$icon_variant_attr = (isset($nectar_options['header-slide-out-widget-area-icon-variant']) && $nectar_options['header-slide-out-widget-area-icon-variant'] !== 'default') ?
+											' data-variant="' . esc_attr($nectar_options['header-slide-out-widget-area-icon-variant']) . '"' :
+											'';
+										echo '<span aria-hidden="true"> <i class="lines-button x2"' . $icon_variant_attr . '> <i class="lines"></i> </i> </span> </a> </div>';
+										?>
+								</div>
+							<?php } ?>
+					</nav>
+				<?php } ?>
+			</div>
+
 
 		</div><!--/row-->
 		<?php

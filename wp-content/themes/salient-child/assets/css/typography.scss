@@ -1,22 +1,20 @@
 #super,
-.super {
+.super,
+.super .h1,
+.super h1,
+.super h2,
+.super .h2 {
+    font-family: "polymath-text", sans-serif;
 
-    h1,
-    &h1,
-    .h1,
-    &.h1 {
-        font-family: "polymath-text", sans-serif;
-
-        strong,
-        em {
-            font-family: "georgia", sans-serif !important;
-            font-weight: 400 !important;
-        }
-
-        font-size: 90px !important;
-        font-weight: 300 !important;
-        line-height: 1;
+    strong,
+    em {
+        font-family: "georgia", sans-serif !important;
+        font-weight: 400 !important;
     }
+
+    font-size: 90px !important;
+    font-weight: 300 !important;
+    line-height: 1;
 }
 
 h1,
@@ -122,7 +120,20 @@ select {
     }
 }
 
+.h2,
+h2 {
+    &.scribble-container {
+        .scribble {
+            position: relative;
 
+            &::after {
+                background-size: cover;
+                height: calc(100% - 14px);
+                top: 11px;
+            }
+        }
+    }
+}
 
 .scribble-container {
     background-color: #1A1A1A;
@@ -163,4 +174,12 @@ select {
             }
         }
     }
+}
+
+
+.reveal-title {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    opacity: 0;
 }

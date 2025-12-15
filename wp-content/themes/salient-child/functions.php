@@ -96,3 +96,17 @@ function add_gsap_scripts()
     );
 }
 add_action('wp_enqueue_scripts', 'add_gsap_scripts');
+
+function off_register_footer_menu() {
+    register_nav_menus(
+        array(
+            'footer_menu' => __('Footer Menu', 'off-theme'),
+        )
+    );
+    register_nav_menus(
+        array(
+            'footer_social_menu' => __('Footer Social Menu', 'off-theme'),
+        )
+    );
+}
+add_action('after_setup_theme', 'off_register_footer_menu');
