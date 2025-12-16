@@ -457,3 +457,67 @@ if (document.querySelector(".manifesto-wrapper")) {
     });
 
 }
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const items = document.querySelectorAll(
+        '.nectar-post-grid-item[data-has-img="true"]'
+    );
+
+    let mouseX = 0, mouseY = 0;
+    let currentX = 0, currentY = 0;
+
+    const ease = 0.12; // più basso = più lag (Signal ≈ 0.1)
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX + 30;
+        mouseY = e.clientY + 30;
+    });
+
+    function animate() {
+        currentX += (mouseX - currentX) * ease;
+        currentY += (mouseY - currentY) * ease;
+
+        const active = document.querySelector(
+            '.nectar-post-grid-item.is-hovered .nectar-post-grid-item-bg'
+        );
+
+        if (active) {
+            active.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    items.forEach(item => {
+
+        const bg = item.querySelector('.nectar-post-grid-item-bg');
+        if (!bg || !bg.querySelector('img')) return;
+
+        item.addEventListener('mouseenter', () => {
+            item.classList.add('is-hovered');
+        });
+
+        item.addEventListener('mouseleave', () => {
+            item.classList.remove('is-hovered');
+        });
+
+    });
+
+    document.querySelectorAll('.nectar-post-grid-link').forEach(link => {
+        link.removeAttribute('href');
+        link.style.pointerEvents = 'none';
+    });
+
+});
