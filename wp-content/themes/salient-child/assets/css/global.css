@@ -702,4 +702,21 @@ html {
 .spline-content-bubble .bubble-3.active {
   opacity: 1;
   transform: scale(1);
+}
+
+.hero-persona {
+  position: relative;
+}
+.hero-persona .nome-persona {
+  position: absolute;
+  left: 50px;
+  text-align: left;
+  bottom: 50px;
+}
+.hero-persona .nome-persona h1 {
+  font-weight: 400 !important;
+  font-family: "polymath-text", sans-serif !important;
+}
+.hero-persona .nome-persona h1 em {
+  font-family: "georgia", sans-serif !important;
 }/*# sourceMappingURL=global.css.map */

@@ -214,6 +214,7 @@ html {
 
 .spline-background {
   min-height: 100vh;
+
   .spline-content {
     top: 45%;
     width: 100%;
@@ -872,27 +873,47 @@ html {
 .spline-content-bubble {
   height: 100vh;
   margin-top: -90vh !important;
-  
+
   @media (max-width: 1024px) {
     margin-top: -65vh !important;
   }
 
-    .bubble-1,
-    .bubble-2,
-    .bubble-3 {
-      position: absolute;
-      opacity: 0;
-      transform: scale(0.95);
-      transition:
-        opacity 0.6s ease,
-        transform 0.6s ease;
-    }
+  .bubble-1,
+  .bubble-2,
+  .bubble-3 {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0.95);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
+  }
 
-    .bubble-1.active,
-    .bubble-2.active,
-    .bubble-3.active {
-      opacity: 1;
-      transform: scale(1);
-    }
+  .bubble-1.active,
+  .bubble-2.active,
+  .bubble-3.active {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
+
+.hero-persona {
+  position: relative;
+
+  .nome-persona {
+    position: absolute;
+    left: 50px;
+    text-align: left;
+    bottom: 50px;
+
+    h1 {
+      font-weight: 400 !important;
+      font-family: "polymath-text", sans-serif !important;
+
+      em {
+        font-family: "georgia" , sans-serif !important;
+      }
+    }
+  }
+}
