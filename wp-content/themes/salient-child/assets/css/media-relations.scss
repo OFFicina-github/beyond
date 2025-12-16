@@ -1,0 +1,147 @@
+#block-media-relations {
+    margin-top: 10vh;
+
+    .row_col_wrap_12_inner {
+        padding-left: 5vw;
+        padding-right: 5vw;
+
+        >.vc_col-sm-12 {
+            >.vc_column-inner {
+                >.wpb_wrapper {
+                    // background-color: #ededed;
+                    // padding: 40px;
+
+                    * {
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+
+    .manifesto-wrapper {
+        height: 500vh;
+        position: relative;
+        overflow: visible;
+    }
+
+    .manifesto-pin {
+        height: calc(100vh - 120px);
+        padding-top: 120px;
+        background: #f1f1ef;
+        border-radius: 32px;
+        position: relative;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    /* header */
+    .manifesto-header {
+        position: relative;
+        text-align: center;
+        margin-bottom: 120px;
+    }
+
+    .label {
+        position: absolute;
+        top: calc(-10vh - 70px);
+        left: 0px;
+        font-size: 14px;
+    }
+
+    .titles {
+        position: relative;
+        height: 90px;
+        margin-top: 10vh;
+    }
+
+    .title {
+        position: absolute;
+        inset: 0;
+        margin: 0;
+        font-size: 72px;
+        opacity: 0;
+        font-family: "georgia", sans-serif !important;
+        pointer-events: none;
+        font-style: italic;
+    }
+
+    .title .char {
+        display: inline-block;
+        will-change: transform, filter, opacity;
+    }
+
+    /* colonne */
+    .manifesto-columns {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 80px;
+    }
+
+    .manifesto-col {
+        position: relative;
+    }
+
+    /* testo */
+    .text {
+        font-size: 18px;
+        line-height: 1.4;
+        color: #bdbdbd;
+    }
+
+    /* parole */
+    .word {
+        display: inline-block;
+        position: relative;
+    }
+
+    .word-fill {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        color: #111;
+        overflow: hidden;
+        height: 0%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #media-relations-block{
+        margin-top: 12vh !important;
+    }
+    #block-media-relations {
+
+        .manifesto-pin {
+            padding-top: 10px;
+        }
+
+        .manifesto-header {
+            // margin-bottom: 20px;
+            margin-bottom: 0px;
+        }
+
+        .label {
+            top: -60px;
+        }
+
+        .manifesto-columns {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 10px;
+        }
+
+        .manifesto-col {
+            br{
+                display: none;
+            }
+            p{
+                &:first-of-type{
+                    padding-bottom: 4px;
+                }
+                &:last-of-type{
+
+                    padding-bottom: 12px;
+                }
+            }
+        }
+    }
+}

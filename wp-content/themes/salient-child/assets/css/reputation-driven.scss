@@ -1,0 +1,191 @@
+.matching-words {
+    position: relative;
+    min-height: 140vh;
+    padding: 40px 20px;
+    color: white;
+    margin-top: 100px;
+
+    .row_col_wrap_12 {
+        background: #EDEDED;
+        border-radius: 25px;
+    }
+
+    /* BLOCCO SUPERIORE */
+    .top-block {
+        position: sticky;
+        top: 40px;
+        display: block;
+        height: 120px;
+        pointer-events: none;
+    }
+
+    .word {
+        position: absolute;
+        padding: 12px 22px;
+        border-radius: 999px;
+        font-size: 40px;
+        font-weight: 700;
+        color: black;
+        font-family: "georgia", sans-serif;
+        background: transparent;
+        will-change: transform;
+        border: 1px solid black;
+        white-space: nowrap;
+    }
+
+    /* POSIZIONI INIZIALI */
+    .word-metodo {
+        left: 50%;
+        border-radius: 50px;
+        top: 0;
+    }
+
+    .word-consapevolezza {
+        left: 50%;
+        border-radius: 3px;
+        top: 0;
+    }
+
+    .word-immagine {
+        left: 50%;
+        border-radius: 10px;
+        top: 60px;
+    }
+
+    .word-consapevolezza {
+        left: 50%;
+        top: 0;
+        transform: translateX(40px);
+    }
+
+    .word-immagine {
+        left: 50%;
+        top: 60px;
+        transform: translateX(-80px);
+    }
+
+    /* BLOCCO FRASE */
+    .sentence-block {
+        margin-top: 40vh;
+        text-align: center;
+        font-size: 32px;
+        line-height: 1.6;
+        color: black;
+
+        &.is-near {
+            .slot {
+                .slot-outline {
+                    border: 1px solid #bebebe00;
+                }
+            }
+        }
+
+        p {
+            max-width: 900px;
+            font-size: 32px;
+            margin: 0 auto;
+        }
+
+        .slot {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0px 14px;
+
+
+            /* elemento fantasma che determina la dimensione */
+            .slot-size {
+                visibility: hidden;
+                white-space: nowrap;
+                font-size: 50px;
+                font-weight: 700;
+                padding: 12px 15px;
+                line-height: 1;
+            }
+
+            /* buco visivo */
+            .slot-outline {
+                position: absolute;
+                inset: 0;
+                border: 1px solid #bebebe;
+                transition: border 0.3s ease-in-out;
+                border-radius: 50px;
+                pointer-events: none;
+            }
+
+            &.slot-consapevolezza {
+                .slot-size {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+
+                .slot-outline {
+                    border-radius: 3px;
+                }
+            }
+
+            &.slot-immagine {
+                .slot-outline {
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        .sentence-block.is-active .slot-outline {
+            opacity: 1;
+        }
+
+        &.is-active .slot::after {
+            opacity: 1;
+        }
+    }
+}
+
+.riga {
+    * {
+        color: black;
+    }
+
+    .riga-container {
+        border-top: 1px solid black;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 20px;
+        margin-top: 30vh;
+        padding-bottom: 10vh;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    #matching-words {
+        margin-bottom: 50px;
+        padding: 0;
+        min-height: 100vh;
+        margin-top: 50px;
+
+        .word {
+            font-size: 24px;
+            padding: 8px 10px;
+            line-height: 1;
+        }
+
+        .sentence-block p {
+            line-height: 2;
+            font-size: 24px;
+        }
+
+        .matching-words .sentence-block .slot .slot-size {
+            line-height: 2;
+            font-size: 24px;
+        }
+    }
+
+    .riga {
+        .riga-container {
+            margin-top: 10vh;
+            flex-wrap: wrap;
+        }
+    }
+}

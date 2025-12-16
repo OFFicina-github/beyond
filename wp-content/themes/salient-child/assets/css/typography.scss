@@ -63,7 +63,6 @@ h3,
 h4,
 .h4 {
     font-size: 24px;
-    line-height: 1;
 }
 
 h5,
@@ -182,4 +181,56 @@ h2 {
     position: relative;
     vertical-align: top;
     opacity: 0;
+}
+
+@media screen and (max-width: 1000px) {
+
+    #super,
+    .super,
+    .super .h1,
+    .super h1,
+    .super h2,
+    .super .h2 {
+        font-family: "polymath-text", sans-serif;
+
+        strong,
+        em {
+            font-family: "georgia", sans-serif !important;
+            font-weight: 400 !important;
+        }
+
+        font-size: 40px !important;
+        font-weight: 300 !important;
+        line-height: 1;
+    }
+
+    h1,
+    .h1 {
+        font-size: 36px;
+    }
+
+    h2,
+    .h2 {
+        font-size: 30px;
+    }
+
+
+    h3,
+    .h3,
+    .h3 p,
+    .h3 span {
+        font-size: 24px;
+    }
+
+    h4,
+    .h4 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    h5,
+    .h5 {
+        font-size: 18px;
+        line-height: 1;
+    }
 }

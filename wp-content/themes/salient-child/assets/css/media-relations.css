@@ -1,0 +1,111 @@
+#block-media-relations {
+  margin-top: 10vh;
+  /* header */
+  /* colonne */
+  /* testo */
+  /* parole */
+}
+#block-media-relations .row_col_wrap_12_inner {
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+#block-media-relations .row_col_wrap_12_inner > .vc_col-sm-12 > .vc_column-inner > .wpb_wrapper * {
+  color: black;
+}
+#block-media-relations .manifesto-wrapper {
+  height: 500vh;
+  position: relative;
+  overflow: visible;
+}
+#block-media-relations .manifesto-pin {
+  height: calc(100vh - 120px);
+  padding-top: 120px;
+  background: #f1f1ef;
+  border-radius: 32px;
+  position: relative;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+#block-media-relations .manifesto-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 120px;
+}
+#block-media-relations .label {
+  position: absolute;
+  top: calc(-10vh - 70px);
+  left: 0px;
+  font-size: 14px;
+}
+#block-media-relations .titles {
+  position: relative;
+  height: 90px;
+  margin-top: 10vh;
+}
+#block-media-relations .title {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  font-size: 72px;
+  opacity: 0;
+  font-family: "georgia", sans-serif !important;
+  pointer-events: none;
+  font-style: italic;
+}
+#block-media-relations .title .char {
+  display: inline-block;
+  will-change: transform, filter, opacity;
+}
+#block-media-relations .manifesto-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+}
+#block-media-relations .manifesto-col {
+  position: relative;
+}
+#block-media-relations .text {
+  font-size: 18px;
+  line-height: 1.4;
+  color: #bdbdbd;
+}
+#block-media-relations .word {
+  display: inline-block;
+  position: relative;
+}
+#block-media-relations .word-fill {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: #111;
+  overflow: hidden;
+  height: 0%;
+}
+
+@media screen and (max-width: 1000px) {
+  #media-relations-block {
+    margin-top: 12vh !important;
+  }
+  #block-media-relations .manifesto-pin {
+    padding-top: 10px;
+  }
+  #block-media-relations .manifesto-header {
+    margin-bottom: 0px;
+  }
+  #block-media-relations .label {
+    top: -60px;
+  }
+  #block-media-relations .manifesto-columns {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+  #block-media-relations .manifesto-col br {
+    display: none;
+  }
+  #block-media-relations .manifesto-col p:first-of-type {
+    padding-bottom: 4px;
+  }
+  #block-media-relations .manifesto-col p:last-of-type {
+    padding-bottom: 12px;
+  }
+}/*# sourceMappingURL=media-relations.css.map */

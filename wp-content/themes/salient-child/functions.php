@@ -9,6 +9,8 @@ function salient_child_enqueue_styles()
     wp_enqueue_style('salient-child-font-style', get_stylesheet_directory_uri() . '/assets/css/typography.css', '', $nectar_theme_version);
     wp_enqueue_style('salient-child-style', get_stylesheet_directory_uri() . '/assets/css/style.css', '', $nectar_theme_version);
     wp_enqueue_style('salient-global-style', get_stylesheet_directory_uri() . '/assets/css/global.css', '', $nectar_theme_version);
+    wp_enqueue_style('reputation-driven-style', get_stylesheet_directory_uri() . '/assets/css/reputation-driven.css', '', $nectar_theme_version);
+    wp_enqueue_style('reputation-media-style', get_stylesheet_directory_uri() . '/assets/css/media-relations.css', '', $nectar_theme_version);
     wp_enqueue_style('salient-header-style', get_stylesheet_directory_uri() . '/assets/css/header.css', '', $nectar_theme_version);
 
     if (is_rtl()) {

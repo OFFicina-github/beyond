@@ -213,6 +213,7 @@ html {
 }
 
 .spline-background {
+  min-height: 100vh;
   .spline-content {
     top: 45%;
     width: 100%;
@@ -763,106 +764,135 @@ html {
 
 }
 
-.matching-words {
-  position: relative;
-  min-height: 120vh;
-  padding: 40px 20px;
-  background: #111;
-  color: white;
-
-  /* BLOCCO SUPERIORE */
-  .top-block {
-    position: sticky;
-    top: 40px;
-    display: block;
-    height: 120px;
-    pointer-events: none;
-  }
-
-  .word {
-    position: absolute;
-    padding: 12px 22px;
-    border-radius: 999px;
-    font-size: 24px;
-    font-weight: 700;
-    color: white;
-    background: transparent;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    will-change: transform;
-    white-space: nowrap;
-  }
-
-  /* POSIZIONI INIZIALI */
-  .word-metodo {
-    left: 50%;
-    top: 0;
-  }
-
-  .word-consapevolezza {
-    left: 50%;
-    top: 0;
-  }
-
-  .word-immagine {
-    left: 50%;
-    top: 60px;
-  }
-
-  .word-consapevolezza {
-    left: 50%;
-    top: 0;
-    transform: translateX(40px);
-  }
-
-  .word-immagine {
-    left: 50%;
-    top: 60px;
-    transform: translateX(-80px);
-  }
-
-  /* BLOCCO FRASE */
-  .sentence-block {
-    margin-top: 40vh;
-    text-align: center;
-    font-size: 20px;
-    line-height: 1.6;
-
-    p {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .slot {
-      position: relative;
-      display: inline-block;
-      vertical-align: middle;
-      margin: 0 6px;
-
-      /* elemento fantasma che determina la dimensione */
-      .slot-size {
-        visibility: hidden;
-        white-space: nowrap;
-        font-size: 24px;
-        font-weight: 700;
-        padding: 12px 22px;
-      }
-
-      /* buco visivo */
-      .slot-outline {
-        position: absolute;
-        inset: 0;
-        border-bottom: 2px dashed rgba(255, 255, 255, 0.4);
-        border-radius: 999px;
-        pointer-events: none;
-      }
-    }
-
-    .sentence-block.is-active .slot-outline {
-      opacity: 1;
-    }
-
-    &.is-active .slot::after {
-      opacity: 1;
-    }
+.align-items-end {
+  .row_col_wrap_12_inner {
+    align-items: self-end;
   }
 }
+
+.max-width-centered {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+
+.max-width-centered-460 {
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.max-width-centered-800 {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.bubble {
+  position: relative;
+  width: 320px;
+  padding: 36px 40px;
+  border-radius: 28px;
+
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: center;
+  color: #f5f5f5;
+
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(6px);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 0 40px rgba(0, 0, 0, 0.8),
+    0 0 80px rgba(0, 0, 0, 0.9);
+}
+
+.bubble-bottom-left::before {
+  content: "";
+  position: absolute;
+
+  left: 56px;
+  bottom: -26px;
+
+  width: 0;
+  height: 0;
+
+  border-top: 26px solid rgba(255, 255, 255, 0.35);
+  border-right: 26px solid transparent;
+}
+
+.bubble-bottom-left::after {
+  content: "";
+  position: absolute;
+
+  left: 57px;
+  bottom: -23px;
+
+  width: 0;
+  height: 0;
+
+  border-top: 24px solid rgba(20, 20, 20, 0.9);
+  border-right: 24px solid transparent;
+}
+
+.bubble-bottom-right::before {
+  content: "";
+  position: absolute;
+
+  right: 56px;
+  bottom: -26px;
+
+  width: 0;
+  height: 0;
+
+  border-top: 26px solid rgba(255, 255, 255, 0.35);
+  border-left: 26px solid transparent;
+}
+
+.bubble-bottom-right::after {
+  content: "";
+  position: absolute;
+
+  right: 57px;
+  bottom: -23px;
+
+  width: 0;
+  height: 0;
+
+  border-top: 24px solid rgba(20, 20, 20, 0.9);
+  border-left: 24px solid transparent;
+}
+
+
+.spline-bubble-background {
+  min-height: 100vh;
+}
+
+.spline-content-bubble {
+  height: 100vh;
+  margin-top: -90vh !important;
+  
+  @media (max-width: 1024px) {
+    margin-top: -65vh !important;
+  }
+
+    .bubble-1,
+    .bubble-2,
+    .bubble-3 {
+      position: absolute;
+      opacity: 0;
+      transform: scale(0.95);
+      transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+    }
+
+    .bubble-1.active,
+    .bubble-2.active,
+    .bubble-3.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+}
+
