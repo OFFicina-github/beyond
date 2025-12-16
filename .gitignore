@@ -10,6 +10,8 @@
 # Mantieni solo il tema WordPress
 !/wp-content/
 !/wp-content/themes/
+!/wp-content/themes/salient/
+!/wp-content/themes/salient/**
 !/wp-content/themes/salient-child/
 !/wp-content/themes/salient-child/**
 
