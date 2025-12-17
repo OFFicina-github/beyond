@@ -712,6 +712,16 @@ html {
   left: 50px;
   text-align: left;
   bottom: 50px;
+  z-index: 12;
+}
+@media screen and (max-width: 1000px) {
+  .hero-persona .nome-persona {
+    position: relative;
+    margin-top: 20px;
+    margin-left: 10px;
+    bottom: 0px;
+    left: 0px;
+  }
 }
 .hero-persona .nome-persona h1 {
   font-weight: 400 !important;
@@ -719,6 +729,60 @@ html {
 }
 .hero-persona .nome-persona h1 em {
   font-family: "georgia", sans-serif !important;
+}
+.hero-persona .hero-tags-container {
+  position: absolute;
+  height: 60vh;
+  width: 90vw;
+  margin-top: -65vh;
+}
+@media screen and (max-width: 1000px) {
+  .hero-persona .hero-tags-container {
+    width: 90vw;
+    height: 50vh;
+    margin-top: -55vh;
+  }
+}
+.hero-persona .hero-tags {
+  position: absolute;
+  inset: 0;
+}
+.hero-persona .hero-tags .tag {
+  position: absolute;
+  padding: 2px 12px;
+  font-size: 12px;
+  background: #424241;
+  color: #F6E937;
+  border-radius: 20px;
+  white-space: nowrap;
+  border: 1px solid #525252;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.hero-persona .hero-tags .tag::before {
+  content: "";
+  position: relative;
+  margin-right: 4px;
+  width: 14px;
+  height: 9px;
+  background-image: url("../img/segno_grafico.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.hero-persona .hero-tags .tag.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 1000px) {
+  .persona-carousel .nectar-flickity.nectar-carousel[data-format=default] .flickity-slider .cell {
+    min-height: 60vh;
+  }
+  .persona-carousel .nectar-flickity.nectar-carousel[data-format=default] .flickity-slider .cell .inner-wrap {
+    padding: 16px !important;
+  }
 }
 
 .elenco-libri {
@@ -772,6 +836,90 @@ html {
 .elenco-libri .nectar-post-grid-item:hover .item-main > *:last-child {
   transform: translateX(1rem) !important;
 }
-.elenco-libri .nectar-post-grid-item::before, .elenco-libri .nectar-post-grid-item::before {
+.elenco-libri .nectar-post-grid-item::before, .elenco-libri .nectar-post-grid-item::after {
   background-color: white !important;
+}
+
+.cose-persona {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.cose-persona > .row_col_wrap_12 {
+  height: 70vh !important;
+  align-items: stretch;
+}
+@media screen and (max-width: 1000px) {
+  .cose-persona > .row_col_wrap_12 {
+    height: unset !important;
+  }
+}
+.cose-persona .col > .vc_column-inner .col .vc_column-inner:hover .column-bg-overlay {
+  background-color: #fff !important;
+}
+.cose-persona .col > .vc_column-inner .col .vc_column-inner:hover svg,
+.cose-persona .col > .vc_column-inner .col .vc_column-inner:hover svg * {
+  color: black;
+  fill: black;
+}
+.cose-persona .col > .vc_column-inner .col .vc_column-inner:hover .divider-wrap > div {
+  background-color: black !important;
+}
+.cose-persona .col > .vc_column-inner .col .vc_column-inner:hover * {
+  color: black !important;
+}
+.cose-persona .col .divider-wrap {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+.cose-persona .col .divider-wrap > div {
+  transition: all 0.3s ease-in-out;
+}
+.cose-persona .col .colonna-colore > .vc_column-inner {
+  background-color: #252525;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+.cose-persona .col .colonna-colore > .vc_column-inner:hover {
+  background-color: white;
+}
+.cose-persona .col .colonna-colore > .vc_column-inner:hover .divider-wrap > div {
+  background-color: black;
+}
+.cose-persona .col .colonna-colore > .vc_column-inner:hover svg,
+.cose-persona .col .colonna-colore > .vc_column-inner:hover svg * {
+  fill: black;
+  color: black;
+}
+.cose-persona .col .colonna-colore > .vc_column-inner:hover * {
+  color: black;
+}
+.cose-persona h2 {
+  font-size: 36px !important;
+  line-height: 1.3;
+  font-weight: 400;
+}
+.cose-persona h3 {
+  font-size: 25px !important;
+  line-height: 1.3;
+}
+.cose-persona .icon-box-full {
+  width: 100%;
+  background-color: unset;
+}
+.cose-persona .icon-box-full .icon-box {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.cose-persona svg,
+.cose-persona svg * {
+  color: white;
+  fill: white;
+}
+.cose-persona .small-text * {
+  font-size: 10px;
+  line-height: 1.3;
+  text-transform: uppercase;
 }/*# sourceMappingURL=global.css.map */

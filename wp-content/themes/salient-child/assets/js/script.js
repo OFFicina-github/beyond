@@ -521,3 +521,87 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector(".hero-tags-container");
+    const tags = Array.from(container.querySelectorAll(".tag"));
+
+    const containerRect = container.getBoundingClientRect();
+
+    const safeX = containerRect.width * 0.08;  // 8%
+    const safeY = containerRect.height * 0.08;
+    const padding = 24;
+    const maxAttempts = 100;
+
+    const placed = [];
+
+    function isOverlapping(rect) {
+        return placed.some(p =>
+            !(
+                rect.right + padding < p.left ||
+                rect.left - padding > p.right ||
+                rect.bottom + padding < p.top ||
+                rect.top - padding > p.bottom
+            )
+        );
+    }
+
+    tags.forEach(tag => {
+
+        const rect = tag.getBoundingClientRect();
+        let attempts = 0;
+        let placedRect;
+
+        do {
+            const minX = safeX;
+            const maxX = containerRect.width - rect.width - safeX;
+            const minY = safeY;
+            const maxY = containerRect.height - rect.height - safeY;
+
+            const x = minX + Math.random() * (maxX - minX);
+            const y = minY + Math.random() * (maxY - minY);
+
+            placedRect = {
+                left: x,
+                top: y,
+                right: x + rect.width,
+                bottom: y + rect.height
+            };
+
+            attempts++;
+
+        } while (isOverlapping(placedRect) && attempts < maxAttempts);
+
+        placed.push(placedRect);
+
+        tag.style.left = `${placedRect.left}px`;
+        tag.style.top = `${placedRect.top}px`;
+    });
+
+    setTimeout(() => {
+        tags.forEach(tag => tag.classList.add("active"));
+    }, 600);
+});
+
+
+
