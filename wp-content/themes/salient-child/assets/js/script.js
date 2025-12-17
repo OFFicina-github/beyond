@@ -1,4 +1,4 @@
-
+console.log("-D4N-")
 gsap.registerPlugin(ScrollTrigger);
 
 const split = new SplitType('.js-title-text', { types: 'chars' });
@@ -258,15 +258,17 @@ if (document.querySelector('.word-metodo')) {
 
 document.addEventListener("DOMContentLoaded", () => {
     // desktop only
-
     const bubbles = Array.from(
         document.querySelectorAll(".bubble-1, .bubble-2, .bubble-3")
     );
 
-    const safeX = window.innerWidth * 0.1;  // 10vw
-    const safeY = window.innerHeight * 0.1; // 10vh
-    const padding = 24; // spazio minimo tra bolle
-    const maxAttempts = 100;
+    const safeMultiplier = window.innerWidth < 1000 ? 0.1 : 0.2;
+
+    const safeX = window.innerWidth * safeMultiplier;
+    const safeY = window.innerHeight * safeMultiplier;
+    const padding = 24;
+    const maxAttempts = 200;
+    const delayBetween = 200; // 0.2s
 
     const placed = [];
 
@@ -281,12 +283,12 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
-    bubbles.forEach(bubble => {
+    function placeBubble(bubble, index) {
         const rect = bubble.getBoundingClientRect();
         let attempts = 0;
-        let placedRect;
+        let placedRect = null;
 
-        do {
+        while (attempts < maxAttempts) {
             const minX = safeX;
             const maxX = window.innerWidth - rect.width - safeX;
             const minY = safeY;
@@ -295,26 +297,44 @@ document.addEventListener("DOMContentLoaded", () => {
             const x = minX + Math.random() * (maxX - minX);
             const y = minY + Math.random() * (maxY - minY);
 
-            placedRect = {
+            const candidate = {
                 left: x,
                 top: y,
                 right: x + rect.width,
                 bottom: y + rect.height
             };
 
+            if (!isOverlapping(candidate)) {
+                placedRect = candidate;
+                break;
+            }
+
             attempts++;
-        } while (isOverlapping(placedRect) && attempts < maxAttempts);
+        }
+
+        if (!placedRect) {
+            console.warn("Bubble non posizionata (spazio insufficiente)", bubble);
+            return;
+        }
 
         placed.push(placedRect);
 
         bubble.style.left = `${placedRect.left}px`;
         bubble.style.top = `${placedRect.top}px`;
-    });
 
-    setTimeout(() => {
-        bubbles.forEach(bubble => bubble.classList.add("active"));
-    }, 1500);
+        // attiva animazione
+        setTimeout(() => {
+            bubble.classList.add("active");
+        }, 50);
+    }
+
+    bubbles.forEach((bubble, index) => {
+        setTimeout(() => {
+            placeBubble(bubble, index);
+        }, index * delayBetween);
+    });
 });
+
 
 
 
@@ -470,12 +490,11 @@ if (document.querySelector(".manifesto-wrapper")) {
 document.addEventListener('DOMContentLoaded', () => {
 
     const items = document.querySelectorAll(
-        '.nectar-post-grid-item[data-has-img="true"]'
+        '.elenco-libri .nectar-post-grid-item[data-has-img="true"]'
     );
 
     let mouseX = 0, mouseY = 0;
     let currentX = 0, currentY = 0;
-
     const ease = 0.12; // più basso = più lag (Signal ≈ 0.1)
 
     document.addEventListener('mousemove', (e) => {
@@ -488,7 +507,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentY += (mouseY - currentY) * ease;
 
         const active = document.querySelector(
-            '.nectar-post-grid-item.is-hovered .nectar-post-grid-item-bg'
+            '.elenco-libri .nectar-post-grid-item.is-hovered .nectar-post-grid-item-bg'
         );
 
         if (active) {
@@ -544,14 +563,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".hero-tags-container");
+    if (!container) return;
+
     const tags = Array.from(container.querySelectorAll(".tag"));
 
-    const containerRect = container.getBoundingClientRect();
-
-    const safeX = containerRect.width * 0.08;  // 8%
-    const safeY = containerRect.height * 0.08;
     const padding = 24;
-    const maxAttempts = 100;
+    const maxAttempts = 200;
+    const delayBetween = 200; // 0.2s
 
     const placed = [];
 
@@ -566,13 +584,16 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
-    tags.forEach(tag => {
-
+    function placeTag(tag) {
+        const containerRect = container.getBoundingClientRect();
         const rect = tag.getBoundingClientRect();
+        const safeMultiplier = window.innerWidth < 1000 ? 0 : 0.1;
+        const safeX = window.innerWidth * safeMultiplier;
+        const safeY = window.innerHeight * safeMultiplier;
         let attempts = 0;
-        let placedRect;
+        let placedRect = null;
 
-        do {
+        while (attempts < maxAttempts) {
             const minX = safeX;
             const maxX = containerRect.width - rect.width - safeX;
             const minY = safeY;
@@ -581,26 +602,41 @@ document.addEventListener("DOMContentLoaded", () => {
             const x = minX + Math.random() * (maxX - minX);
             const y = minY + Math.random() * (maxY - minY);
 
-            placedRect = {
+            const candidate = {
                 left: x,
                 top: y,
                 right: x + rect.width,
                 bottom: y + rect.height
             };
 
-            attempts++;
+            if (!isOverlapping(candidate)) {
+                placedRect = candidate;
+                break;
+            }
 
-        } while (isOverlapping(placedRect) && attempts < maxAttempts);
+            attempts++;
+        }
+
+        if (!placedRect) {
+            console.warn("Tag non posizionata: spazio insufficiente", tag);
+            return;
+        }
 
         placed.push(placedRect);
 
         tag.style.left = `${placedRect.left}px`;
         tag.style.top = `${placedRect.top}px`;
-    });
 
-    setTimeout(() => {
-        tags.forEach(tag => tag.classList.add("active"));
-    }, 600);
+        requestAnimationFrame(() => {
+            tag.classList.add("active");
+        });
+    }
+
+    tags.forEach((tag, index) => {
+        setTimeout(() => {
+            placeTag(tag);
+        }, index * delayBetween);
+    });
 });
 
 

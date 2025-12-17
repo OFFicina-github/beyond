@@ -13,6 +13,12 @@
         z-index: 1000;
         background: transparent;
 
+        .menu-title-text {
+            em {
+                font-family: "georgia", sans-serif !important;
+            }
+        }
+
         &::before {
             content: '';
             position: absolute;
@@ -119,7 +125,7 @@
                     }
 
                     .sub-menu {
-                        background-color: transparent !important;
+                        background-color: #252525 !important;
                         padding-left: 0 !important;
                         max-width: 100%;
 
@@ -233,6 +239,17 @@
     }
 }
 
+.off-canvas-menu-container{
+    ul{
+        li{
+            a{
+                font-family: "polymath-text", sans-serif !important; 
+                font-weight: 400 !important; 
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 1000px) {
 
     #header-outer {
@@ -240,6 +257,7 @@
 
         #top {
             padding-bottom: 30px !important;
+
             .row {
                 display: flex;
                 flex-direction: row;
@@ -261,6 +279,7 @@
             }
 
             &.scrolled {
+
                 .header-name,
                 .super {
                     font-size: 24px !important;
@@ -284,9 +303,6 @@
         }
     }
 
-}
-
-@media screen and (max-width: 1000px) {
     .footer-inner {
         padding-bottom: 15vh;
 

@@ -177,6 +177,10 @@ html {
       h2.post-heading {
         line-height: 1;
 
+        span {
+          color: black;
+        }
+
         @media screen and (max-width: 767px) {
           font-size: clamp(30px, 12vw, 37px) !important;
         }
@@ -213,8 +217,6 @@ html {
 }
 
 .spline-background {
-  min-height: 100vh;
-
   .spline-content {
     top: 45%;
     width: 100%;
@@ -271,6 +273,7 @@ html {
 }
 
 #stay-in-touch {
+  margin-top: 10vh;
 
   .nectar-text-inline-images__marker {
 
@@ -283,17 +286,32 @@ html {
   }
 
   .stay-in-touch {
+
     h2 {
       font-size: 147px;
       font-weight: 400;
       line-height: 120.58px;
       margin-bottom: 50px !important;
 
+
+
       @media screen and (max-width:1000px) {
         font-size: 80px;
         font-weight: 400;
         line-height: 1;
         margin-bottom: 20px !important;
+      }
+    }
+
+    &.experience {
+      h2 {
+        @media screen and (max-width:1000px) {
+          font-size: 60px;
+          gap: 20px;
+          display: flex;
+          align-items: center;
+          margin-bottom: 0 !important;
+        }
       }
     }
   }
@@ -330,6 +348,7 @@ html {
       border: 1px solid black;
       position: relative;
       z-index: 1;
+      text-align: center;
 
       img {
         width: 62px;
@@ -362,6 +381,15 @@ html {
 
 #persona,
 .persona {
+
+  .nectar-button {
+    width: fit-content !important;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
   .name {
     text-align: right;
     font-family: "polymath-text", sans-serif !important;
@@ -607,9 +635,50 @@ html {
     }
   }
 
+  @media screen and (max-width: 1000px) {
+    .row_col_wrap_12 {
+      &:hover {
+
+        .colonna-youtrend::before,
+        .colonna-off::before {
+          width: 90vw;
+        }
+      }
+
+      .colonna-youtrend:hover::before {
+        width: 90vw;
+      }
+
+      .colonna-off:hover::before {
+        width: 90vw;
+      }
+
+      .colonna-centrale {
+        .testo-dritto {
+          p {
+            font-size: 42px;
+            line-height: 42px;
+            text-align: center;
+            height: unset;
+            writing-mode: unset;
+            text-orientation: unset;
+            transform: unset;
+          }
+        }
+      }
+    }
+  }
+
 }
 
 
+#spline-container-full-height {
+  height: 100vh;
+}
+
+#ma-ti-sceglie {
+  height: 80vh;
+}
 
 
 @media screen and (max-width: 1000px) {
@@ -618,12 +687,18 @@ html {
     gap: 30px;
   }
 
+  #spline-container-full-height {
+    height: 50vh;
+  }
+
   .spline-background .spline-content .vc_column-inner {
     max-width: 100%;
     padding: 0 5vw;
   }
 
   #ma-ti-sceglie {
+    height: 30vh;
+
     h3 {
       font-size: 70px !important;
       line-height: 1.56;
@@ -868,15 +943,23 @@ html {
 
 .spline-bubble-background {
   min-height: 100vh;
+
+  @media (max-width: 1024px) {
+    .row_col_wrap_12 {
+      height: 100vh;
+
+      .wpb_wrapper {
+        align-content: center;
+      }
+    }
+  }
 }
 
 .spline-content-bubble {
   height: 100vh;
   margin-top: -90vh !important;
 
-  @media (max-width: 1024px) {
-    margin-top: -65vh !important;
-  }
+
 
   .bubble-1,
   .bubble-2,
@@ -930,13 +1013,13 @@ html {
     position: absolute;
     height: 60vh;
     width: 90vw;
-    margin-top: -65vh;
+    margin-top: -80vh;
 
     @media screen and (max-width: 1000px) {
-      width: 90vw;
-      height: 50vh;
-      margin-top: -55vh;
-
+      width: 100vw;
+      height: 52vh;
+      margin-top: -65vh;
+      margin-left: -5vw;
     }
   }
 
@@ -1178,6 +1261,147 @@ html {
       font-size: 10px;
       line-height: 1.3;
       text-transform: uppercase;
+    }
+  }
+}
+
+#modulo-contatti {
+  * {
+    color: black;
+  }
+}
+
+#hero-full,
+.hero-full {
+  padding-top: 4vh !important;
+  height: 100vh !important;
+  padding-bottom: 0vh !important;
+
+  #canvas3d {
+    width: 100%;
+    height: 80vh;
+    display: block;
+
+    @media screen and (max-width: 1000px) {
+      height: 60vh !important;
+    }
+  }
+
+  >.row_col_wrap_12 {
+    height: 100%;
+  }
+
+  .colonna-hero>.vc_column-inner>.wpb_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .titolo-hero {
+    margin-bottom: 50px;
+  }
+
+  .colonna-hero>.vc_column-inner {
+    padding-bottom: 0;
+  }
+}
+
+#form-contatti {
+  border-radius: 12px;
+
+  .form-row {
+    margin-bottom: 16px;
+
+    &.two-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    &.submit-row {
+      margin-top: 24px;
+    }
+  }
+
+  .field {
+    width: 100%;
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid #000;
+      background: transparent;
+      font-size: 13px;
+      text-transform: uppercase;
+      outline: none;
+
+      &::placeholder {
+        color: #000;
+        opacity: 1;
+      }
+
+      &:focus {
+        background: rgba(0, 0, 0, 0.05);
+      }
+    }
+
+    textarea {
+      border-radius: 24px;
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      background-size: 14px;
+      padding-right: 40px;
+    }
+  }
+
+  input[type="submit"] {
+    background: #000;
+    color: #f2ef4a;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+
+    &:hover {
+      background: #1a1a1a;
+    }
+  }
+
+  /* CF7 validation */
+  .wpcf7-not-valid-tip {
+    font-size: 11px;
+    margin-top: 4px;
+    color: #000;
+  }
+
+  .wpcf7-response-output {
+    margin-top: 16px;
+    border: none;
+    font-size: 12px;
+    padding: 0;
+  }
+
+  .wpcf7-not-valid-tip,
+  .wpcf7-response-output {
+    background-color: transparent !important;
+  }
+
+  @media (max-width: 768px) {
+
+    .form-row.two-cols {
+      grid-template-columns: 1fr;
     }
   }
 }

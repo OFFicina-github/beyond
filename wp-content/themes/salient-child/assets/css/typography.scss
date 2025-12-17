@@ -233,4 +233,9 @@ h2 {
         font-size: 18px;
         line-height: 1;
     }
+    .text-left-mobile{
+        *{
+            text-align: left !important;
+        }
+    }
 }

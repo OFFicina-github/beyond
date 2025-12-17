@@ -10,7 +10,13 @@
 	<script src="https://unpkg.com/split-type"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
-
+	<script type="importmap">
+	  {
+		"imports": {
+		  "@splinetool/runtime": "https://unpkg.com/@splinetool/runtime@1.12.21/build/runtime.js"
+		}
+	  }
+	</script>
 	<?php
 	$nectar_options = get_nectar_theme_options();
 

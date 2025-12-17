@@ -24,6 +24,14 @@ function salient_child_enqueue_styles()
         null,
         true
     );
+    wp_enqueue_script(
+        'child-custom-script-string',
+        get_stylesheet_directory_uri() . '/assets/js/string.js',
+        array('jquery'),
+        null,
+        true
+    );
+
 }
 
 
@@ -99,7 +107,8 @@ function add_gsap_scripts()
 }
 add_action('wp_enqueue_scripts', 'add_gsap_scripts');
 
-function off_register_footer_menu() {
+function off_register_footer_menu()
+{
     register_nav_menus(
         array(
             'footer_menu' => __('Footer Menu', 'off-theme'),
@@ -112,3 +121,21 @@ function off_register_footer_menu() {
     );
 }
 add_action('after_setup_theme', 'off_register_footer_menu');
+
+add_action('wp_enqueue_scripts', function () {
+
+  wp_enqueue_script(
+    'spline-init',
+    get_stylesheet_directory_uri() . '/assets/js/spline-init.js',
+    [],
+    null,
+    true
+  );
+});
+
+add_filter('script_loader_tag', function ($tag, $handle, $src) {
+  if ($handle === 'spline-init') {
+    return '<script type="module" src="' . esc_url($src) . '"></script>';
+  }
+  return $tag;
+}, 10, 3);
