@@ -1,6 +1,20 @@
 #hero.reputation-driven .titolo-hero:first-of-type {
   margin-bottom: 0;
 }
+@media screen and (max-width: 1000px) {
+  #hero.reputation-driven .colonna-title-reputation .vc_column-inner {
+    padding-right: 0 !important;
+  }
+  #hero.reputation-driven .colonna-title-reputation .vc_column-inner .scribble {
+    padding: 2px 0px 2px 0;
+  }
+  #hero.reputation-driven .colonna-title-reputation .vc_column-inner .scribble .icon::after {
+    content: url(../img/segno_grafico.svg);
+  }
+  #hero.reputation-driven .colonna-title-reputation .vc_column-inner .scribble::after {
+    background-size: contain;
+  }
+}
 
 .title-reputation h2 {
   font-size: clamp(32px, 6vw, 70px) !important;

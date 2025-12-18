@@ -73,7 +73,10 @@ html {
     margin: 0;
     padding: 0;
     transform: translateX(0);
-    /* IMPORTANTE per Salient */
+
+    @media screen and (max-width:1000px) {
+      font-size: 20vw;
+    }
   }
 
   .js-title-text {
@@ -274,7 +277,8 @@ html {
 
 #stay-in-touch {
   margin-top: 10vh;
-  &.seguici{
+
+  &.seguici {
     display: none;
   }
 
@@ -496,8 +500,8 @@ html {
       width: auto;
 
       &.h1 {
-        font-size: 7.5vw;
-        line-height: 7.5vw;
+        font-size: 7vw;
+        line-height: 7vw;
         word-break: keep-all;
         white-space: nowrap;
         padding-bottom: 0 !important;
@@ -513,7 +517,7 @@ html {
 
     .last {
       transform-origin: right;
-      right: -70%;
+      right: -75%;
     }
 
     .first,
@@ -838,6 +842,14 @@ html {
 
         .inner {
           padding: 150px 16px 16px 16px;
+
+          @media screen and (max-width:1000px) {
+            padding: 120px 16px 16px 16px;
+
+            .content {
+              padding-top: 20px;
+            }
+          }
         }
 
         .item-meta-extra {
@@ -933,6 +945,12 @@ html {
     0 0 0 1px rgba(255, 255, 255, 0.15),
     0 0 40px rgba(0, 0, 0, 0.8),
     0 0 80px rgba(0, 0, 0, 0.9);
+
+  @media screen and (max-width: 1000px) {
+    width: 250px;
+    font-size: 20px;
+    padding: 20px;
+  }
 }
 
 .bubble-bottom-left::before {

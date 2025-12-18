@@ -76,6 +76,7 @@
 }
 #header-outer #top .header-beyond ul li a {
   color: white;
+  text-shadow: 1px 0px 15px #000000;
   text-transform: uppercase;
   font-weight: 500;
   margin-left: 0 !important;

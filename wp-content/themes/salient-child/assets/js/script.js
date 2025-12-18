@@ -194,7 +194,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 if (document.querySelector('.word-metodo')) {
     /* POSIZIONI INIZIALI */
-    gsap.set(".word-metodo", { x: -400, y: 50 });
+    
+                if( window.innerWidth < 1000){
+                    gsap.set(".word-metodo", { x: -200, y: 50 });
+                }
+                else {
+                    gsap.set(".word-metodo", { x: -400, y: 50 });
+                }
+
     gsap.set(".word-consapevolezza", { x: 40, y: 10 });
     gsap.set(".word-immagine", { x: -80, y: 80 });
 
@@ -255,86 +262,6 @@ if (document.querySelector('.word-metodo')) {
     moveWordToSlot(".word-consapevolezza", ".slot-consapevolezza");
     moveWordToSlot(".word-immagine", ".slot-immagine");
 }
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     // desktop only
-//     const bubbles = Array.from(
-//         document.querySelectorAll(".bubble-1, .bubble-2, .bubble-3")
-//     );
-
-//     const safeMultiplier = window.innerWidth < 1000 ? 0.1 : 0.08;
-//     const safeMultiplierHeight = window.innerWidth < 1000 ? 0.1 : 0.2;
-
-//     const safeX = window.innerWidth * safeMultiplier;
-//     const safeY = window.innerHeight * safeMultiplierHeight;
-//     const padding = 24;
-//     const maxAttempts = 200;
-//     const delayBetween = 200; // 0.2s
-
-//     const placed = [];
-
-//     function isOverlapping(rect) {
-//         return placed.some(p =>
-//             !(
-//                 rect.right + padding < p.left ||
-//                 rect.left - padding > p.right ||
-//                 rect.bottom + padding < p.top ||
-//                 rect.top - padding > p.bottom
-//             )
-//         );
-//     }
-
-//     function placeBubble(bubble, index) {
-//         const rect = bubble.getBoundingClientRect();
-//         let attempts = 0;
-//         let placedRect = null;
-
-//         while (attempts < maxAttempts) {
-//             const minX = safeX;
-//             const maxX = window.innerWidth - rect.width - safeX;
-//             const minY = safeY;
-//             const maxY = window.innerHeight - rect.height - safeY;
-
-//             const x = minX + Math.random() * (maxX - minX);
-//             const y = minY + Math.random() * (maxY - minY);
-
-//             const candidate = {
-//                 left: x,
-//                 top: y,
-//                 right: x + rect.width,
-//                 bottom: y + rect.height
-//             };
-
-//             if (!isOverlapping(candidate)) {
-//                 placedRect = candidate;
-//                 break;
-//             }
-
-//             attempts++;
-//         }
-
-//         if (!placedRect) {
-//             console.warn("Bubble non posizionata (spazio insufficiente)", bubble);
-//             return;
-//         }
-
-//         placed.push(placedRect);
-
-//         bubble.style.left = `${placedRect.left}px`;
-//         bubble.style.top = `${placedRect.top}px`;
-
-//         // attiva animazione
-//         setTimeout(() => {
-//             bubble.classList.add("active");
-//         }, 50);
-//     }
-
-//     bubbles.forEach((bubble, index) => {
-//         setTimeout(() => {
-//             placeBubble(bubble, index);
-//         }, index * delayBetween);
-//     });
-// });
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -792,7 +719,7 @@ document.addEventListener("DOMContentLoaded", () => {
             this.y0 = 0.5;
             this.n = 22;                 // punti della corda (più = più morbida)
             this.influence = 0.18;       // raggio d'influenza in unità 0..1
-            this.maxDisp = 0.18;         // limite curvatura (anti “curva troppo”)
+            this.maxDisp = 0.5;         // limite curvatura (anti “curva troppo”)
 
             this.p = new Array(this.n).fill(0).map((_, i) => ({
                 x: i / (this.n - 1),

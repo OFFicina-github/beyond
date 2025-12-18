@@ -63,7 +63,11 @@ html {
   margin: 0;
   padding: 0;
   transform: translateX(0);
-  /* IMPORTANTE per Salient */
+}
+@media screen and (max-width: 1000px) {
+  #hero .scroll-text {
+    font-size: 20vw;
+  }
 }
 #hero .js-title-text {
   transform: translateX(0) !important;
@@ -421,8 +425,8 @@ html {
 .experience-intro-container .first.h1,
 .experience-intro-container .middle.h1,
 .experience-intro-container .last.h1 {
-  font-size: 7.5vw;
-  line-height: 7.5vw;
+  font-size: 7vw;
+  line-height: 7vw;
   word-break: keep-all;
   white-space: nowrap;
   padding-bottom: 0 !important;
@@ -435,7 +439,7 @@ html {
 }
 .experience-intro-container .last {
   transform-origin: right;
-  right: -70%;
+  right: -75%;
 }
 .experience-intro-container .first,
 .experience-intro-container .last {
@@ -661,6 +665,16 @@ html {
   #servizi .nectar-post-grid-wrap .nectar-post-grid-item .inner {
     padding: 150px 16px 16px 16px;
   }
+}
+@media screen and (max-width: 768px) and (max-width: 1000px) {
+  #servizi .nectar-post-grid-wrap .nectar-post-grid-item .inner {
+    padding: 120px 16px 16px 16px;
+  }
+  #servizi .nectar-post-grid-wrap .nectar-post-grid-item .inner .content {
+    padding-top: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
   #servizi .nectar-post-grid-wrap .nectar-post-grid-item .item-meta-extra {
     max-width: 100% !important;
     padding-top: 10px;
@@ -735,6 +749,13 @@ html {
           backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.35);
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15), 0 0 40px rgba(0, 0, 0, 0.8), 0 0 80px rgba(0, 0, 0, 0.9);
+}
+@media screen and (max-width: 1000px) {
+  .bubble {
+    width: 250px;
+    font-size: 20px;
+    padding: 20px;
+  }
 }
 
 .bubble-bottom-left::before {

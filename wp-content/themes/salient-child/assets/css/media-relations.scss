@@ -53,6 +53,14 @@
         position: relative;
         height: 90px;
         margin-top: 10vh;
+
+        @media screen and (max-width: 1000px) {
+            margin-bottom: 4vh;
+
+            .title {
+                font-size: 13.5vw !important;
+            }
+        }
     }
 
     .title {
@@ -109,9 +117,10 @@
 }
 
 @media screen and (max-width: 1000px) {
-    #media-relations-block{
+    #media-relations-block {
         margin-top: 12vh !important;
     }
+
     #block-media-relations {
 
         .manifesto-pin {
@@ -133,14 +142,16 @@
         }
 
         .manifesto-col {
-            br{
+            br {
                 display: none;
             }
-            p{
-                &:first-of-type{
+
+            p {
+                &:first-of-type {
                     padding-bottom: 4px;
                 }
-                &:last-of-type{
+
+                &:last-of-type {
 
                     padding-bottom: 12px;
                 }

@@ -4,6 +4,26 @@
             margin-bottom: 0;
         }
     }
+
+    @media screen and (max-width: 1000px) {
+        
+        .colonna-title-reputation{
+            .vc_column-inner{
+                padding-right: 0 !important;
+                .scribble{
+                    padding: 2px 0px 2px 0 ;
+                    .icon{
+                        &::after{
+                            content: url(../img/segno_grafico.svg);
+                        }
+                    }
+                    &::after{
+                        background-size: contain;
+                    }
+                }
+            }       
+        }
+    }
 }
 
 .title-reputation {
