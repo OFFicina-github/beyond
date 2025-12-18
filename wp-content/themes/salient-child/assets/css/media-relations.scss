@@ -2,8 +2,8 @@
     margin-top: 10vh;
 
     .row_col_wrap_12_inner {
-        padding-left: 5vw;
-        padding-right: 5vw;
+        // padding-left: 5vw;
+        // padding-right: 5vw;
 
         >.vc_col-sm-12 {
             >.vc_column-inner {
@@ -59,7 +59,8 @@
         position: absolute;
         inset: 0;
         margin: 0;
-        font-size: 72px;
+        font-size: 100px !important;
+
         opacity: 0;
         font-family: "georgia", sans-serif !important;
         pointer-events: none;
@@ -73,6 +74,8 @@
 
     /* colonne */
     .manifesto-columns {
+        max-width: 1000px;
+        margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 80px;

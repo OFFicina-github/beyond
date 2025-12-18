@@ -71,7 +71,7 @@ nectar_hook_before_footer_open();
 			<div class="col-12">
 				<div class="row-info">
 					<div>
-						© 2025 BEYOND SRL - P.I. 04552790240 - CAPITALE SOCIALE € 10.o00 I.V.
+						© 2025 BEYOND SRL - P.I. 04552790240 - CAPITALE SOCIALE € 10.000 I.V.
 					</div>
 
 

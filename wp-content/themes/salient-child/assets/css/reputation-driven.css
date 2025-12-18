@@ -1,3 +1,29 @@
+#hero.reputation-driven .titolo-hero:first-of-type {
+  margin-bottom: 0;
+}
+
+.title-reputation h2 {
+  font-size: clamp(32px, 6vw, 70px) !important;
+  line-height: 1.2 !important;
+}
+.title-reputation h2 .scribble {
+  background-color: black;
+  border-radius: 16px;
+  padding: 2px 10px;
+  color: #F6E937;
+}
+.title-reputation h2 .scribble:first-child {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.title-reputation h2 .scribble:last-of-type {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.title-reputation h2 .icon:after {
+  content: url(../img/segno-grafico-big.svg);
+}
+
 .matching-words {
   position: relative;
   min-height: 140vh;
@@ -5,12 +31,11 @@
   color: white;
   margin-top: 100px;
   /* BLOCCO SUPERIORE */
-  /* POSIZIONI INIZIALI */
   /* BLOCCO FRASE */
 }
 .matching-words .row_col_wrap_12 {
   background: #EDEDED;
-  border-radius: 25px;
+  border-radius: 48px;
 }
 .matching-words .top-block {
   position: sticky;
@@ -32,6 +57,11 @@
   border: 1px solid black;
   white-space: nowrap;
 }
+.matching-words .word-metodo,
+.matching-words .word-consapevolezza,
+.matching-words .word-immagine {
+  background-color: #ededed;
+}
 .matching-words .word-metodo {
   left: 50%;
   border-radius: 50px;
@@ -40,22 +70,14 @@
 .matching-words .word-consapevolezza {
   left: 50%;
   border-radius: 3px;
+  transform: translateX(40px);
   top: 0;
 }
 .matching-words .word-immagine {
   left: 50%;
   border-radius: 10px;
-  top: 60px;
-}
-.matching-words .word-consapevolezza {
-  left: 50%;
-  top: 0;
-  transform: translateX(40px);
-}
-.matching-words .word-immagine {
-  left: 50%;
-  top: 60px;
   transform: translateX(-80px);
+  top: 60px;
 }
 .matching-words .sentence-block {
   margin-top: 40vh;
@@ -116,13 +138,14 @@
 .riga * {
   color: black;
 }
+.riga .riga-box {
+  margin-top: 30vh;
+}
 .riga .riga-container {
-  border-top: 1px solid black;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding-top: 20px;
-  margin-top: 30vh;
   padding-bottom: 10vh;
 }
 
@@ -146,8 +169,27 @@
     line-height: 2;
     font-size: 24px;
   }
-  .riga .riga-container {
+  .riga .riga-box {
     margin-top: 10vh;
+  }
+  .riga .riga-container {
     flex-wrap: wrap;
   }
+}
+.string-svg {
+  display: block;
+  width: 100%;
+  height: 20px;
+}
+
+.string {
+  stroke: black;
+  stroke-width: 1px;
+  fill: none;
+}
+
+.string {
+  stroke: black;
+  stroke-width: 1px;
+  fill: none;
 }/*# sourceMappingURL=reputation-driven.css.map */

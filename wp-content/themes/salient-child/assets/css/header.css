@@ -30,15 +30,19 @@
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
 }
+#header-outer #top.scrolled {
+  padding-bottom: 100px;
+}
 #header-outer #top.scrolled::before {
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: saturate(180%) blur(24px);
   -webkit-backdrop-filter: saturate(180%) blur(24px);
-  mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
-  -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 30%, rgba(0, 0, 0, 0) 80%);
+  -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 30%, rgba(0, 0, 0, 0) 80%);
 }
 #header-outer #top.scrolled .header-name,
 #header-outer #top.scrolled .super {
+  margin-top: 10px;
   font-size: 45px !important;
 }
 #header-outer #top .header-name,
@@ -76,6 +80,7 @@
   font-weight: 500;
   margin-left: 0 !important;
   margin-right: 20px !important;
+  padding-left: 0 !important;
 }
 #header-outer #top .header-beyond ul li a span {
   font-size: 13px;
@@ -96,9 +101,11 @@
   padding-top: 12px;
 }
 #header-outer #top .header-beyond ul li .sub-menu {
-  background-color: #252525 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
   padding-left: 0 !important;
   max-width: 100%;
+  border-top: 0 !important;
 }
 #header-outer #top .header-beyond ul li .sub-menu li:hover,
 #header-outer #top .header-beyond ul li .sub-menu .current_page_item {
@@ -106,6 +113,8 @@
 }
 #header-outer #top .header-beyond ul li .sub-menu li:hover a,
 #header-outer #top .header-beyond ul li .sub-menu .current_page_item a {
+  transition: all 0.3s ease-in-out;
+  text-shadow: 1px 0px 15px #000000;
   background-color: unset !important;
   color: #f6e937 !important;
 }

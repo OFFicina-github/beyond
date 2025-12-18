@@ -34,22 +34,24 @@
         }
 
         &.scrolled {
+            padding-bottom: 100px;
             &::before {
                 background-color: rgba(0, 0, 0, 0.2);
                 backdrop-filter: saturate(180%) blur(24px);
                 -webkit-backdrop-filter: saturate(180%) blur(24px);
 
                 mask-image: linear-gradient(to bottom,
-                        rgba(0, 0, 0, 1) 70%,
-                        rgba(0, 0, 0, 0) 100%);
+                        rgba(0, 0, 0, 1) 30%,
+                        rgba(0, 0, 0, 0) 80%);
 
                 -webkit-mask-image: linear-gradient(to bottom,
-                        rgba(0, 0, 0, 1) 70%,
-                        rgba(0, 0, 0, 0) 100%);
+                        rgba(0, 0, 0, 1) 30%,
+                        rgba(0, 0, 0, 0) 80%);
             }
 
             .header-name,
             .super {
+                margin-top: 10px;
                 font-size: 45px !important;
             }
         }
@@ -97,7 +99,7 @@
                         font-weight: 500;
                         margin-left: 0 !important;
                         margin-right: 20px !important;
-
+                        padding-left: 0 !important;
                         span {
                             font-size: 13px;
 
@@ -125,16 +127,19 @@
                     }
 
                     .sub-menu {
-                        background-color: #252525 !important;
+                        background-color: transparent !important;
+                        box-shadow: none !important;
                         padding-left: 0 !important;
                         max-width: 100%;
+                        border-top: 0 !important;
 
                         li:hover,
                         .current_page_item {
                             background-color: unset !important;
 
                             a {
-
+                                transition: all 0.3s ease-in-out;
+                                text-shadow: 1px 0px 15px #000000;
                                 background-color: unset !important;
                                 color: #f6e937 !important;
                             }

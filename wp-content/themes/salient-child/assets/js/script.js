@@ -174,14 +174,14 @@ document.addEventListener("DOMContentLoaded", () => {
             document
                 .querySelector('.experience-intro')
                 .classList.add('first-animation');
-    }, 1000);
+    }, 600);
 
     setTimeout(() => {
         if (document.querySelector('.experience-intro'))
             document
                 .querySelector('.experience-intro')
                 .classList.add('second-animation');
-    }, 2500);
+    }, 1600);
 
 
     setTimeout(() => {
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document
                 .querySelector('.experience-intro')
                 .classList.add('is-ready');
-    }, 3000);
+    }, 2300);
 });
 
 if (document.querySelector('.word-metodo')) {
@@ -256,21 +256,111 @@ if (document.querySelector('.word-metodo')) {
     moveWordToSlot(".word-immagine", ".slot-immagine");
 }
 
+// document.addEventListener("DOMContentLoaded", () => {
+//     // desktop only
+//     const bubbles = Array.from(
+//         document.querySelectorAll(".bubble-1, .bubble-2, .bubble-3")
+//     );
+
+//     const safeMultiplier = window.innerWidth < 1000 ? 0.1 : 0.08;
+//     const safeMultiplierHeight = window.innerWidth < 1000 ? 0.1 : 0.2;
+
+//     const safeX = window.innerWidth * safeMultiplier;
+//     const safeY = window.innerHeight * safeMultiplierHeight;
+//     const padding = 24;
+//     const maxAttempts = 200;
+//     const delayBetween = 200; // 0.2s
+
+//     const placed = [];
+
+//     function isOverlapping(rect) {
+//         return placed.some(p =>
+//             !(
+//                 rect.right + padding < p.left ||
+//                 rect.left - padding > p.right ||
+//                 rect.bottom + padding < p.top ||
+//                 rect.top - padding > p.bottom
+//             )
+//         );
+//     }
+
+//     function placeBubble(bubble, index) {
+//         const rect = bubble.getBoundingClientRect();
+//         let attempts = 0;
+//         let placedRect = null;
+
+//         while (attempts < maxAttempts) {
+//             const minX = safeX;
+//             const maxX = window.innerWidth - rect.width - safeX;
+//             const minY = safeY;
+//             const maxY = window.innerHeight - rect.height - safeY;
+
+//             const x = minX + Math.random() * (maxX - minX);
+//             const y = minY + Math.random() * (maxY - minY);
+
+//             const candidate = {
+//                 left: x,
+//                 top: y,
+//                 right: x + rect.width,
+//                 bottom: y + rect.height
+//             };
+
+//             if (!isOverlapping(candidate)) {
+//                 placedRect = candidate;
+//                 break;
+//             }
+
+//             attempts++;
+//         }
+
+//         if (!placedRect) {
+//             console.warn("Bubble non posizionata (spazio insufficiente)", bubble);
+//             return;
+//         }
+
+//         placed.push(placedRect);
+
+//         bubble.style.left = `${placedRect.left}px`;
+//         bubble.style.top = `${placedRect.top}px`;
+
+//         // attiva animazione
+//         setTimeout(() => {
+//             bubble.classList.add("active");
+//         }, 50);
+//     }
+
+//     bubbles.forEach((bubble, index) => {
+//         setTimeout(() => {
+//             placeBubble(bubble, index);
+//         }, index * delayBetween);
+//     });
+// });
+
 document.addEventListener("DOMContentLoaded", () => {
-    // desktop only
+
+    /* ==============================
+       CONFIG
+       ============================== */
+
+    const container = document.querySelector(".spline-content-bubble");
+    if (!container) return;
+
     const bubbles = Array.from(
-        document.querySelectorAll(".bubble-1, .bubble-2, .bubble-3")
+        container.querySelectorAll(".bubble-1, .bubble-2, .bubble-3")
     );
 
-    const safeMultiplier = window.innerWidth < 1000 ? 0.1 : 0.2;
+    const safeMultiplier = window.innerWidth < 1000 ? 0.1 : 0.08;
+    const safeMultiplierHeight = window.innerWidth < 1000 ? 0.1 : 0.2;
 
-    const safeX = window.innerWidth * safeMultiplier;
-    const safeY = window.innerHeight * safeMultiplier;
     const padding = 24;
     const maxAttempts = 200;
-    const delayBetween = 200; // 0.2s
+    const delayBetween = 200;
 
     const placed = [];
+
+    /* ==============================
+       UTILS
+       ============================== */
 
     function isOverlapping(rect) {
         return placed.some(p =>
@@ -283,16 +373,29 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
-    function placeBubble(bubble, index) {
+    /* ==============================
+       POSIZIONAMENTO
+       ============================== */
+
+    function placeBubble(bubble) {
+
+        const containerRect = container.getBoundingClientRect();
         const rect = bubble.getBoundingClientRect();
+
+        const safeX = containerRect.width * safeMultiplier;
+        const safeY = containerRect.height * safeMultiplierHeight;
+
         let attempts = 0;
         let placedRect = null;
 
         while (attempts < maxAttempts) {
+
             const minX = safeX;
-            const maxX = window.innerWidth - rect.width - safeX;
+            const maxX = containerRect.width - rect.width - safeX;
             const minY = safeY;
-            const maxY = window.innerHeight - rect.height - safeY;
+            const maxY = containerRect.height - rect.height - safeY;
+
+            if (maxX <= minX || maxY <= minY) break;
 
             const x = minX + Math.random() * (maxX - minX);
             const y = minY + Math.random() * (maxY - minY);
@@ -322,18 +425,23 @@ document.addEventListener("DOMContentLoaded", () => {
         bubble.style.left = `${placedRect.left}px`;
         bubble.style.top = `${placedRect.top}px`;
 
-        // attiva animazione
         setTimeout(() => {
             bubble.classList.add("active");
         }, 50);
     }
 
+    /* ==============================
+       AVVIO SEQUENZIALE
+       ============================== */
+
     bubbles.forEach((bubble, index) => {
         setTimeout(() => {
-            placeBubble(bubble, index);
+            placeBubble(bubble);
         }, index * delayBetween);
     });
+
 });
+
 
 
 
@@ -471,7 +579,10 @@ if (document.querySelector(".manifesto-wrapper")) {
 
         tl.to(words, {
             height: "100%",
-            stagger: 0.1,
+            stagger: {
+                each: 0.1
+            },
+            duration: 0.02, // ← scatto immediato
             ease: "none"
         });
     });
@@ -641,3 +752,202 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
+
+
+
+
+
+(() => {
+    const svgs = Array.from(document.querySelectorAll('svg[string="impulse"]'));
+    if (!svgs.length) return;
+
+    const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+    const lerp = (a, b, t) => a + (b - a) * t;
+
+    function attrNum(el, name, fallback) {
+        const v = parseFloat(el.getAttribute(name));
+        return Number.isFinite(v) ? v : fallback;
+    }
+    function attrBool(el, name, fallback) {
+        const v = (el.getAttribute(name) ?? "").toLowerCase().trim();
+        if (!v) return fallback;
+        return v === "true" || v === "1" || v === "yes";
+    }
+
+    class StringImpulse {
+        constructor(svg) {
+            this.svg = svg;
+            this.path = svg.querySelector("path");
+            if (!this.path) return;
+
+            // Tunables (nomi compatibili coi tuoi attributi)
+            this.strength = attrNum(svg, "string-position-strength", 2.0); // energia input
+            this.tension = attrNum(svg, "string-position-tension", 0.82);  // ritorno
+            this.friction = attrNum(svg, "string-position-friction", 0.18); // smorzamento (più alto = più “morto”)
+            this.continuous = attrBool(svg, "string-continuous-push", true);
+
+            // Geometria “normalizzata” 0..1
+            this.y0 = 0.5;
+            this.n = 22;                 // punti della corda (più = più morbida)
+            this.influence = 0.18;       // raggio d'influenza in unità 0..1
+            this.maxDisp = 0.18;         // limite curvatura (anti “curva troppo”)
+
+            this.p = new Array(this.n).fill(0).map((_, i) => ({
+                x: i / (this.n - 1),
+                y: this.y0,
+                vy: 0
+            }));
+
+            // input
+            this.pointer = { x: 0.5, y: 0.5, vx: 0, vy: 0, inside: false };
+            this._lastPointer = null;
+
+            // bind
+            this._onMove = this._onMove.bind(this);
+            this._onEnter = this._onEnter.bind(this);
+            this._onLeave = this._onLeave.bind(this);
+            this._tick = this._tick.bind(this);
+
+            // events
+            svg.addEventListener("pointermove", this._onMove, { passive: true });
+            svg.addEventListener("pointerenter", this._onEnter, { passive: true });
+            svg.addEventListener("pointerleave", this._onLeave, { passive: true });
+
+            // init path
+            this._render();
+            this._raf = requestAnimationFrame(this._tick);
+            svg.setAttribute("string-inited", "");
+        }
+
+        _svgCoords(e) {
+            const r = this.svg.getBoundingClientRect();
+            const nx = clamp((e.clientX - r.left) / r.width, 0, 1);
+            const ny = clamp((e.clientY - r.top) / r.height, 0, 1);
+            return { x: nx, y: ny };
+        }
+
+        _onEnter() { this.pointer.inside = true; this._lastPointer = null; }
+        _onLeave() { this.pointer.inside = false; this._lastPointer = null; }
+
+        _onMove(e) {
+            const now = performance.now();
+            const pt = this._svgCoords(e);
+
+            if (this._lastPointer) {
+                const dt = Math.max(16, now - this._lastPointer.t); // clamp dt
+                const dx = pt.x - this._lastPointer.x;
+                const dy = pt.y - this._lastPointer.y;
+                // velocità “normalizzata”
+                this.pointer.vx = dx / dt;
+                this.pointer.vy = dy / dt;
+            }
+
+            this.pointer.x = pt.x;
+            this.pointer.y = pt.y;
+            this._lastPointer = { x: pt.x, y: pt.y, t: now };
+
+            // impulso “one-shot” + continuo
+            this._applyImpulse(true);
+        }
+
+        _applyImpulse(fromEvent) {
+            if (!this.pointer.inside && this.continuous) return;
+
+            const { x: mx, y: my, vx, vy } = this.pointer;
+            // energia dall’intensità del movimento (bidirezionale, naturale)
+            const speed = Math.sqrt(vx * vx + vy * vy);
+            const impulse = clamp(speed * this.strength * 60, 0, 3.5); // scale
+
+            // direzione verticale: segue il mouse (su/giù) ma limitata
+            const targetY = clamp(my, 0, 1);
+            const dir = clamp((targetY - this.y0) / 0.5, -1, 1);
+
+            // applico ai punti vicini lungo x (gauss/triangular falloff)
+            for (let i = 1; i < this.n - 1; i++) {
+                const pt = this.p[i];
+                const dx = Math.abs(pt.x - mx);
+                if (dx > this.influence) continue;
+
+                const w = 1 - dx / this.influence;            // 0..1
+                const shaped = w * w * (3 - 2 * w);           // smoothstep
+                // impulso: “pizzico” + un po’ di attrazione verso mouse
+                pt.vy += dir * impulse * shaped * 0.012;
+                pt.vy += (targetY - pt.y) * shaped * 0.35 * (fromEvent ? 1 : 0.6);
+            }
+        }
+
+        _stepPhysics() {
+
+            if (!this.pointer.inside || Math.abs(this.pointer.vy) < 0.0005) {
+                for (let i = 1; i < this.n - 1; i++) {
+                    this.p[i].vy *= 0.8;
+                }
+            }
+            // opzionale spinta continua (se vuoi “viva” anche con mouse fermo)
+            if (this.continuous && this.pointer.inside) this._applyImpulse(false);
+
+            const fr = clamp(this.friction, 0.0, 0.35);
+            const tn = clamp(this.tension, 0.0, 0.999);
+
+            // fissi gli estremi
+            this.p[0].y = this.y0; this.p[0].vy = 0;
+            this.p[this.n - 1].y = this.y0; this.p[this.n - 1].vy = 0;
+
+            // integrazione + propagazione “corda”
+            for (let i = 1; i < this.n - 1; i++) {
+                const pt = this.p[i];
+
+                // ritorno verso baseline
+                const spring = (this.y0 - pt.y) * (1 - tn) * 0.85;
+
+                // accoppio con vicini (propagazione)
+                const left = this.p[i - 1], right = this.p[i + 1];
+                const neighbor = ((left.y + right.y) * 0.5 - pt.y) * 0.22;
+
+                pt.vy += (spring + neighbor) * 0.7;
+
+                // damping
+                pt.vy *= (1 - fr);
+
+                pt.y += pt.vy;
+
+                // clamp curvatura (anti “curva troppo”)
+                pt.y = clamp(pt.y, this.y0 - this.maxDisp, this.y0 + this.maxDisp);
+            }
+        }
+
+        _render() {
+            // Cubic segments in 0..1 space, come nel tuo esempio
+            // (C0..Ck) con controlli basati su punti intermedi
+            const pts = this.p;
+            let d = `M ${pts[0].x} ${pts[0].y}`;
+
+            // segmento cubico ogni 2 punti per avere forma “strumento”
+            for (let i = 0; i < pts.length - 1; i++) {
+                const a = pts[i];
+                const b = pts[i + 1];
+                const dx = (b.x - a.x);
+
+                // controlli: un po’ “tirati” per avere curva pulita
+                const c1x = a.x + dx * 0.45;
+                const c2x = a.x + dx * 0.55;
+                const c1y = a.y;
+                const c2y = b.y;
+
+                d += ` C ${c1x} ${c1y} ${c2x} ${c2y} ${b.x} ${b.y}`;
+            }
+
+            this.path.setAttribute("d", d);
+        }
+
+        _tick() {
+            this._stepPhysics();
+            this._render();
+            this._raf = requestAnimationFrame(this._tick);
+        }
+    }
+
+    svgs.forEach(svg => new StringImpulse(svg));
+})();

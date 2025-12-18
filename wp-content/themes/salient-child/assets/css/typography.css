@@ -35,6 +35,7 @@ h1,
 
 h2,
 .h2 {
+  font-weight: 300;
   font-family: "georgia", sans-serif;
   font-size: 48px;
   line-height: 1;

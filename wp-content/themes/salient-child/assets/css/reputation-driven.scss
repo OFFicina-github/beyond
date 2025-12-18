@@ -1,3 +1,41 @@
+#hero.reputation-driven {
+    .titolo-hero {
+        &:first-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.title-reputation {
+    h2 {
+        font-size: clamp(32px, 6vw, 70px) !important;
+        line-height: 1.2 !important;
+
+        .scribble {
+            background-color: black;
+            border-radius: 16px;
+            padding: 2px 10px;
+            color: #F6E937;
+
+            &:first-child {
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+
+            &:last-of-type {
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+            }
+        }
+
+        .icon {
+            &:after {
+                content: url(../img/segno-grafico-big.svg);
+            }
+        }
+    }
+}
+
 .matching-words {
     position: relative;
     min-height: 140vh;
@@ -7,7 +45,7 @@
 
     .row_col_wrap_12 {
         background: #EDEDED;
-        border-radius: 25px;
+        border-radius: 48px;
     }
 
     /* BLOCCO SUPERIORE */
@@ -33,7 +71,12 @@
         white-space: nowrap;
     }
 
-    /* POSIZIONI INIZIALI */
+    .word-metodo,
+    .word-consapevolezza,
+    .word-immagine {
+        background-color: #ededed;
+    }
+
     .word-metodo {
         left: 50%;
         border-radius: 50px;
@@ -43,26 +86,17 @@
     .word-consapevolezza {
         left: 50%;
         border-radius: 3px;
+        transform: translateX(40px);
         top: 0;
     }
 
     .word-immagine {
         left: 50%;
         border-radius: 10px;
-        top: 60px;
-    }
-
-    .word-consapevolezza {
-        left: 50%;
-        top: 0;
-        transform: translateX(40px);
-    }
-
-    .word-immagine {
-        left: 50%;
-        top: 60px;
         transform: translateX(-80px);
+        top: 60px;
     }
+
 
     /* BLOCCO FRASE */
     .sentence-block {
@@ -146,13 +180,15 @@
         color: black;
     }
 
+    .riga-box {
+        margin-top: 30vh;
+    }
+
     .riga-container {
-        border-top: 1px solid black;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         padding-top: 20px;
-        margin-top: 30vh;
         padding-bottom: 10vh;
     }
 }
@@ -183,9 +219,30 @@
     }
 
     .riga {
-        .riga-container {
+        .riga-box {
             margin-top: 10vh;
+        }
+
+        .riga-container {
             flex-wrap: wrap;
         }
     }
+}
+
+.string-svg {
+    display: block;
+    width: 100%;
+    height: 20px;
+}
+
+.string {
+    stroke: black;
+    stroke-width: 1px;
+    fill: none;
+}
+
+.string {
+    stroke: black;
+    stroke-width: 1px;
+    fill: none;
 }
