@@ -4,6 +4,6 @@
 .menu-item:hover a {
   color: #f6e937 !important;
 }
-.menu-item .current-menu-item a {
+.menu-item.current-menu-item a {
   color: #f6e937 !important;
 }/*# sourceMappingURL=fla_style.css.map */
