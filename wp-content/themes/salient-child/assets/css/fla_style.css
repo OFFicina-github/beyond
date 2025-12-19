@@ -23,7 +23,7 @@
 
 #spline-container-full-height h3 span::after {
   content: "";
-  background: radial-gradient(rgba(0, 0, 0, 0.7098039216) 0%, transparent 70%);
+  background: radial-gradient(rgba(26, 26, 26, 0.7098039216) 0%, transparent 70%);
   position: absolute;
   left: 0;
   top: -27px;
