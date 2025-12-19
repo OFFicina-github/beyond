@@ -8,6 +8,9 @@
   color: #f6e937 !important;
 }
 
+#inner_section_visione img {
+  width: 100%;
+}
 #inner_section_visione .bg_img {
   border-radius: 20px;
 }/*# sourceMappingURL=fla_style.css.map */
