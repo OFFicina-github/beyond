@@ -276,8 +276,8 @@ document.addEventListener("DOMContentLoaded", () => {
         container.querySelectorAll(".bubble-1, .bubble-2, .bubble-3")
     );
 
-    const safeMultiplier = window.innerWidth < 1000 ? 0.1 : 0.08;
-    const safeMultiplierHeight = window.innerWidth < 1000 ? 0.1 : 0.2;
+    const safeMultiplier = window.innerWidth < 1000 ? 0.2 : 0.08;
+    const safeMultiplierHeight = window.innerWidth < 1000 ? 0.2 : 0.2;
 
     const padding = 24;
     const maxAttempts = 200;

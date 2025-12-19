@@ -720,7 +720,7 @@ html {
   }
 
   #spline-container-full-height {
-    height: 50vh;
+    height: 70vh;
   }
 
   .spline-background .spline-content .vc_column-inner {
@@ -1213,11 +1213,14 @@ html {
     opacity: 0;
     pointer-events: none;
     z-index: 9999;
-
     /* 🚫 NESSUNA TRANSITION SU TRANSFORM */
     transition: opacity 0.25s ease;
-
     will-change: transform;
+
+    @media screen and (max-width:1000px) {
+      height: 220px !important;
+      width: 150px !important;
+    }
   }
 
   .nectar-post-grid-item-bg img {

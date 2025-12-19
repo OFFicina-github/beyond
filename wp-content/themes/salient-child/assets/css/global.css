@@ -590,7 +590,7 @@ html {
     gap: 30px;
   }
   #spline-container-full-height {
-    height: 50vh;
+    height: 70vh;
   }
   .spline-background .spline-content .vc_column-inner {
     max-width: 100%;
@@ -978,6 +978,12 @@ html {
   /* 🚫 NESSUNA TRANSITION SU TRANSFORM */
   transition: opacity 0.25s ease;
   will-change: transform;
+}
+@media screen and (max-width: 1000px) {
+  .elenco-libri .nectar-post-grid-item-bg {
+    height: 220px !important;
+    width: 150px !important;
+  }
 }
 .elenco-libri .nectar-post-grid-item-bg img {
   width: 100%;
