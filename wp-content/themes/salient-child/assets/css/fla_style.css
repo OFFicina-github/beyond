@@ -6,4 +6,8 @@
 }
 .menu-item.current-menu-item a {
   color: #f6e937 !important;
+}
+
+#inner_section_visione .bg_img {
+  border-radius: 20px;
 }/*# sourceMappingURL=fla_style.css.map */
