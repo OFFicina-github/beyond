@@ -5,10 +5,11 @@
     a {
         cursor:pointer;
     }
-    &:hover a {
+    :hover a {
         color: #f6e937;
     }
-    &.current-menu-item a {
-        color: #f6e937;
-    }
+}
+
+.current-menu-item a {
+    color: #f6e937;
 }
