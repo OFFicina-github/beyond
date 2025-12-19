@@ -6,13 +6,16 @@
     padding-right: 0 !important;
   }
   #hero.reputation-driven .colonna-title-reputation .vc_column-inner .scribble {
-    padding: 2px 0px 2px 0;
+    padding: 2px 10px 2px 10px;
+    margin-left: -10px;
+  }
+  #hero.reputation-driven .colonna-title-reputation .vc_column-inner .scribble .icon {
+    padding-left: 5px;
+    padding-right: 10px;
   }
   #hero.reputation-driven .colonna-title-reputation .vc_column-inner .scribble .icon::after {
+    left: 5px;
     content: url(../img/segno_grafico.svg);
-  }
-  #hero.reputation-driven .colonna-title-reputation .vc_column-inner .scribble::after {
-    background-size: contain;
   }
 }
 
@@ -29,6 +32,26 @@
 .title-reputation h2 {
   font-size: clamp(32px, 6vw, 64px) !important;
   line-height: 1.2 !important;
+}
+.title-reputation h2 .black-bg {
+  border-radius: 12px;
+  padding: 2px 10px;
+  background-color: black;
+  color: #F6E937 !important;
+  margin-left: -10px;
+}
+.title-reputation h2 .black-bg i.icon {
+  display: inline-block;
+  width: unset;
+  height: unset;
+  line-height: 1;
+  vertical-align: unset;
+  margin-left: 0;
+}
+@media screen and (max-width: 1000px) {
+  .title-reputation h2 .black-bg i.icon {
+    vertical-align: text-top;
+  }
 }
 .title-reputation h2 .scribble {
   background-color: black;
@@ -167,6 +190,15 @@
 .blocco-testo {
   margin-bottom: 20vh;
   margin-top: 10vh;
+}
+@media screen and (max-width: 1000px) {
+  .blocco-testo {
+    margin-bottom: 15vh;
+    margin-top: 5vh;
+  }
+  .blocco-testo p {
+    font-size: 24px;
+  }
 }
 .blocco-testo .scribble-container {
   background-color: unset;

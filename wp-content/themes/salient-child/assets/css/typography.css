@@ -28,7 +28,7 @@
 h1,
 .h1 {
   font-family: "georgia", sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 64px;
   line-height: 1;
 }
@@ -222,6 +222,11 @@ h2.scribble-container .scribble::after {
   .h4 {
     font-size: 20px;
     line-height: 24px;
+  }
+  h4.scribble-container .scribble::after,
+  .h4.scribble-container .scribble::after {
+    height: calc(100% - 6px);
+    top: 3px;
   }
   h5,
   .h5 {

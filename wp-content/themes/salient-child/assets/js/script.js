@@ -888,3 +888,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
     svgs.forEach(svg => new StringImpulse(svg));
 })();
+
+
+
+
+
+
+
+
+
+// Animazione intro HP
+
+window.addEventListener('load', function () {
+    if (!document.body.classList.contains('home')) return;
+
+    document.body.classList.add('intro-lock');
+
+    const overlay = document.getElementById('intro-overlay');
+    const video = document.getElementById('intro-video');
+    const header = document.getElementById('header-outer');
+
+    const introDuration = 3000; // durata intro prima dell’uscita
+    const exitDuration = 1200;  // durata animazione slide-up
+    const exitDurationHeader = 900;  // durata animazione slide-up
+
+    setTimeout(() => {
+        overlay.classList.add('exit');
+
+        setTimeout(() => {
+            overlay.remove();
+
+            document.documentElement.classList.remove('intro-lock');
+            document.body.classList.remove('intro-lock');
+
+            // ✅ CLASSE AGGIUNTA AL HEADER
+            if (header) {
+                header.classList.add('intro-ended');
+            }
+
+        }, exitDuration);
+
+        setTimeout(() => {
+            if (header) {
+                header.classList.add('intro-ended');
+            }
+        }, exitDurationHeader);
+
+    }, introDuration);
+});

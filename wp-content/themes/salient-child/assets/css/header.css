@@ -1,6 +1,19 @@
+body.home #header-outer {
+  opacity: 0;
+}
+body.home.intro-lock {
+  overflow: hidden;
+  height: 100vh;
+}
+
+body.home #header-outer.intro-ended {
+  opacity: 1;
+}
+
 #header-outer {
   -webkit-backdrop-filter: unset !important;
   backdrop-filter: unset !important;
+  transition: all 0.3s ease-in-out !important;
 }
 #header-outer #top {
   min-height: 70px;
@@ -10,7 +23,7 @@
   width: 100%;
   padding-bottom: 50px;
   align-content: center;
-  z-index: 1000;
+  z-index: 12;
   background: transparent;
 }
 #header-outer #top .menu-title-text em {
@@ -252,7 +265,8 @@
   }
 }
 @media screen and (max-width: 1200px) and (min-width: 100px) {
-  #header-outer #top .header-name, #header-outer #top .super {
+  #header-outer #top .header-name,
+  #header-outer #top .super {
     font-size: 54px !important;
   }
 }/*# sourceMappingURL=header.css.map */
