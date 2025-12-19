@@ -1262,10 +1262,24 @@ html {
 #form-contatti input[type=submit]:hover {
   background: #1a1a1a;
 }
+#form-contatti .privacy-row .wpcf7-list-item {
+  margin-left: 0 !important;
+}
+#form-contatti .privacy-row span {
+  width: 100% !important;
+}
+#form-contatti .privacy-row label {
+  display: flex;
+  align-items: center;
+}
+#form-contatti .privacy-row input[type=checkbox] {
+  width: 30px !important;
+}
 #form-contatti .wpcf7-not-valid-tip {
   font-size: 11px;
   margin-top: 4px;
-  color: #000;
+  box-shadow: none !important;
+  color: red;
 }
 #form-contatti .wpcf7-response-output {
   margin-top: 16px;
@@ -1280,6 +1294,28 @@ html {
 @media (max-width: 768px) {
   #form-contatti .form-row.two-cols {
     grid-template-columns: 1fr;
+  }
+}
+
+.experince-spline.desktop {
+  display: block;
+  position: absolute;
+  width: 100%;
+  margin-top: -100vh;
+}
+.experince-spline.mobile {
+  display: none;
+}
+@media screen and (max-width: 1000px) {
+  .experince-spline.desktop {
+    display: none;
+  }
+  .experince-spline.mobile {
+    display: block;
+  }
+  .experince-spline.mobile spline-viewer {
+    height: 80vh;
+    transform: scale(0.8);
   }
 }
 

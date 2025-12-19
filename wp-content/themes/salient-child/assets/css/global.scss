@@ -572,11 +572,12 @@ html {
   align-content: flex-end;
   position: relative;
 
-  .svg-logo-youtrend{
+  .svg-logo-youtrend {
     max-width: 125px !important;
-    margin-bottom: 20px !important; 
+    margin-bottom: 20px !important;
   }
-  .svg-logo-off{
+
+  .svg-logo-off {
     max-width: 60px !important;
     margin-bottom: 20px !important;
   }
@@ -1564,11 +1565,31 @@ html {
     }
   }
 
+  .privacy-row {
+    .wpcf7-list-item {
+      margin-left: 0 !important;
+    }
+
+    span {
+      width: 100% !important;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+    }
+
+    input[type="checkbox"] {
+      width: 30px !important;
+    }
+  }
+
   /* CF7 validation */
   .wpcf7-not-valid-tip {
     font-size: 11px;
     margin-top: 4px;
-    color: #000;
+    box-shadow: none !important;
+    color: red;
   }
 
   .wpcf7-response-output {
@@ -1591,7 +1612,33 @@ html {
   }
 }
 
+.experince-spline {
+  &.desktop {
+    display: block;
+    position: absolute;
+    width: 100%;
+    margin-top: -100vh;
+  }
 
+  &.mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 1000px) {
+    &.desktop {
+      display: none;
+    }
+
+    &.mobile {
+      display: block;
+
+      spline-viewer {
+        height: 80vh;
+        transform: scale(0.8);
+      }
+    }
+  }
+}
 
 
 

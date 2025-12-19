@@ -890,7 +890,6 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 
 // Animazione intro HP
-
 window.addEventListener('load', function () {
     if (!document.body.classList.contains('home')) return;
 
@@ -900,31 +899,33 @@ window.addEventListener('load', function () {
     const video = document.getElementById('intro-video');
     const header = document.getElementById('header-outer');
 
-    const introDuration = 1500; // durata intro prima dell’uscita
-    const exitDuration = 1200;  // durata animazione slide-up
-    const exitDurationHeader = 900;  // durata animazione slide-up
+    const introDuration = 2500;
+    const exitDuration = 2200;
+    const exitDurationHeader = 900;
+    const textExtraDelay = 1000; // ⏱ +1 secondo testo
 
     setTimeout(() => {
         overlay.classList.add('exit');
 
+        // ⬇️ TESTO / HEADER resta visibile più a lungo
+        setTimeout(() => {
+            if (header) {
+                header.classList.add('intro-ended');
+            }
+        }, exitDurationHeader + textExtraDelay);
+
+        // ⬇️ Fine animazione overlay
         setTimeout(() => {
             overlay.remove();
 
             document.documentElement.classList.remove('intro-lock');
             document.body.classList.remove('intro-lock');
 
-            // ✅ CLASSE AGGIUNTA AL HEADER
             if (header) {
                 header.classList.add('intro-ended');
             }
 
         }, exitDuration);
-
-        setTimeout(() => {
-            if (header) {
-                header.classList.add('intro-ended');
-            }
-        }, exitDurationHeader);
 
     }, introDuration);
 });
