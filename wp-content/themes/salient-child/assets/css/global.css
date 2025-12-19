@@ -451,6 +451,7 @@ html {
 .experience-intro-container .middle {
   font-size: 0 !important;
   transition: all 1s ease-in-out;
+  font-style: italic;
   font-weight: 300;
 }
 .experience-intro.first-animation .first {
@@ -476,6 +477,14 @@ html {
   align-content: flex-end;
   position: relative;
   /* posizionamento base */
+}
+.colonna-espandibile-esperienza .svg-logo-youtrend {
+  max-width: 125px !important;
+  margin-bottom: 20px !important;
+}
+.colonna-espandibile-esperienza .svg-logo-off {
+  max-width: 60px !important;
+  margin-bottom: 20px !important;
 }
 .colonna-espandibile-esperienza .colonna-youtrend,
 .colonna-espandibile-esperienza .colonna-off {
