@@ -1,1 +1,9 @@
-/*# sourceMappingURL=fla_style.css.map */
+.menu-item a {
+  cursor: pointer;
+}
+.menu-item a:hover {
+  color: #f6e937;
+}
+.menu-item.current-menu-item a {
+  color: #f6e937;
+}/*# sourceMappingURL=fla_style.css.map */

@@ -1,1 +1,14 @@
 // fla_style
+
+//menu
+.menu-item {
+    a {
+        cursor:pointer;
+    }
+    a:hover {
+        color: #f6e937;
+    }
+    &.current-menu-item a {
+        color: #f6e937;
+    }
+}
