@@ -1,7 +1,7 @@
 .menu-item a {
   cursor: pointer;
 }
-.menu-item a:hover {
+.menu-item:hover a {
   color: #f6e937;
 }
 .menu-item.current-menu-item a {
