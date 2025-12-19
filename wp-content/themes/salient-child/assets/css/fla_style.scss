@@ -6,10 +6,9 @@
         cursor:pointer;
     }
     :hover a {
-        color: #f6e937;
+        color: #f6e937 !important;
     }
-}
-
-.current-menu-item {
-    color: #f6e937;
+    .current-menu-item a {
+        color: #f6e937 !important;
+    }
 }

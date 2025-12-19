@@ -2,9 +2,8 @@
   cursor: pointer;
 }
 .menu-item :hover a {
-  color: #f6e937;
+  color: #f6e937 !important;
 }
-
-.current-menu-item {
-  color: #f6e937;
+.menu-item .current-menu-item a {
+  color: #f6e937 !important;
 }/*# sourceMappingURL=fla_style.css.map */
