@@ -49,6 +49,11 @@ spline-viewer {
         margin-left: -20vw;
     }
 }
+#spline-container-full-height{
+    @media(max-width:690px){
+        margin-top: -200px;
+    }
+}
 .inner_row.spline-content {
     .row_col_wrap_12_inner {
         .vc_col-sm-12 {
@@ -62,7 +67,6 @@ spline-viewer {
                 max-width: 450px;
                 margin-left: auto !important;
                 margin-right: auto !important;
-
             }
         }
     }

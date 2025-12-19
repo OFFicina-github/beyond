@@ -40,6 +40,12 @@
   }
 }
 
+@media (max-width: 690px) {
+  #spline-container-full-height {
+    margin-top: -200px;
+  }
+}
+
 @media (max-width: 1024px) {
   .inner_row.spline-content .row_col_wrap_12_inner .vc_col-sm-12 {
     position: relative;
