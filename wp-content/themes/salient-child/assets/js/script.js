@@ -889,14 +889,6 @@ document.addEventListener("DOMContentLoaded", () => {
     svgs.forEach(svg => new StringImpulse(svg));
 })();
 
-
-
-
-
-
-
-
-
 // Animazione intro HP
 
 window.addEventListener('load', function () {
@@ -908,7 +900,7 @@ window.addEventListener('load', function () {
     const video = document.getElementById('intro-video');
     const header = document.getElementById('header-outer');
 
-    const introDuration = 3000; // durata intro prima dell’uscita
+    const introDuration = 1500; // durata intro prima dell’uscita
     const exitDuration = 1200;  // durata animazione slide-up
     const exitDurationHeader = 900;  // durata animazione slide-up
 
