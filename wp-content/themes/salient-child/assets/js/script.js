@@ -890,7 +890,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 
 // Animazione intro HP
-
+/*
 window.addEventListener('load', function () {
     if (!document.body.classList.contains('home')) return;
 
@@ -927,4 +927,4 @@ window.addEventListener('load', function () {
         }, exitDurationHeader);
 
     }, introDuration);
-});
+});*/

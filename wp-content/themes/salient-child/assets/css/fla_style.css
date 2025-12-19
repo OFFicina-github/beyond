@@ -13,4 +13,25 @@
 }
 #inner_section_visione .bg_img {
   border-radius: 20px;
+}
+#inner_section_visione .logo_img {
+  position: absolute;
+  bottom: 20px;
+  width: calc(100% - 40px);
+  left: 20px;
+}
+
+@media (max-width: 1024px) {
+  .inner_row.spline-content .row_col_wrap_12_inner .vc_col-sm-12 {
+    position: relative;
+    top: 250px;
+  }
+}
+@media (max-width: 768px) {
+  .inner_row.spline-content .row_col_wrap_12_inner .vc_col-sm-12 {
+    position: relative;
+    top: 140px;
+    max-width: 450px;
+    margin: 0 auto;
+  }
 }/*# sourceMappingURL=fla_style.css.map */
