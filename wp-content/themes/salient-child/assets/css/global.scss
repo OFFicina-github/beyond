@@ -1151,31 +1151,29 @@ html {
     font-size: 24px !important;
   }
 
-  /* wrapper Salient: NO sfondo */
   .nectar-post-grid-item-bg-wrap,
   .nectar-post-grid-item-bg-wrap-inner {
     background: transparent !important;
     overflow: visible !important;
   }
 
-  /* contenitore immagine */
   .nectar-post-grid-item-bg {
     position: fixed !important;
     top: 0;
     left: 0;
-    width: 420px;
-    height: 280px;
+    height: 420px;
+    width: 280px;
+    padding: 10px;
     opacity: 0;
     pointer-events: none;
     z-index: 9999;
 
-    transform: translate3d(0, 0, 0) scale(0.95);
-    transition:
-      opacity 0.25s ease,
-      transform 0.35s ease;
+    /* 🚫 NESSUNA TRANSITION SU TRANSFORM */
+    transition: opacity 0.25s ease;
+
+    will-change: transform;
   }
 
-  /* immagine */
   .nectar-post-grid-item-bg img {
     width: 100%;
     height: 100%;
@@ -1184,17 +1182,12 @@ html {
     display: block;
   }
 
-  /* attivo solo su hover */
   .nectar-post-grid-item.is-hovered .nectar-post-grid-item-bg {
     opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
-
-    &::after {
+        &::after {
       background-color: transparent !important;
     }
   }
-
-
 
   .nectar-post-grid-item {
     .inner {
@@ -1203,7 +1196,7 @@ html {
     }
 
     &:hover {
-      .item-main>*:last-child {
+      .item-main > *:last-child {
         transform: translateX(1rem) !important;
       }
     }
@@ -1214,6 +1207,8 @@ html {
     }
   }
 }
+
+
 
 .cose-persona {
   max-width: 1000px;

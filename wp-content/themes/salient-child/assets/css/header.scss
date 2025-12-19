@@ -330,3 +330,9 @@
         }
     }
 }
+
+@media screen and (max-width:1200px) and (min-width:100px){
+    #header-outer #top .header-name, #header-outer #top .super{
+        font-size: 54px !important;
+    }
+}

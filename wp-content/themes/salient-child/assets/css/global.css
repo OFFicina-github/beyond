@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #wpadminbar {
   max-height: 6px !important;
   overflow: hidden !important;
@@ -915,12 +916,6 @@ html {
   }
 }
 
-.elenco-libri {
-  /* wrapper Salient: NO sfondo */
-  /* contenitore immagine */
-  /* immagine */
-  /* attivo solo su hover */
-}
 .elenco-libri a,
 .elenco-libri span,
 .elenco-libri .post-heading,
@@ -936,13 +931,15 @@ html {
   position: fixed !important;
   top: 0;
   left: 0;
-  width: 420px;
-  height: 280px;
+  height: 420px;
+  width: 280px;
+  padding: 10px;
   opacity: 0;
   pointer-events: none;
   z-index: 9999;
-  transform: translate3d(0, 0, 0) scale(0.95);
-  transition: opacity 0.25s ease, transform 0.35s ease;
+  /* 🚫 NESSUNA TRANSITION SU TRANSFORM */
+  transition: opacity 0.25s ease;
+  will-change: transform;
 }
 .elenco-libri .nectar-post-grid-item-bg img {
   width: 100%;
@@ -954,7 +951,6 @@ html {
 }
 .elenco-libri .nectar-post-grid-item.is-hovered .nectar-post-grid-item-bg {
   opacity: 1;
-  transform: translate3d(0, 0, 0) scale(1);
 }
 .elenco-libri .nectar-post-grid-item.is-hovered .nectar-post-grid-item-bg::after {
   background-color: transparent !important;

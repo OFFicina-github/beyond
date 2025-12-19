@@ -154,14 +154,14 @@ h2 {
             content: "";
             position: absolute;
             width: 0%;
-            height: calc(100% - 5px);
-            left: 0px;
-            top: 3px;
+            height: calc(100% - 4px);
+            left: 1px;
+            top: 2px;
             display: block;
             background-repeat: repeat-x;
-            background-image: url("../img/scribble.svg");
+            background-image: url("../img/scribble-full.svg");
             background-position: center center;
-            background-size: auto;
+            background-size: cover;
             border-radius: 5px;
             will-change: width;
             transition: width 1s ease-in-out;
@@ -170,7 +170,7 @@ h2 {
 
         &.started {
             &::after {
-                width: 100%;
+                width: 99%;
             }
         }
     }

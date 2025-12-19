@@ -6,29 +6,44 @@
     }
 
     @media screen and (max-width: 1000px) {
-        
-        .colonna-title-reputation{
-            .vc_column-inner{
+
+        .colonna-title-reputation {
+            .vc_column-inner {
                 padding-right: 0 !important;
-                .scribble{
-                    padding: 2px 0px 2px 0 ;
-                    .icon{
-                        &::after{
+
+                .scribble {
+                    padding: 2px 0px 2px 0;
+
+                    .icon {
+                        &::after {
                             content: url(../img/segno_grafico.svg);
                         }
                     }
-                    &::after{
+
+                    &::after {
                         background-size: contain;
                     }
                 }
-            }       
+            }
         }
     }
 }
 
 .title-reputation {
+    &.desktop {
+        @media screen and (max-width:1000px) {
+            display: none;
+        }
+    }
+
+    &.mobile {
+        @media screen and (min-width:1000px) {
+            display: none;
+        }
+    }
+
     h2 {
-        font-size: clamp(32px, 6vw, 70px) !important;
+        font-size: clamp(32px, 6vw, 64px) !important;
         line-height: 1.2 !important;
 
         .scribble {
@@ -138,6 +153,10 @@
             max-width: 900px;
             font-size: 32px;
             margin: 0 auto;
+
+            @media screen and (max-width: 1000px) {
+                font-size: 24px;
+            }
         }
 
         .slot {
@@ -195,6 +214,28 @@
     }
 }
 
+.blocco-testo {
+    margin-bottom: 20vh;
+    margin-top: 10vh;
+
+    .scribble-container {
+        background-color: unset;
+
+        .scribble {
+            &::after {
+                background-image: url(../img/scribble.svg);
+            }
+        }
+    }
+
+    p {
+        text-align: justify;
+        font-size: 32px;
+        color: black;
+        line-height: 1.4;
+    }
+}
+
 .riga {
     * {
         color: black;
@@ -209,8 +250,17 @@
         flex-direction: row;
         justify-content: space-between;
         padding-top: 20px;
+        align-items: center;
         padding-bottom: 10vh;
+        gap: 20px;
+
+        h3 {
+            text-align: justify;
+            white-space: nowrap;
+        }
     }
+
+
 }
 
 

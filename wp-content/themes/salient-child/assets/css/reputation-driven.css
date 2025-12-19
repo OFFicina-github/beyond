@@ -16,8 +16,18 @@
   }
 }
 
+@media screen and (max-width: 1000px) {
+  .title-reputation.desktop {
+    display: none;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .title-reputation.mobile {
+    display: none;
+  }
+}
 .title-reputation h2 {
-  font-size: clamp(32px, 6vw, 70px) !important;
+  font-size: clamp(32px, 6vw, 64px) !important;
   line-height: 1.2 !important;
 }
 .title-reputation h2 .scribble {
@@ -108,6 +118,11 @@
   font-size: 32px;
   margin: 0 auto;
 }
+@media screen and (max-width: 1000px) {
+  .matching-words .sentence-block p {
+    font-size: 24px;
+  }
+}
 .matching-words .sentence-block .slot {
   position: relative;
   display: inline-block;
@@ -149,6 +164,23 @@
   opacity: 1;
 }
 
+.blocco-testo {
+  margin-bottom: 20vh;
+  margin-top: 10vh;
+}
+.blocco-testo .scribble-container {
+  background-color: unset;
+}
+.blocco-testo .scribble-container .scribble::after {
+  background-image: url(../img/scribble.svg);
+}
+.blocco-testo p {
+  text-align: justify;
+  font-size: 32px;
+  color: black;
+  line-height: 1.4;
+}
+
 .riga * {
   color: black;
 }
@@ -160,7 +192,13 @@
   flex-direction: row;
   justify-content: space-between;
   padding-top: 20px;
+  align-items: center;
   padding-bottom: 10vh;
+  gap: 20px;
+}
+.riga .riga-container h3 {
+  text-align: justify;
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 1000px) {

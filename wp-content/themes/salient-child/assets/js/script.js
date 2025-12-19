@@ -194,13 +194,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 if (document.querySelector('.word-metodo')) {
     /* POSIZIONI INIZIALI */
-    
-                if( window.innerWidth < 1000){
-                    gsap.set(".word-metodo", { x: -200, y: 50 });
-                }
-                else {
-                    gsap.set(".word-metodo", { x: -400, y: 50 });
-                }
+
+    if (window.innerWidth < 1000) {
+        gsap.set(".word-metodo", { x: -200, y: 50 });
+    }
+    else {
+        gsap.set(".word-metodo", { x: -400, y: 50 });
+    }
 
     gsap.set(".word-consapevolezza", { x: 40, y: 10 });
     gsap.set(".word-immagine", { x: -80, y: 80 });
@@ -533,7 +533,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let mouseX = 0, mouseY = 0;
     let currentX = 0, currentY = 0;
-    const ease = 0.12; // più basso = più lag (Signal ≈ 0.1)
+    const ease = 0.12;
 
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX + 30;
@@ -549,7 +549,8 @@ document.addEventListener('DOMContentLoaded', () => {
         );
 
         if (active) {
-            active.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+            active.style.transform =
+                `translate3d(${currentX}px, ${currentY}px, 0)`;
         }
 
         requestAnimationFrame(animate);
@@ -563,6 +564,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!bg || !bg.querySelector('img')) return;
 
         item.addEventListener('mouseenter', () => {
+            // 🔥 POSIZIONE IMMEDIATA (no interpolazione)
+            currentX = mouseX;
+            currentY = mouseY;
+
+            bg.style.transform =
+                `translate3d(${currentX}px, ${currentY}px, 0)`;
+
             item.classList.add('is-hovered');
         });
 
@@ -578,6 +586,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+
 
 
 
