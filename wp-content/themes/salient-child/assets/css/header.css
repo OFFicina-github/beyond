@@ -247,6 +247,9 @@ body.home #header-outer.intro-ended {
     padding-top: 16px !important;
     padding-left: 8px;
   }
+  #linea-con-occhi .text-occhi a {
+    color: white !important;
+  }
   .footer-inner {
     padding-bottom: 15vh;
   }
