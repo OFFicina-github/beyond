@@ -34,6 +34,13 @@
 }
 
 @media (max-width: 1024px) {
+  spline-viewer {
+    width: 140vw;
+    margin-left: -20vw;
+  }
+}
+
+@media (max-width: 1024px) {
   .inner_row.spline-content .row_col_wrap_12_inner .vc_col-sm-12 {
     position: relative;
     top: 250px;
@@ -44,6 +51,7 @@
     position: relative;
     top: 140px;
     max-width: 450px;
-    margin: 0 auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }/*# sourceMappingURL=fla_style.css.map */
