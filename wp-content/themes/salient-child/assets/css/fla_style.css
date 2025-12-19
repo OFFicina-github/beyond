@@ -21,6 +21,18 @@
   left: 20px;
 }
 
+#spline-container-full-height h3 span::after {
+  content: "";
+  background: radial-gradient(rgba(0, 0, 0, 0.7098039216) 0%, transparent 70%);
+  position: absolute;
+  left: 0;
+  top: -27px;
+  width: 100%;
+  height: 98%;
+  display: block;
+  z-index: -1;
+}
+
 @media (max-width: 1024px) {
   .inner_row.spline-content .row_col_wrap_12_inner .vc_col-sm-12 {
     position: relative;
