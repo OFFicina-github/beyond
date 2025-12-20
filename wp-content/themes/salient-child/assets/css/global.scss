@@ -702,7 +702,7 @@ html {
   }
   .scribble-container {
     background-color: #141414;
-    i.icon::after {
+    i.icon {
       transform: scale(0.7);
       transform-origin: left 100%;
       width: 22px;
