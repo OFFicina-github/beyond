@@ -963,6 +963,12 @@ html {
 .spline-bubble-background {
   min-height: 100vh;
 }
+@media (max-width: 1000px) {
+  .spline-bubble-background {
+    min-height: unset;
+    height: 60vh;
+  }
+}
 .spline-bubble-background .row_col_wrap_12 {
   height: 100vh;
 }
@@ -1261,7 +1267,7 @@ html {
 @media (max-width: 1000px) {
   #modulo-contatti {
     top: -200px;
-    margin-bottom: 100px;
+    margin-bottom: -100px;
   }
 }
 

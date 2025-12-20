@@ -1160,6 +1160,10 @@ body.home {
 
 .spline-bubble-background {
   min-height: 100vh;
+  @media(max-width:1000px) {
+    min-height: unset;
+    height: 60vh;
+  }
 
   .row_col_wrap_12 {
     height: 100vh;
@@ -1536,7 +1540,7 @@ body.home {
   }
   @media(max-width:1000px) {
     top: -200px;
-    margin-bottom:100px;
+    margin-bottom:-100px;
   }
 }
 
