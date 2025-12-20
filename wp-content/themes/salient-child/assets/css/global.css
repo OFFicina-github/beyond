@@ -272,6 +272,8 @@ html {
 }
 #stay-in-touch .card {
   position: relative;
+  padding-left: 20px !important;
+  padding-right: 0 !important;
 }
 #stay-in-touch .card .vc_column-inner::after {
   content: "";
