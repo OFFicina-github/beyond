@@ -48,13 +48,13 @@ body.home {
         }
     }
 }
-/*spline-viewer {
-    @media(max-width:1024px){
+spline-viewer {
+    @media(max-width:1000px){
         width: 140vw;
         margin-left: -20vw;
     }
 }
-#spline-container-full-height{
+/*#spline-container-full-height{
     @media(max-width:690px){
         margin-top: -290px;
     }
