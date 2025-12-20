@@ -325,6 +325,9 @@ html {
 }
 #stay-in-touch .item_evento .inner {
   max-width: 170px;
+  background-color: #000;
+  padding: 2%;
+  background-repeat: 20px;
 }
 
 .rotateWord.homepage {
