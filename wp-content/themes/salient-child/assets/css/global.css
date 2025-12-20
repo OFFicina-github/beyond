@@ -311,6 +311,9 @@ html {
   color: #F6E937;
 }
 
+.rotateWord.homepage {
+  max-width: 350px;
+}
 .rotateWord.homepage .splide {
   display: inline-flex;
 }
