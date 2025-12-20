@@ -346,6 +346,11 @@ html {
     max-width: 170px;
   }
 }
+@media (max-width: 1000px) {
+  #stay-in-touch .item_evento .inner {
+    width: 100%;
+  }
+}
 #stay-in-touch .item_evento .inner.text_custom.color_y p {
   color: #f2ef4a;
 }
