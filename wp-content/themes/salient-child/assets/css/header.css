@@ -255,8 +255,8 @@ body.home #header-outer.intro-ended {
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: saturate(180%) blur(24px);
     -webkit-backdrop-filter: saturate(180%) blur(24px);
-    mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 30%, rgba(0, 0, 0, 0) 80%);
-    -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 30%, rgba(0, 0, 0, 0) 80%);
+    mask-image: linear-gradient(to top, rgb(0, 0, 0) 30%, rgba(0, 0, 0, 0) 80%);
+    -webkit-mask-image: linear-gradient(to top, rgb(0, 0, 0) 30%, rgba(0, 0, 0, 0) 80%);
     width: 100%;
     position: absolute;
     top: 1px;

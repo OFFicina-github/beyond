@@ -336,11 +336,11 @@ body.home {
                 backdrop-filter: saturate(180%) blur(24px);
                 -webkit-backdrop-filter: saturate(180%) blur(24px);
 
-                mask-image: linear-gradient(to bottom,
+                mask-image: linear-gradient(to top,
                         rgba(0, 0, 0, 1) 30%,
                         rgba(0, 0, 0, 0) 80%);
 
-                -webkit-mask-image: linear-gradient(to bottom,
+                -webkit-mask-image: linear-gradient(to top,
                         rgba(0, 0, 0, 1) 30%,
                         rgba(0, 0, 0, 0) 80%);
                         width: 100%;
