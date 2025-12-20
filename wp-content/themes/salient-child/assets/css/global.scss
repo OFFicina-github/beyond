@@ -1632,10 +1632,15 @@ html {
 
 .experince-spline {
   &.desktop {
+    //display: block;
+    //position: absolute;
+    //width: 100%;
+    //margin-top: -100vh;
     display: block;
     position: absolute;
     width: 100%;
-    margin-top: -100vh;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   &.mobile {
@@ -1653,6 +1658,17 @@ html {
       spline-viewer {
         height: 80vh;
         transform: scale(0.8);
+      }
+    }
+  }
+}
+#section_labels_dinamiche {
+  .colonna-hero {
+    position: static;
+    & > .vc_column-inner {
+      position: static;
+      & > .wpb_wrapper {
+        position: static;
       }
     }
   }

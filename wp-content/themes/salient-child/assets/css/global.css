@@ -1321,7 +1321,8 @@ html {
   display: block;
   position: absolute;
   width: 100%;
-  margin-top: -100vh;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .experince-spline.mobile {
   display: none;
@@ -1337,6 +1338,16 @@ html {
     height: 80vh;
     transform: scale(0.8);
   }
+}
+
+#section_labels_dinamiche .colonna-hero {
+  position: static;
+}
+#section_labels_dinamiche .colonna-hero > .vc_column-inner {
+  position: static;
+}
+#section_labels_dinamiche .colonna-hero > .vc_column-inner > .wpb_wrapper {
+  position: static;
 }
 
 #intro-overlay {
