@@ -317,6 +317,11 @@ html {
   gap: 10px;
   align-items: center;
 }
+@media (max-width: 1000px) {
+  #stay-in-touch .item_evento {
+    flex-direction: column-reverse;
+  }
+}
 #stay-in-touch .item_evento p {
   text-align: left;
   color: rgba(217, 217, 217, 0.4509803922);
@@ -327,7 +332,6 @@ html {
   padding: 0 !important;
 }
 #stay-in-touch .item_evento .inner {
-  max-width: 170px;
   background-color: #000;
   padding: 20px;
   border-radius: 20px;
@@ -336,6 +340,11 @@ html {
   gap: 10px;
   flex-direction: column;
   justify-content: space-between;
+}
+@media (min-width: 1001px) {
+  #stay-in-touch .item_evento .inner {
+    max-width: 170px;
+  }
 }
 #stay-in-touch .item_evento .inner.text_custom.color_y p {
   color: #f2ef4a;
