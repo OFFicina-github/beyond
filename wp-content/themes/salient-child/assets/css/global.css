@@ -579,7 +579,7 @@ html {
 .colonna-espandibile-esperienza .scribble-container {
   background-color: #141414;
 }
-.colonna-espandibile-esperienza.vc_col-sm-4 .vc_column-inner > .wpb_wrapper:hover .scribble-container {
+.colonna-espandibile-esperienza .vc_col-sm-4 .vc_column-inner > .wpb_wrapper:hover .scribble-container {
   background-color: #252525;
 }
 
