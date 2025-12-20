@@ -329,7 +329,7 @@ html {
   background-color: #000;
   padding: 20px;
   border-radius: 20px;
-  height: 120px;
+  height: 140px;
   display: flex;
   gap: 10px;
   flex-direction: column;
@@ -337,6 +337,16 @@ html {
 }
 #stay-in-touch .item_evento .inner.text_custom p:last-child {
   font-family: Georgia;
+}
+#stay-in-touch .item_evento .inner.img_custom {
+  background-color: transparent;
+}
+#stay-in-touch .item_evento .inner.img_custom img {
+  margin: 0 !important;
+}
+#stay-in-touch .item_evento .inner.img_custom p {
+  color: #fff !important;
+  white-space: nowrap;
 }
 
 .rotateWord.homepage {
