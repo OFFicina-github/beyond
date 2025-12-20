@@ -403,9 +403,6 @@ html {
       @media(min-width:1001px) {
         max-width: 170px;
       }
-      @media(max-width:1000px) {
-        width: 100%;
-      }
       background-color: #000;
       padding: 20px;
       border-radius: 20px;
@@ -441,14 +438,16 @@ html {
         }
       }
     }
-    @media(max-width:1000px) {
-      
-    }
   }
   .vc_col-sm-3 {
     .item_evento .inner.img_custom img {
       margin: 0  !important;
     }
+  }
+}
+.inner {
+  @media(max-width:1000px) {
+    width: 100%;
   }
 }
 
