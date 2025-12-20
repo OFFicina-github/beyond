@@ -261,7 +261,7 @@ body.home #header-outer.intro-ended {
     position: absolute;
     top: 1px;
     left: -5vw;
-    min-height: 23vw;
+    min-height: 64px;
     min-width: 101vw;
   }
 }
