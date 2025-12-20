@@ -237,6 +237,11 @@ html {
 #stay-in-touch {
   margin-top: 10vh;
 }
+@media (max-width: 1000px) {
+  #stay-in-touch .wpb_raw_code {
+    width: 100%;
+  }
+}
 #stay-in-touch.seguici {
   display: none;
 }
@@ -272,8 +277,12 @@ html {
 }
 #stay-in-touch .card {
   position: relative;
-  padding-left: 20px !important;
-  padding-right: 0 !important;
+}
+@media (min-width: 1001px) {
+  #stay-in-touch .card {
+    padding-left: 20px !important;
+    padding-right: 0 !important;
+  }
 }
 #stay-in-touch .card .vc_column-inner::after {
   content: "";
@@ -360,6 +369,7 @@ html {
 @media (max-width: 1000px) {
   #stay-in-touch .item_evento .inner.img_custom {
     flex-direction: row-reverse;
+    align-items: center;
   }
 }
 #stay-in-touch .item_evento .inner.img_custom img {

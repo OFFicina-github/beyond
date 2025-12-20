@@ -283,6 +283,11 @@ html {
 #stay-in-touch {
   margin-top: 10vh;
 
+  .wpb_raw_code {
+    @media(max-width:1000px) {
+      width: 100%;
+    }
+  }
   &.seguici {
     display: none;
   }
@@ -331,8 +336,10 @@ html {
 
   .card {
     position: relative;
-    padding-left: 20px !important;
-    padding-right: 0 !important;
+    @media(min-width:1001px) {
+      padding-left: 20px !important;
+      padding-right: 0 !important;
+    }
     .vc_column-inner {
 
       &::after {
@@ -424,6 +431,7 @@ html {
       &.img_custom {
         @media(max-width:1000px) {
           flex-direction: row-reverse;
+          align-items: center;
         }
         background-color: transparent;
         padding: 0 !important;
