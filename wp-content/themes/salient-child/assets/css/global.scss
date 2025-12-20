@@ -102,6 +102,15 @@ html {
   .horizontal-scroll {
     padding-right: 20vw;
   }
+
+  //mob
+  &.reputation-driven {
+    @media(max-width:1000px) {
+      h4 {
+        margin-top: -20%;
+      }
+    }
+  }
 }
 
 body.home {

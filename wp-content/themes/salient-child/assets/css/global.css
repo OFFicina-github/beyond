@@ -91,6 +91,11 @@ html {
 #hero .horizontal-scroll {
   padding-right: 20vw;
 }
+@media (max-width: 1000px) {
+  #hero.reputation-driven h4 {
+    margin-top: -20%;
+  }
+}
 
 @media (min-width: 1001px) {
   body.home .scribble-container {
