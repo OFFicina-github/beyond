@@ -1350,7 +1350,7 @@ html {
 }
 .hero-full-affidi .colonna-hero > .vc_column-inner .wpb_wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 0 30px;
   flex-wrap: wrap;
 }
