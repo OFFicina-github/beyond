@@ -274,6 +274,11 @@ body.home {
     .footer-info {
         margin-bottom: 60px;
     }
+    .footer-nav {
+        @media(max-width:1000px) {
+            margin-top:200px;
+        }
+    }
 }
 
 .off-canvas-menu-container {

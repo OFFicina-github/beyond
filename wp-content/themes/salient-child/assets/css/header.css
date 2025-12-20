@@ -212,6 +212,11 @@ body.home #header-outer.intro-ended {
 .footer-inner .footer-info {
   margin-bottom: 60px;
 }
+@media (max-width: 1000px) {
+  .footer-inner .footer-nav {
+    margin-top: 200px;
+  }
+}
 
 .off-canvas-menu-container ul li a {
   font-family: "polymath-text", sans-serif !important;
