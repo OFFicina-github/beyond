@@ -94,7 +94,7 @@ html {
 @media (max-width: 1000px) {
   #hero.reputation-driven h2.blackext-background {
     margin-top: -70px;
-    min-width: 90%;
+    max-width: 90%;
   }
   #hero.reputation-driven h4 {
     margin-top: -20%;
