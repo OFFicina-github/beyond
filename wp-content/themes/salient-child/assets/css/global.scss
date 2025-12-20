@@ -690,6 +690,7 @@ body.home {
     max-width: 125px !important;
     margin-bottom: 20px !important;
     filter: brightness(35);
+    -webkit-filter: brightness(35%);
   }
 
   .svg-logo-off {

@@ -602,6 +602,7 @@ html {
   max-width: 125px !important;
   margin-bottom: 20px !important;
   filter: brightness(35);
+  -webkit-filter: brightness(35%);
 }
 .colonna-espandibile-esperienza .svg-logo-off {
   max-width: 60px !important;
