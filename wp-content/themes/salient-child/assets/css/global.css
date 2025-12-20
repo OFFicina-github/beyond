@@ -601,8 +601,6 @@ html {
 .colonna-espandibile-esperienza .svg-logo-youtrend {
   max-width: 125px !important;
   margin-bottom: 20px !important;
-  filter: brightness(35%);
-  -webkit-filter: brightness(35%);
 }
 .colonna-espandibile-esperienza .svg-logo-off {
   max-width: 60px !important;
@@ -1263,6 +1261,7 @@ html {
 @media (max-width: 1000px) {
   #modulo-contatti {
     top: -200px;
+    margin-bottom: 100px;
   }
 }
 

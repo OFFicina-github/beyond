@@ -689,8 +689,6 @@ body.home {
   .svg-logo-youtrend {
     max-width: 125px !important;
     margin-bottom: 20px !important;
-    filter: brightness(35%);
-    -webkit-filter: brightness(35%);
   }
 
   .svg-logo-off {
@@ -1538,6 +1536,7 @@ body.home {
   }
   @media(max-width:1000px) {
     top: -200px;
+    margin-bottom:100px;
   }
 }
 
