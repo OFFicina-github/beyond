@@ -244,8 +244,6 @@ body.home #header-outer.intro-ended {
   #linea-con-occhi {
     bottom: 0;
     margin-bottom: 0;
-  }
-  #linea-con-occhi::before {
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: saturate(180%) blur(24px);
     -webkit-backdrop-filter: saturate(180%) blur(24px);
