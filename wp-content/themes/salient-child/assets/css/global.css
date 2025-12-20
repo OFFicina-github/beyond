@@ -362,6 +362,11 @@ html {
   padding: 0 !important;
   padding: 0 20px !important;
 }
+@media (max-width: 1000px) {
+  #stay-in-touch .item_evento .inner.img_custom {
+    flex-direction: column-reverse;
+  }
+}
 #stay-in-touch .item_evento .inner.img_custom img {
   margin: 0 0 0 auto !important;
   display: block;

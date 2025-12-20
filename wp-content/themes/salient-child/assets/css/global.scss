@@ -425,6 +425,9 @@ html {
         }
       }
       &.img_custom {
+        @media(max-width:1000px) {
+          flex-direction: column-reverse;
+        }
         background-color: transparent;
         padding: 0 !important;
         padding: 0 20px !important;
