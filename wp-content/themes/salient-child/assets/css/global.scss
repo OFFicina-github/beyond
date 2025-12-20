@@ -24,6 +24,18 @@ html {
   opacity: 1 !important;
 }
 
+//utilities
+.desk{
+  @media(max-width:1000px) {
+    display: none !important;
+  }
+}
+.mob {
+  @media(min-width:1001px) {
+    display: none !important;
+  }
+}
+
 #hero {
   padding-top: 4vh !important;
   height: 90vh !important;
