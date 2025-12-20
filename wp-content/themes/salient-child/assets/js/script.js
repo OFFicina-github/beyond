@@ -615,7 +615,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const tags = Array.from(container.querySelectorAll(".tag"));
 
-    const padding = 24;
+    const padding = 80;
     const maxAttempts = 200;
     const delayBetween = 200; // 0.2s
 
