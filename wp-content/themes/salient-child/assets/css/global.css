@@ -340,6 +340,7 @@ html {
 }
 #stay-in-touch .item_evento .inner.img_custom {
   background-color: transparent;
+  padding: 0 !important;
 }
 #stay-in-touch .item_evento .inner.img_custom img {
   margin: 0 !important;

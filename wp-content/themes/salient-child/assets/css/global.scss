@@ -410,6 +410,7 @@ html {
       }
       &.img_custom {
         background-color: transparent;
+        padding: 0 !important;
         img {
           margin: 0 !important;
         }
