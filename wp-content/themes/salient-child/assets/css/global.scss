@@ -980,6 +980,9 @@ body.home {
         &::after {
           top: 10px;
           height: 67vh;
+          @media(max-width:1000px) {
+            height: 58%;
+          }
         }
 
         .inner {

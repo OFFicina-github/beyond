@@ -808,6 +808,13 @@ html {
     top: 10px;
     height: 67vh;
   }
+}
+@media screen and (max-width: 768px) and (max-width: 1000px) {
+  #servizi .nectar-post-grid-wrap .nectar-post-grid-item::after {
+    height: 58%;
+  }
+}
+@media screen and (max-width: 768px) {
   #servizi .nectar-post-grid-wrap .nectar-post-grid-item .inner {
     padding: 150px 16px 16px 16px;
   }
