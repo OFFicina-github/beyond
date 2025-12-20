@@ -405,8 +405,13 @@ html {
       gap:10px;
       flex-direction: column;
       justify-content: space-between;
-      &.text_custom p:last-child {
-        font-family: Georgia;
+      &.text_custom {
+        &.color_y {
+          color:#f2ef4a;
+        }
+        p:last-child {
+          font-family: Georgia;
+        }
       }
       &.img_custom {
         background-color: transparent;
