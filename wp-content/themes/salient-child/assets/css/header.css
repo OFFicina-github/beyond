@@ -208,6 +208,10 @@ body.home #header-outer.intro-ended {
     width: 100%;
   }
 }
+.footer-inner .footer-nav,
+.footer-inner .footer-info {
+  margin-bottom: 20px;
+}
 
 .off-canvas-menu-container ul li a {
   font-family: "polymath-text", sans-serif !important;

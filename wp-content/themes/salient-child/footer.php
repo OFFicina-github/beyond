@@ -69,7 +69,7 @@ nectar_hook_before_footer_open();
 
 		<div>
 			<div class="col-12">
-				<div class="row-info">
+				<div class="row-info desk">
 					<div>
 						© 2025 BEYOND SRL - P.I. 04552790240 - CAPITALE SOCIALE € 10.000 I.V.
 					</div>
@@ -80,6 +80,17 @@ nectar_hook_before_footer_open();
 							Privacy Policy
 						</a>
 						<a href="/cookie-policy">
+							Cookie Policy
+						</a>
+					</div>
+				</div>
+				<div class="row-info mob">
+					<div>
+						© 2025 BEYOND SRL - P.I. 04552790240 - CAPITALE SOCIALE € 10.000 I.V.
+						<a style="display:inline;" href="/privacy-policy">
+							Privacy Policy
+						</a>
+						<a style="display:inline;" href="/cookie-policy">
 							Cookie Policy
 						</a>
 					</div>
