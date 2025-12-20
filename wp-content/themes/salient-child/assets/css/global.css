@@ -821,6 +821,12 @@ html {
     min-height: 100vh !important;
   }
 }
+@media screen and (max-width: 768px) and (max-width: 1000px) {
+  #servizi .nectar-post-grid[data-grid-item-height="80vh"] .nectar-post-grid-item {
+    min-height: auto !important;
+    aspect-ratio: 1/1.8;
+  }
+}
 .align-items-end .row_col_wrap_12_inner {
   align-items: self-end;
 }
