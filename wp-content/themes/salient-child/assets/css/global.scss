@@ -1761,7 +1761,7 @@ html {
 
     &.mobile {
       display: block;
-
+      margin-top:-20vh;
       spline-viewer {
         height: 80vh;
         transform: scale(0.8);
@@ -1778,6 +1778,10 @@ html {
         position: static;
       }
     }
+  }
+
+  @media(max-width:1000px) {
+    padding-top: 100px;
   }
 }
 

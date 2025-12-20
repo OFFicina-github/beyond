@@ -1453,6 +1453,7 @@ html {
   }
   .experince-spline.mobile {
     display: block;
+    margin-top: -20vh;
   }
   .experince-spline.mobile spline-viewer {
     height: 80vh;
@@ -1468,6 +1469,11 @@ html {
 }
 #section_labels_dinamiche .colonna-hero > .vc_column-inner > .wpb_wrapper {
   position: static;
+}
+@media (max-width: 1000px) {
+  #section_labels_dinamiche {
+    padding-top: 100px;
+  }
 }
 
 #intro-overlay {
