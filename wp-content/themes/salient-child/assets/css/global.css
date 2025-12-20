@@ -320,8 +320,11 @@ html {
   color: #D9D9D9;
   font-size: 12px;
   font-weight: 500;
-  text-transform: unset;
+  text-transform: none;
   line-height: 1.2;
+}
+#stay-in-touch .item_evento .inner {
+  max-width: 170px;
 }
 
 .rotateWord.homepage {
