@@ -327,12 +327,13 @@ html {
 #stay-in-touch .item_evento .inner {
   max-width: 170px;
   background-color: #000;
-  padding: 4px 6px;
+  padding: 20px;
   border-radius: 20px;
   height: 120px;
   display: flex;
   gap: 10px;
   flex-direction: column;
+  justify-content: space-between;
 }
 #stay-in-touch .item_evento .inner.text_custom p:last-child {
   font-family: Georgia;
