@@ -332,6 +332,7 @@ html {
   height: 120px;
   display: flex;
   gap: 10px;
+  flex-direction: column;
 }
 #stay-in-touch .item_evento .inner.text_custom p:last-child {
   font-family: Georgia;
