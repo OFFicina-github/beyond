@@ -423,7 +423,7 @@ html {
       }
       &.img_custom {
         @media(max-width:1000px) {
-          flex-direction: column-reverse;
+          flex-direction: row-reverse;
         }
         background-color: transparent;
         padding: 0 !important;
@@ -431,6 +431,9 @@ html {
         img {
           margin: 0 0 0 auto !important;
           display: block;
+          @media(max-width:1000px) {
+            margin: 0 !important;
+          }
         }
         p {
           color:#fff !important;
@@ -442,9 +445,13 @@ html {
   .vc_col-sm-3 {
     .item_evento .inner.img_custom img {
       margin: 0  !important;
+      @media(max-width:1000px) {
+        flex-direction: row;
+      }
     }
   }
 }
+.item_evento,
 .inner {
   @media(max-width:1000px) {
     width: 100%;

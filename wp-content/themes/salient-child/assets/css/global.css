@@ -359,12 +359,17 @@ html {
 }
 @media (max-width: 1000px) {
   #stay-in-touch .item_evento .inner.img_custom {
-    flex-direction: column-reverse;
+    flex-direction: row-reverse;
   }
 }
 #stay-in-touch .item_evento .inner.img_custom img {
   margin: 0 0 0 auto !important;
   display: block;
+}
+@media (max-width: 1000px) {
+  #stay-in-touch .item_evento .inner.img_custom img {
+    margin: 0 !important;
+  }
 }
 #stay-in-touch .item_evento .inner.img_custom p {
   color: #fff !important;
@@ -373,8 +378,14 @@ html {
 #stay-in-touch .vc_col-sm-3 .item_evento .inner.img_custom img {
   margin: 0 !important;
 }
+@media (max-width: 1000px) {
+  #stay-in-touch .vc_col-sm-3 .item_evento .inner.img_custom img {
+    flex-direction: row;
+  }
+}
 
 @media (max-width: 1000px) {
+  .item_evento,
   .inner {
     width: 100%;
   }
