@@ -1259,6 +1259,11 @@ html {
 #modulo-contatti * {
   color: black;
 }
+@media (max-width: 1000px) {
+  #modulo-contatti {
+    top: -200px;
+  }
+}
 
 #hero-full,
 .hero-full {

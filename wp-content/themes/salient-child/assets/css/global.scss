@@ -1535,6 +1535,9 @@ body.home {
   * {
     color: black;
   }
+  @media(max-width:1000px) {
+    top: -200px;
+  }
 }
 
 #hero-full,
