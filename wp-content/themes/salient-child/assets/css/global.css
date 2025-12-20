@@ -333,7 +333,7 @@ html {
   display: flex;
   gap: 10px;
 }
-#stay-in-touch .item_evento .inner p:last-child {
+#stay-in-touch .item_evento .inner.text_custom p:last-child {
   font-family: Georgia;
 }
 

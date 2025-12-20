@@ -403,7 +403,7 @@ html {
       height: 120px;
       display: flex;
       gap:10px;
-      p:last-child {
+      &.text_custom p:last-child {
         font-family: Georgia;
       }
     }
