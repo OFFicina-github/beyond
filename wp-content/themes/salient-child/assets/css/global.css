@@ -579,6 +579,9 @@ html {
 .colonna-espandibile-esperienza .scribble-container {
   background-color: #141414;
 }
+.colonna-espandibile-esperienza:hover .scribble-container {
+  background-color: #252525;
+}
 
 #spline-container-full-height {
   height: 100vh;

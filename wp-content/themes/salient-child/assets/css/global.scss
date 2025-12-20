@@ -703,6 +703,11 @@ html {
   .scribble-container {
     background-color: #141414;
   }
+  &:hover {
+    .scribble-container {
+      background-color: #252525;
+    }
+  }
 }
 
 
