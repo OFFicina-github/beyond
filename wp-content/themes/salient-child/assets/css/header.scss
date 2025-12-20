@@ -245,7 +245,9 @@ body.home {
 
         .footer-info {
             font-size: 18px;
-
+            @media(min-width:1001px) {
+                text-align: right !important;
+            }
             a {
                 text-transform: none !important;
             }

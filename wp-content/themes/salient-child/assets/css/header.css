@@ -188,6 +188,11 @@ body.home #header-outer.intro-ended {
 .footer-inner .row .footer-info {
   font-size: 18px;
 }
+@media (min-width: 1001px) {
+  .footer-inner .row .footer-info {
+    text-align: right !important;
+  }
+}
 .footer-inner .row .footer-info a {
   text-transform: none !important;
 }
