@@ -703,6 +703,9 @@ html {
   .scribble-container {
     background-color: #141414;
   }
+  .vc_col-sm-4 .vc_column-inner > .wpb_wrapper {
+    transition: all 0.4s ease;
+  }
   .vc_col-sm-4 .vc_column-inner > .wpb_wrapper:hover {
     .scribble-container {
       background-color: #252525;
