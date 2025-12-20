@@ -44,12 +44,7 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
   }
 }
 
-/*#spline-container-full-height{
-    @media(max-width:690px){
-        margin-top: -290px;
-    }
-}
-.inner_row.spline-content {
+/*.inner_row.spline-content {
     .row_col_wrap_12_inner {
         .vc_col-sm-12 {
             @media(max-width:1024px){

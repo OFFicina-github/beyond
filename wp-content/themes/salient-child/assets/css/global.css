@@ -662,7 +662,8 @@ html {
     gap: 30px;
   }
   #spline-container-full-height {
-    height: 70vh;
+    height: 50vh;
+    margin-top: -20vh;
   }
   .spline-background .spline-content .vc_column-inner {
     max-width: 100%;
