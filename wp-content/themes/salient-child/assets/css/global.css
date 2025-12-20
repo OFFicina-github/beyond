@@ -335,7 +335,10 @@ html {
   flex-direction: column;
   justify-content: space-between;
 }
-#stay-in-touch .item_evento .inner.text_custom.color_y {
+#stay-in-touch .item_evento .inner.text_custom {
+  max-width: 170px;
+}
+#stay-in-touch .item_evento .inner.text_custom.color_y p {
   color: #f2ef4a;
 }
 #stay-in-touch .item_evento .inner.text_custom p:last-child {
@@ -344,6 +347,7 @@ html {
 #stay-in-touch .item_evento .inner.img_custom {
   background-color: transparent;
   padding: 0 !important;
+  padding: 0 20px !important;
 }
 #stay-in-touch .item_evento .inner.img_custom img {
   margin: 0 0 0 auto !important;

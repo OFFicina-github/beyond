@@ -406,8 +406,11 @@ html {
       flex-direction: column;
       justify-content: space-between;
       &.text_custom {
+        max-width: 170px;
         &.color_y {
-          color:#f2ef4a;
+          p {
+            color:#f2ef4a;
+          }
         }
         p:last-child {
           font-family: Georgia;
@@ -416,6 +419,7 @@ html {
       &.img_custom {
         background-color: transparent;
         padding: 0 !important;
+        padding: 0 20px !important;
         img {
           margin: 0 0 0 auto !important;
           display: block;
