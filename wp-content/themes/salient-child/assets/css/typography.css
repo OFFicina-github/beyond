@@ -102,6 +102,12 @@ select {
   color: #f6e937 !important;
 }
 
+@media (max-width: 1000px) {
+  .special_text {
+    font-size: 20px;
+  }
+}
+
 .icon {
   content: "";
 }

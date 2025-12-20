@@ -96,6 +96,12 @@ select {
     }
 }
 
+.special_text {
+    @media(max-width:1000px) {
+        font-size: 20px;
+    }
+}
+
 .icon {
     content: "";
 
