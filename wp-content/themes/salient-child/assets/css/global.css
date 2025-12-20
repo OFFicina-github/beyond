@@ -1472,7 +1472,7 @@ html {
 }
 @media (max-width: 1000px) {
   #section_labels_dinamiche {
-    padding-top: 100px;
+    padding-top: 100px !important;
   }
 }
 
