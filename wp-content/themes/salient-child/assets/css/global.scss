@@ -430,6 +430,11 @@ html {
       }
     }
   }
+  .vc_col-sm-3 {
+    .item_evento .inner.img_custom img {
+      margin: 0  !important;
+    }
+  }
 }
 
 .rotateWord.homepage {

@@ -354,6 +354,9 @@ html {
   color: #fff !important;
   white-space: nowrap;
 }
+#stay-in-touch .vc_col-sm-3 .item_evento .inner.img_custom img {
+  margin: 0 !important;
+}
 
 .rotateWord.homepage {
   max-width: 350px;
