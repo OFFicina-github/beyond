@@ -1348,6 +1348,19 @@ html {
   font-weight: 400;
   text-transform: uppercase;
 }
+.hero-full-affidi .colonna-hero > .vc_column-inner {
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hero-full-affidi .colonna-hero > .vc_column-inner::-webkit-scrollbar {
+  display: none;
+}
+.hero-full-affidi .colonna-hero > .vc_column-inner .wpb_wrapper {
+  display: flex;
+  justify-content: space-between;
+  min-width: 1300px;
+}
 
 #form-contatti {
   border-radius: 12px;

@@ -1633,6 +1633,20 @@ body.home {
       }
     }
   }
+
+  .colonna-hero > .vc_column-inner {
+    overflow:auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    & .wpb_wrapper {
+      display: flex;
+      justify-content: space-between;
+      min-width: 1300px;
+    }
+  }
 }
 
 
