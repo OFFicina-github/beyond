@@ -91,6 +91,11 @@ html {
     padding-right: 20vw;
   }
 
+  .scribble-container {
+    @media(min-width:1001px) {
+      min-width: 600px;
+    }
+  }
 }
 
 #servizi {

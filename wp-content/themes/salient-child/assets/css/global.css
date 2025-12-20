@@ -79,6 +79,11 @@ html {
 #hero .horizontal-scroll {
   padding-right: 20vw;
 }
+@media (min-width: 1001px) {
+  #hero .scribble-container {
+    min-width: 600px;
+  }
+}
 
 #servizi {
   counter-reset: section;
