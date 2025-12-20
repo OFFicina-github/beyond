@@ -512,7 +512,7 @@ html {
   top: 0;
   height: 100%;
   width: 44.67vw;
-  background-color: #1a1a1a;
+  background-color: #141414;
   border-radius: 20px;
   transition: all 0.4s ease;
   z-index: 1;
@@ -575,6 +575,9 @@ html {
     text-orientation: unset;
     transform: unset;
   }
+}
+.colonna-espandibile-esperienza .scribble-container {
+  background-color: #141414;
 }
 
 #spline-container-full-height {
