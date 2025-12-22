@@ -38,7 +38,8 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
 }
 
 @media (max-width: 1000px) {
-  spline-viewer {
+  spline-viewer,
+  hana-viewer {
     width: 140vw;
     margin-left: -20vw;
   }

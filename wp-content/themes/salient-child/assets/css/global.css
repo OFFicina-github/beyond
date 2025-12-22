@@ -115,6 +115,11 @@ html {
 #servizi .nectar-post-grid-wrap .nectar-post-grid[data-grid-item-height="80vh"] .nectar-post-grid-item {
   aspect-ratio: 1.5/1;
 }
+@media (max-width: 1000px) {
+  #servizi .nectar-post-grid-wrap .nectar-post-grid[data-grid-item-height="80vh"] .nectar-post-grid-item {
+    aspect-ratio: 1/1.8 !important;
+  }
+}
 #servizi .nectar-post-grid-wrap .nectar-post-grid .nectar-post-grid-item:nth-child(2) {
   top: 126px !important;
 }
@@ -837,8 +842,15 @@ html {
     gap: 30px;
   }
   #spline-container-full-height {
-    height: 50vh;
+    height: 70vh;
     margin-top: -20vh;
+  }
+  #spline-container-full-height hana-viewer,
+  #spline-container-full-height spline-viewer {
+    width: 100vw;
+    height: 70vh;
+    margin-left: 0 !important;
+    margin-top: -20vh !important;
   }
   .spline-background .spline-content .vc_column-inner {
     max-width: 100%;
@@ -933,7 +945,7 @@ html {
 }
 @media screen and (max-width: 768px) and (max-width: 1000px) {
   #servizi .nectar-post-grid-wrap .nectar-post-grid-item .inner {
-    padding: 120px 16px 16px 16px;
+    padding: 180px 16px 16px 16px;
   }
   #servizi .nectar-post-grid-wrap .nectar-post-grid-item .inner .content {
     padding-top: 20px;
@@ -1608,7 +1620,8 @@ html {
     display: block;
     margin-top: -20vh;
   }
-  .experince-spline.mobile spline-viewer {
+  .experince-spline.mobile spline-viewer,
+  .experince-spline.mobile hana-viewer {
     height: 80vh;
     transform: scale(0.8);
   }
@@ -1734,5 +1747,39 @@ html {
   }
   .intro-text {
     z-index: 2;
+  }
+}
+.nectar-post-grid.layout-stacked[data-grid-spacing="10px"] {
+  grid-row-gap: 70px;
+}
+
+.nectar-post-grid[data-grid-item-height="80vh"] .nectar-post-grid-item {
+  min-height: unset !important;
+}
+
+@media screen and (max-width: 768px) {
+  #servizi .nectar-post-grid[data-grid-item-height="80vh"] .nectar-post-grid-item {
+    min-height: unset !important;
+    padding: 0 !important;
+    width: 100% !important;
+    aspect-ratio: 1/1;
+    height: -webkit-fill-available;
+  }
+  #servizi .nectar-post-grid-wrap .nectar-post-grid-item::after {
+    height: 100%;
+  }
+}
+@media screen and (min-width: 769px) {
+  #servizi .nectar-post-grid[data-grid-item-height="80vh"] .nectar-post-grid-item {
+    min-height: unset !important;
+    padding: 0 !important;
+    width: 100% !important;
+    aspect-ratio: 1.2/1;
+    height: -webkit-fill-available;
+  }
+}
+@media screen and (max-width: 1000px) {
+  #spline-container-full-height {
+    margin-top: unset !important;
   }
 }/*# sourceMappingURL=global.css.map */

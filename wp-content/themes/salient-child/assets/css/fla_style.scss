@@ -48,7 +48,8 @@ body.home {
         }
     }
 }
-spline-viewer {
+spline-viewer,
+hana-viewer  {
     @media(max-width:1000px){
         width: 140vw;
         margin-left: -20vw;
