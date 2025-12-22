@@ -42,6 +42,9 @@ html {
   height: 90vh !important;
   padding-bottom: 0vh !important;
 
+  // bozza
+
+
   >.row_col_wrap_12 {
     height: 100%;
   }
@@ -107,6 +110,7 @@ html {
   //mob
   &.reputation-driven {
     @media(max-width:1000px) {
+
       h2.blackext-background,
       h2.blacktext-background {
         margin-top: -70px;
