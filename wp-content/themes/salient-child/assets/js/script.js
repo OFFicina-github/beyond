@@ -554,27 +554,30 @@ if (document.querySelector(".manifesto-wrapper")) {
 
 
 
-const tlHero = gsap.timeline({
-    scrollTrigger: {
-        trigger: "#hero.reputation-driven",
-        start: "top top",
-        end: "+=150%",   // scroll totale
-        scrub: true,
-        pin: true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-        onLeave: () => {
-            initSentenceAnimation();
+
+if (document.querySelector("#hero.reputation-driven")) {
+
+    const tlHero = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#hero.reputation-driven",
+            start: "top top",
+            end: "+=150%",   // scroll totale
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+            onLeave: () => {
+                initSentenceAnimation();
+            }
         }
-    }
-});
+    });
 
-// FADE VELOCE NELLA PRIMA PARTE DELLO SCROLL
-tlHero
-  .to(".subtitle-1", { opacity: 0, duration: 0.05 })
-  .to(".subtitle-2", { opacity: 1, duration: 0.01 }, "<")
-  .to({}, { duration: 0.8 });
-
+    // FADE VELOCE NELLA PRIMA PARTE DELLO SCROLL
+    tlHero
+        .to(".subtitle-1", { opacity: 0, duration: 0.05 })
+        .to(".subtitle-2", { opacity: 1, duration: 0.01 }, "<")
+        .to({}, { duration: 0.8 });
+}
 
 
 

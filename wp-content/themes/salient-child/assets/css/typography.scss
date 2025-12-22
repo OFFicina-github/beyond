@@ -102,6 +102,10 @@ select {
     }
 }
 
+.yellow-graziato .yellow {
+    font-family: "georgia", sans-serif !important;
+}
+
 .special_text {
     @media(max-width:1000px) {
         font-size: 20px;
