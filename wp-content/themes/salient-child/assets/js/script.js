@@ -653,35 +653,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-if (document.querySelector(".gif-tooltip")) {
+document.querySelectorAll(".highlight").forEach(trigger => {
+    const tooltipClass = trigger.dataset.tooltip;
+    const tooltip = document.querySelector("." + tooltipClass);
 
-    const trigger1 = document.querySelector(".gif-1");
-    const trigger2 = document.querySelector(".gif-2");
+    if (!tooltip) return;
 
-    const tooltip1 = document.querySelector(".tooltip-1");
-    const tooltip2 = document.querySelector(".tooltip-2");
+    trigger.addEventListener("mouseenter", () => {
+        tooltip.style.opacity = "1";
+        tooltip.style.pointerEvents = "none";
+    });
 
-    function attachTooltip(trigger, tooltip) {
-        trigger.addEventListener("mouseenter", () => {
-            tooltip.style.opacity = "1";
-        });
+    trigger.addEventListener("mouseleave", () => {
+        tooltip.style.opacity = "0";
+    });
 
-        trigger.addEventListener("mouseleave", () => {
-            tooltip.style.opacity = "0";
-        });
-
-        trigger.addEventListener("mousemove", e => {
-            tooltip.style.left = e.clientX + "px";
-            tooltip.style.top = e.clientY + "px";
-        });
-    }
-
-    attachTooltip(trigger1, tooltip1);
-    attachTooltip(trigger2, tooltip2);
-
-
-
-}
+    trigger.addEventListener("mousemove", e => {
+        tooltip.style.left = e.clientX + 15 + "px";
+        tooltip.style.top = e.clientY + 15 + "px";
+    });
+});
 
 
 

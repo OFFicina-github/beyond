@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #block-media-relations {
   margin-top: 10vh;
   /* header */
@@ -90,7 +91,7 @@
 
 .colonna-meme-media {
   /* FRASE EVIDENZIATA */
-  /* MINI GIF INLINE */
+  /* MINI GIF INLINE (opzionale, se la tieni) */
   /* TOOLTIP BASE */
   /* CARD */
   /* GIF GRANDE */
@@ -104,15 +105,17 @@
   background: #000;
   color: #f4ea00;
   border-radius: 0.4em;
+  cursor: pointer;
 }
 .colonna-meme-media .gif-trigger {
   width: 28px;
   height: 28px;
-  cursor: pointer;
   display: inline-block;
   background-size: cover;
   background-position: center;
   border-radius: 8px;
+  pointer-events: none;
+  /* 👈 fondamentale */
 }
 .colonna-meme-media .gif-trigger.gif-1 {
   background-image: url(../img/gif-1.gif);
@@ -127,6 +130,7 @@
   z-index: 9999;
   transform: translate(-50%, -60%);
   transition: opacity 0.15s ease;
+  will-change: transform, opacity;
 }
 .colonna-meme-media .gif-card {
   background: #000;
@@ -148,8 +152,10 @@
 @media screen and (max-width: 1000px) {
   .colonna-meme-media .gif-tooltip {
     width: 70%;
+    transform: translate(-50%, -80%);
   }
-  .colonna-meme-media .gif-tooltip img {
+  .colonna-meme-media .gif-card img {
+    width: 100%;
     height: auto;
   }
 }
