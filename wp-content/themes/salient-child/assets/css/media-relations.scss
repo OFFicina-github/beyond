@@ -116,6 +116,82 @@
     }
 }
 
+.colonna-meme-media {
+
+    /* FRASE EVIDENZIATA */
+    .highlight {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4em;
+        padding: 0.15em 0.35em;
+        background: #000;
+        color: #f4ea00;
+        border-radius: 0.4em;
+    }
+
+    /* MINI GIF INLINE */
+    .gif-trigger {
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+        display: inline-block;
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+    }
+
+    .gif-trigger.gif-1 {
+        background-image: url(../img/gif-1.gif);
+    }
+
+    .gif-trigger.gif-2 {
+        background-image: url(../img/gif-2.gif);
+    }
+
+    /* TOOLTIP BASE */
+    .gif-tooltip {
+        position: fixed;
+        pointer-events: none;
+        opacity: 0;
+        z-index: 9999;
+        transform: translate(-50%, -60%);
+        transition: opacity 0.15s ease;
+    }
+
+    /* CARD */
+    .gif-card {
+        background: #000;
+        border-radius: 22px;
+        padding: 10px;
+    }
+
+    /* GIF GRANDE */
+    .gif-card img {
+        width: 260px;
+        height: 260px;
+        display: block;
+        border-radius: 16px;
+    }
+
+    /* SOTTOTITOLO */
+    .gif-caption {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 1rem;
+        color: #f4ea00;
+    }
+
+    @media screen and (max-width: 1000px) {
+        .gif-tooltip{
+            width: 70%;
+            img{
+                height: auto;
+            }
+        }
+    }
+
+}
+
 @media screen and (max-width: 1000px) {
     #media-relations-block {
         margin-top: 12vh !important;
@@ -144,6 +220,7 @@
         .manifesto-col {
             max-width: 250px;
             margin: 0 auto;
+
             br {
                 display: none;
             }
