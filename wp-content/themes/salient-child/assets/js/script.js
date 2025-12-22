@@ -276,8 +276,8 @@ document.addEventListener("DOMContentLoaded", () => {
         container.querySelectorAll(".bubble-1, .bubble-2, .bubble-3")
     );
 
-    const safeMultiplier = window.innerWidth < 1000 ? 0.1 : 0.08;
-    const safeMultiplierHeight = window.innerWidth < 1000 ? 0.1 : 0.2;
+    const safeMultiplier = window.innerWidth < 1000 ? 0 : 0.08;
+    const safeMultiplierHeight = window.innerWidth < 1000 ? 0.2 : 0.2;
 
     const padding = 24;
     const maxAttempts = 200;
@@ -889,16 +889,7 @@ document.addEventListener("DOMContentLoaded", () => {
     svgs.forEach(svg => new StringImpulse(svg));
 })();
 
-
-
-
-
-
-
-
-
 // Animazione intro HP
-
 window.addEventListener('load', function () {
     if (!document.body.classList.contains('home')) return;
 
@@ -908,31 +899,33 @@ window.addEventListener('load', function () {
     const video = document.getElementById('intro-video');
     const header = document.getElementById('header-outer');
 
-    const introDuration = 3000; // durata intro prima dell’uscita
-    const exitDuration = 1200;  // durata animazione slide-up
-    const exitDurationHeader = 900;  // durata animazione slide-up
+    const introDuration = 2500;
+    const exitDuration = 2200;
+    const exitDurationHeader = 900;
+    const textExtraDelay = 1000; // ⏱ +1 secondo testo
 
     setTimeout(() => {
         overlay.classList.add('exit');
 
+        // ⬇️ TESTO / HEADER resta visibile più a lungo
+        setTimeout(() => {
+            if (header) {
+                header.classList.add('intro-ended');
+            }
+        }, exitDurationHeader + textExtraDelay);
+
+        // ⬇️ Fine animazione overlay
         setTimeout(() => {
             overlay.remove();
 
             document.documentElement.classList.remove('intro-lock');
             document.body.classList.remove('intro-lock');
 
-            // ✅ CLASSE AGGIUNTA AL HEADER
             if (header) {
                 header.classList.add('intro-ended');
             }
 
         }, exitDuration);
-
-        setTimeout(() => {
-            if (header) {
-                header.classList.add('intro-ended');
-            }
-        }, exitDurationHeader);
 
     }, introDuration);
 });

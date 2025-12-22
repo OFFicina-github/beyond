@@ -105,6 +105,10 @@
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
   }
+  #block-media-relations .manifesto-col {
+    max-width: 250px;
+    margin: 0 auto;
+  }
   #block-media-relations .manifesto-col br {
     display: none;
   }
@@ -113,5 +117,8 @@
   }
   #block-media-relations .manifesto-col p:last-of-type {
     padding-bottom: 12px;
+  }
+  #reputation-info {
+    margin-top: 80px;
   }
 }/*# sourceMappingURL=media-relations.css.map */

@@ -13,6 +13,10 @@ function salient_child_enqueue_styles()
     wp_enqueue_style('reputation-media-style', get_stylesheet_directory_uri() . '/assets/css/media-relations.css', '', $nectar_theme_version);
     wp_enqueue_style('salient-header-style', get_stylesheet_directory_uri() . '/assets/css/header.css', '', $nectar_theme_version);
 
+    // -fl4v10-
+    wp_enqueue_style('off-fla-style', get_stylesheet_directory_uri() . '/assets/css/fla_style.css', '', $nectar_theme_version);
+
+
     if (is_rtl()) {
         wp_enqueue_style('salient-rtl', get_template_directory_uri() . '/rtl.css', array(), '1', 'screen');
     }
@@ -34,10 +38,6 @@ function salient_child_enqueue_styles()
 
 }
 
-
-?>
-
-<?php
 // Abilitare il caricamento degli SVG su WordPress
 function abilita_caricamento_svg($mimes)
 {
