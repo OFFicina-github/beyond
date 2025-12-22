@@ -425,6 +425,99 @@ html {
     width: 100%;
   }
 }
+.item_evento .item_evento,
+.inner .item_evento {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+@media (max-width: 1000px) {
+  .item_evento .item_evento,
+  .inner .item_evento {
+    flex-direction: column-reverse;
+  }
+}
+.item_evento .item_evento p,
+.inner .item_evento p {
+  text-align: left;
+  color: rgba(217, 217, 217, 0.4509803922);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: none;
+  line-height: 1.2;
+  padding: 0 !important;
+}
+.item_evento .item_evento .inner,
+.inner .item_evento .inner {
+  background-color: #000;
+  padding: 20px;
+  border-radius: 20px;
+  height: 100px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (min-width: 1001px) {
+  .item_evento .item_evento .inner,
+  .inner .item_evento .inner {
+    max-width: 170px;
+  }
+}
+.item_evento .item_evento .inner.text_custom.color_y p,
+.inner .item_evento .inner.text_custom.color_y p {
+  color: #f2ef4a;
+}
+.item_evento .item_evento .inner.text_custom p:last-child,
+.inner .item_evento .inner.text_custom p:last-child {
+  font-family: Georgia;
+}
+.item_evento .item_evento .inner.img_custom,
+.inner .item_evento .inner.img_custom {
+  background-color: transparent;
+  padding: 0 !important;
+  padding: 0 20px !important;
+}
+@media (max-width: 1000px) {
+  .item_evento .item_evento .inner.img_custom,
+  .inner .item_evento .inner.img_custom {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+}
+.item_evento .item_evento .inner.img_custom img,
+.inner .item_evento .inner.img_custom img {
+  margin: 0 0 0 auto !important;
+  display: block;
+}
+@media (max-width: 1000px) {
+  .item_evento .item_evento .inner.img_custom img,
+  .inner .item_evento .inner.img_custom img {
+    margin: 0 !important;
+  }
+}
+.item_evento .item_evento .inner.img_custom p,
+.inner .item_evento .inner.img_custom p {
+  color: #fff !important;
+  white-space: nowrap;
+}
+.item_evento .vc_col-sm-3 .item_evento .inner.img_custom img,
+.inner .vc_col-sm-3 .item_evento .inner.img_custom img {
+  margin: 0 !important;
+}
+@media (max-width: 1000px) {
+  .item_evento .vc_col-sm-3 .item_evento .inner.img_custom img,
+  .inner .vc_col-sm-3 .item_evento .inner.img_custom img {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 1000px) {
+  .item_evento,
+  .inner {
+    width: 100%;
+  }
+}
 
 .rotateWord.homepage {
   max-width: 350px;
@@ -843,7 +936,7 @@ html {
 @media screen and (max-width: 768px) and (max-width: 1000px) {
   #servizi .nectar-post-grid[data-grid-item-height="80vh"] .nectar-post-grid-item {
     min-height: auto !important;
-    aspect-ratio: 1/1.8 !important;
+    aspect-ratio: 1/1.8;
   }
 }
 .align-items-end .row_col_wrap_12_inner {
