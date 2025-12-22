@@ -1,4 +1,3 @@
-@charset "UTF-8";
 #hero .titolo-hero {
   margin-bottom: 50px;
 }
@@ -17,14 +16,6 @@
 
 #servizi .nectar-post-grid-wrap {
   pointer-events: none;
-}
-#servizi .nectar-post-grid-wrap .nectar-post-grid-item.animated-in[data-post-id="49"] h2.post-heading::after {
-  content: "strategia, relazioni e operatività";
-  display: block;
-  font-size: min(30px, 5vw);
-  font-family: "IBM PLEX SANS";
-  line-height: 1.2;
-  margin-top: 20px;
 }
 #servizi .nectar-post-grid-wrap .nectar-post-grid-item.animated-in h2.post-heading {
   line-height: 1;

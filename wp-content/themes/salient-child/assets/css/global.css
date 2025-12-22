@@ -112,6 +112,9 @@ html {
   transform: translateY(95px);
   margin-bottom: 150px;
 }
+#servizi .nectar-post-grid-wrap .nectar-post-grid[data-grid-item-height="80vh"] .nectar-post-grid-item {
+  aspect-ratio: 1.5/1;
+}
 #servizi .nectar-post-grid-wrap .nectar-post-grid .nectar-post-grid-item:nth-child(2) {
   top: 126px !important;
 }
@@ -840,7 +843,7 @@ html {
 @media screen and (max-width: 768px) and (max-width: 1000px) {
   #servizi .nectar-post-grid[data-grid-item-height="80vh"] .nectar-post-grid-item {
     min-height: auto !important;
-    aspect-ratio: 1/1.8;
+    aspect-ratio: 1/1.8 !important;
   }
 }
 .align-items-end .row_col_wrap_12_inner {

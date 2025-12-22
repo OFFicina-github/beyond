@@ -35,14 +35,14 @@
       &[data-post-id="49"] {
 
         h2.post-heading {
-          &::after {
-            content: 'strategia, relazioni e operatività';
-            display: block;
-            font-size: min(30px,5vw);
-            font-family: 'IBM PLEX SANS';
-            line-height: 1.2;
-            margin-top: 20px;
-          }
+          // &::after {
+          //   content: 'strategia, relazioni e operatività';
+          //   display: block;
+          //   font-size: min(30px,5vw);
+          //   font-family: 'IBM PLEX SANS';
+          //   line-height: 1.2;
+          //   margin-top: 20px;
+          // }
         }
       }
 

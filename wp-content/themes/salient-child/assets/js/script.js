@@ -103,12 +103,32 @@ function raf(time) {
 requestAnimationFrame(raf);
 
 document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(() => {
-        document.querySelectorAll(".scribble").forEach(el => {
+
+    function initScribbles(container = document) {
+        container.querySelectorAll(".scribble").forEach(el => {
             ScrollTrigger.create({
                 trigger: el,
                 start: "top 80%",
-                once: true,          // 🔥 una sola volta
+                once: true,
+                onEnter: () => {
+                    requestAnimationFrame(() => {
+                        el.offsetWidth; // force reflow
+                        el.classList.add("started");
+                    });
+                }
+            });
+        });
+    }
+
+    /* ==========================
+       Scribble NORMALI → subito
+    ========================== */
+    document.querySelectorAll(".scribble:not(.delay-scribble .scribble)")
+        .forEach(el => {
+            ScrollTrigger.create({
+                trigger: el,
+                start: "top 80%",
+                once: true,
                 onEnter: () => {
                     requestAnimationFrame(() => {
                         el.offsetWidth;
@@ -117,8 +137,34 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         });
-    }, 1000);
+
+    /* ==========================
+       Scribble DELAYED → DOPO INTRO
+    ========================== */
+    const delayedContainer = document.querySelector(".delay-scribble");
+    if (!delayedContainer) return;
+
+    if (document.documentElement.classList.contains("intro-finished")) {
+        initScribbles(delayedContainer);
+        ScrollTrigger.refresh();
+        return;
+    }
+
+    const observer = new MutationObserver(() => {
+        if (document.documentElement.classList.contains("intro-finished")) {
+            initScribbles(delayedContainer);
+            ScrollTrigger.refresh();
+            observer.disconnect();
+        }
+    });
+
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["class"]
+    });
 });
+
+
 
 window.addEventListener('scroll', () => {
     const top = document.querySelector('#top');
@@ -693,7 +739,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
 
+        const svg = entry.target;
+        const instance = svg._stringImpulse;
+
+        if (instance && !instance.autoplayed) {
+            instance.autoplay(2);
+            instance.autoplayed = true;
+        }
+
+        observer.unobserve(svg);
+    });
+}, {
+    threshold: 0.35
+});
 
 
 (() => {
@@ -756,6 +818,13 @@ document.addEventListener("DOMContentLoaded", () => {
             this._render();
             this._raf = requestAnimationFrame(this._tick);
             svg.setAttribute("string-inited", "");
+
+            this.autoplayed = false;
+            this._autoplayTween = null;
+
+            svg._stringImpulse = this;
+            observer.observe(svg);
+
         }
 
         _svgCoords(e) {
@@ -884,6 +953,59 @@ document.addEventListener("DOMContentLoaded", () => {
             this._render();
             this._raf = requestAnimationFrame(this._tick);
         }
+
+        autoplay(times = 3) {
+            if (this._autoplayTween) return;
+
+            this.pointer.inside = true;
+            this.pointer.x = 0.5;
+
+            const obj = { y: this.y0 };
+            let count = 0;
+
+            this._autoplayTween = gsap.timeline({
+                onComplete: () => {
+                    this.pointer.inside = false;
+                    this.pointer.vy = 0;
+                    this._autoplayTween = null;
+                }
+            });
+
+            const pluck = () => {
+                this._autoplayTween
+                    .to(obj, {
+                        y: this.y0 + 0.32,
+                        duration: 0.35,
+                        ease: "power3.out",
+                        onUpdate: () => {
+                            this.pointer.y = obj.y;
+                            this.pointer.vy = 0.08;
+                            this._applyImpulse(false);
+                        }
+                    })
+                    .to(obj, {
+                        y: this.y0 - 0.22,
+                        duration: 0.25,
+                        ease: "power2.inOut",
+                        onUpdate: () => {
+                            this.pointer.y = obj.y;
+                            this.pointer.vy = -0.06;
+                            this._applyImpulse(false);
+                        }
+                    });
+            };
+
+            for (let i = 0; i < times; i++) {
+                pluck();
+
+                // micro pausa tra un colpo e l'altro
+                if (i < times - 1) {
+                    this._autoplayTween.to({}, { duration: 0.25 });
+                }
+            }
+        }
+
+
     }
 
     svgs.forEach(svg => new StringImpulse(svg));
@@ -924,6 +1046,8 @@ window.addEventListener('load', function () {
             if (header) {
                 header.classList.add('intro-ended');
             }
+
+            document.documentElement.classList.add('intro-finished');
 
         }, exitDuration);
 

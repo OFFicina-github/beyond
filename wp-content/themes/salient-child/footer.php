@@ -82,6 +82,7 @@ nectar_hook_before_footer_open();
 						<a href="/cookie-policy">
 							Cookie Policy
 						</a>
+						<a href="#" class="iubenda-cs-preferences-link">Impostazioni di tracciamento</a>
 					</div>
 				</div>
 				<div class="row-info mob">
