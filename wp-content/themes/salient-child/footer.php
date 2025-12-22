@@ -63,7 +63,7 @@ nectar_hook_before_footer_open();
 				<strong>VICENZA</strong><br>
 				Contra Santa Barbara, 33<br>
 				36100 - Vicenza<br>
-				<a href="mailto:media@beyondpress.it" > media@beyondpress.it</a>
+				<a href="mailto:media@beyondpress.it"> media@beyondpress.it</a>
 			</div>
 		</div>
 
@@ -89,22 +89,12 @@ nectar_hook_before_footer_open();
 					<div>
 						© 2025 BEYOND SRL - P.I. 04552790240 - CAPITALE SOCIALE € 10.000 I.V.
 						<a style="display:inline;" href="/privacy-policy">
-							 - Privacy Policy
+							- Privacy Policy
 						</a>
 						<a style="display:inline;" href="/cookie-policy">
-							 - Cookie Policy
+							- Cookie Policy
 						</a>
-					</div>
-				</div>
-				<div class="row-info mob">
-					<div>
-						© 2025 BEYOND SRL - P.I. 04552790240 - CAPITALE SOCIALE € 10.000 I.V.
-						<a style="display:inline;" href="/privacy-policy">
-							 - Privacy Policy
-						</a>
-						<a style="display:inline;" href="/cookie-policy">
-							 - Cookie Policy
-						</a>
+						<a href="#" class="iubenda-cs-preferences-link">Impostazioni di tracciamento</a>
 					</div>
 				</div>
 			</div>
