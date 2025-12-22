@@ -146,8 +146,6 @@ body.home {
 
     .nectar-post-grid-item {
 
-
-
       &::after {
         content: "";
         right: -8px;
@@ -433,9 +431,31 @@ body.home {
     display: flex;
     gap: 10px;
     align-items: center;
+
+    &.passati {
+      .evento-container {
+        gap: 10px;
+        align-items: center;
+        display: flex;
+        flex-direction: row-reverse;
+
+        @media(max-width:1000px) {
+          flex-direction: column;
+          width: 100%;
+        }
+      }
+    }
+
+    &.futuri {
+      @media(max-width:1000px) {
+        flex-direction: column;
+      }
+    }
+
     @media(max-width:1000px) {
       flex-direction: column-reverse;
     }
+
     p {
       text-align: left;
       color: #d9d9d973;
@@ -445,10 +465,12 @@ body.home {
       line-height: 1.2;
       padding: 0 !important;
     }
+
     .inner {
       @media(min-width:1001px) {
         max-width: 170px;
       }
+
       background-color: #000;
       padding: 20px;
       border-radius: 20px;
@@ -457,52 +479,64 @@ body.home {
       gap:10px;
       flex-direction: column;
       justify-content: space-between;
+
       &.text_custom {
         &.color_y {
           p {
-            color:#f2ef4a;
+            color: #f2ef4a;
           }
         }
+
         p:last-child {
           font-family: Georgia;
         }
       }
+
       &.img_custom {
         @media(max-width:1000px) {
           flex-direction: row-reverse;
           align-items: center;
         }
+
         background-color: transparent;
         padding: 0 !important;
         padding: 0 20px !important;
+
         img {
           margin: 0 0 0 auto !important;
           display: block;
+
           @media(max-width:1000px) {
             margin: 0 !important;
           }
         }
+
         p {
-          color:#fff !important;
-          white-space:nowrap;
+          color: #fff !important;
+          white-space: nowrap;
         }
       }
     }
   }
+
   .vc_col-sm-3 {
     .item_evento .inner.img_custom img {
-      margin: 0  !important;
+      margin: 0 !important;
+
       @media(max-width:1000px) {
         flex-direction: row;
       }
     }
   }
 }
+
 .item_evento,
 .inner {
   @media(max-width:1000px) {
     width: 100%;
-  }  .item_evento {
+  }
+
+  .item_evento {
     display: flex;
     gap: 10px;
     align-items: center;
@@ -914,17 +948,21 @@ body.home {
       }
     }
   }
+
   .scribble-container {
     background-color: #141414;
+
     i.icon {
       transform: scale(0.7);
       transform-origin: left 100%;
       width: 22px;
     }
   }
-  .vc_col-sm-4 .vc_column-inner > .wpb_wrapper .scribble-container {
+
+  .vc_col-sm-4 .vc_column-inner>.wpb_wrapper .scribble-container {
     transition: all 0.4s ease;
   }
+
   .vc_col-sm-4:hover {
     .scribble-container {
       background-color: #252525;
@@ -1079,6 +1117,7 @@ body.home {
         &::after {
           top: 10px;
           height: 67vh;
+
           @media(max-width:1000px) {
             height: 58%;
           }
@@ -1108,6 +1147,7 @@ body.home {
 
     .nectar-post-grid[data-grid-item-height="80vh"] .nectar-post-grid-item {
       min-height: 100vh !important;
+
       @media(max-width:1000px) {
         min-height: auto !important;
         aspect-ratio: 1/1.8;
@@ -1260,6 +1300,7 @@ body.home {
 
 .spline-bubble-background {
   min-height: 100vh;
+
   @media(max-width:1000px) {
     min-height: unset;
     height: 60vh;
@@ -1643,9 +1684,10 @@ body.home {
   * {
     color: black;
   }
+
   @media(max-width:1000px) {
     top: -200px;
-    margin-bottom:-150px;
+    margin-bottom: -150px;
   }
 }
 
@@ -1743,12 +1785,12 @@ body.home {
     }
   }
 
-  .colonna-hero > .vc_column-inner {
+  .colonna-hero>.vc_column-inner {
     & .wpb_wrapper {
       display: flex;
       justify-content: flex-start;
       gap: 0 30px;
-      flex-wrap:wrap;
+      flex-wrap: wrap;
     }
   }
 }
@@ -1900,7 +1942,8 @@ body.home {
 
     &.mobile {
       display: block;
-      margin-top:-20vh;
+      margin-top: -20vh;
+
       spline-viewer {
         height: 80vh;
         transform: scale(0.8);
@@ -1908,12 +1951,15 @@ body.home {
     }
   }
 }
+
 #section_labels_dinamiche {
   .colonna-hero {
     position: static;
-    & > .vc_column-inner {
+
+    &>.vc_column-inner {
       position: static;
-      & > .wpb_wrapper {
+
+      &>.wpb_wrapper {
         position: static;
       }
     }

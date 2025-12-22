@@ -351,6 +351,23 @@ html {
   gap: 10px;
   align-items: center;
 }
+#stay-in-touch .item_evento.passati .evento-container {
+  gap: 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+}
+@media (max-width: 1000px) {
+  #stay-in-touch .item_evento.passati .evento-container {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+@media (max-width: 1000px) {
+  #stay-in-touch .item_evento.futuri {
+    flex-direction: column;
+  }
+}
 @media (max-width: 1000px) {
   #stay-in-touch .item_evento {
     flex-direction: column-reverse;
