@@ -544,7 +544,7 @@ html {
 .rotateWord.homepage {
   max-width: 350px;
 }
-.rotateWord.homepage .splide {
+.rotateWord .splide {
   display: inline-flex;
 }
 
