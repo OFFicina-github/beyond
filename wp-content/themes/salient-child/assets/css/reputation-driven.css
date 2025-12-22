@@ -1,3 +1,57 @@
+#hero.reputation-driven {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  /* Titolo principale */
+  /* Wrapper dei sottotitoli */
+  /* Sottotitoli sovrapposti */
+  /* Stato iniziale */
+}
+#hero.reputation-driven .reputation-section {
+  position: relative;
+  height: 100%;
+}
+#hero.reputation-driven .title-main {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0;
+}
+#hero.reputation-driven .subtitle-wrapper {
+  position: relative;
+  margin-top: 1.2em;
+  /* distanza visiva dal titolo principale */
+}
+@media screen and (max-width: 1000px) {
+  #hero.reputation-driven .subtitle-wrapper {
+    margin-top: 0;
+  }
+}
+#hero.reputation-driven .subtitle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#hero.reputation-driven .subtitle-1 {
+  opacity: 1;
+}
+#hero.reputation-driven .subtitle-2 {
+  opacity: 0;
+}
+#hero.reputation-driven .colonna-hero > .vc_column-inner > .wpb_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+#hero.reputation-driven .colonna-hero > .vc_column-inner > .wpb_wrapper h2 {
+  text-align: center !important;
+}
+@media screen and (max-width: 1000px) {
+  #hero.reputation-driven .colonna-hero > .vc_column-inner > .wpb_wrapper h2 {
+    text-align: left !important;
+  }
+}
 #hero.reputation-driven .titolo-hero:first-of-type {
   margin-bottom: 0;
 }
@@ -263,12 +317,6 @@
   display: block;
   width: 100%;
   height: 20px;
-}
-
-.string {
-  stroke: black;
-  stroke-width: 1px;
-  fill: none;
 }
 
 .string {

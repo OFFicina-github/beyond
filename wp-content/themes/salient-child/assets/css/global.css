@@ -92,9 +92,9 @@ html {
   padding-right: 20vw;
 }
 @media (max-width: 1000px) {
-  #hero.reputation-driven h2.blackext-background {
+  #hero.reputation-driven h2.blackext-background,
+  #hero.reputation-driven h2.blacktext-background {
     margin-top: -70px;
-    max-width: 90%;
   }
   #hero.reputation-driven h4 {
     margin-top: -20%;

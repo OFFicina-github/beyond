@@ -107,9 +107,9 @@ html {
   //mob
   &.reputation-driven {
     @media(max-width:1000px) {
-      h2.blackext-background {
+      h2.blackext-background,
+      h2.blacktext-background {
         margin-top: -70px;
-        max-width: 90%;
       }
 
       h4 {

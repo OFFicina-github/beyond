@@ -238,20 +238,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 2300);
 });
 
-if (document.querySelector('.word-metodo')) {
-    /* POSIZIONI INIZIALI */
+function initSentenceAnimation() {
 
+    if (!document.querySelector('.word-metodo')) return;
+
+    /* POSIZIONI INIZIALI */
     if (window.innerWidth < 1000) {
         gsap.set(".word-metodo", { x: -200, y: 50 });
-    }
-    else {
+    } else {
         gsap.set(".word-metodo", { x: -400, y: 50 });
     }
 
     gsap.set(".word-consapevolezza", { x: 40, y: 10 });
     gsap.set(".word-immagine", { x: -80, y: 80 });
 
-    /* helper preciso centro-centro */
     function moveWordToSlot(wordSelector, slotSelector) {
         const word = document.querySelector(wordSelector);
         const slot = document.querySelector(slotSelector);
@@ -266,48 +266,37 @@ if (document.querySelector('.word-metodo')) {
             };
         };
 
-
         gsap.to(word, {
             x: () => `+=${getDelta().x}`,
             y: () => `+=${getDelta().y}`,
-            ease: "none", // IMPORTANTISSIMO per scroll fluido
+            ease: "none",
             scrollTrigger: {
                 trigger: ".sentence-block",
                 start: "top 100%",
-                end: "top 55%",   // ⬅ molto più spazio
-                scrub: 1,         // ⬅ smoothing
+                end: "top 55%",
+                scrub: 1,
                 snap: false,
                 onUpdate: self => {
-                    if (self.progress > 0.8) {
-                        document
-                            .querySelector(".sentence-block")
-                            .classList.add("is-near");
-                    } else {
-                        document
-                            .querySelector(".sentence-block")
-                            .classList.remove("is-near");
-                    }
-                }       // ⬅ togli snap per naturalezza
+                    document
+                        .querySelector(".sentence-block")
+                        .classList.toggle("is-near", self.progress > 0.8);
+                }
             }
         });
-
     }
 
-    /* highlight slot */
     ScrollTrigger.create({
         trigger: ".sentence-block",
         start: "top 75%",
         onEnter: () =>
-            document
-                .querySelector(".sentence-block")
-                .classList.add("is-active")
+            document.querySelector(".sentence-block").classList.add("is-active")
     });
 
-    /* associazioni */
     moveWordToSlot(".word-metodo", ".slot-metodo");
     moveWordToSlot(".word-consapevolezza", ".slot-consapevolezza");
     moveWordToSlot(".word-immagine", ".slot-immagine");
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -565,8 +554,26 @@ if (document.querySelector(".manifesto-wrapper")) {
 
 
 
+const tlHero = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#hero.reputation-driven",
+        start: "top top",
+        end: "+=150%",   // scroll totale
+        scrub: true,
+        pin: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        onLeave: () => {
+            initSentenceAnimation();
+        }
+    }
+});
 
-
+// FADE VELOCE NELLA PRIMA PARTE DELLO SCROLL
+tlHero
+  .to(".subtitle-1", { opacity: 0, duration: 0.05 })
+  .to(".subtitle-2", { opacity: 1, duration: 0.01 }, "<")
+  .to({}, { duration: 0.8 });
 
 
 

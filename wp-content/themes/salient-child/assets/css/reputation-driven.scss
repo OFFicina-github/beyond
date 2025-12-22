@@ -1,4 +1,65 @@
 #hero.reputation-driven {
+
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+
+    .reputation-section {
+        position: relative;
+        height: 100%;
+    }
+
+    /* Titolo principale */
+    .title-main {
+        position: relative;
+        z-index: 2;
+        margin-bottom: 0;
+    }
+
+    /* Wrapper dei sottotitoli */
+    .subtitle-wrapper {
+        position: relative;
+        margin-top: 1.2em;
+
+        @media screen and (max-width: 1000px) {
+            margin-top: 0;
+        }
+
+        /* distanza visiva dal titolo principale */
+    }
+
+    /* Sottotitoli sovrapposti */
+    .subtitle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    /* Stato iniziale */
+    .subtitle-1 {
+        opacity: 1;
+    }
+
+    .subtitle-2 {
+        opacity: 0;
+    }
+
+    .colonna-hero>.vc_column-inner>.wpb_wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+            text-align: center !important;
+            @media screen and (max-width: 1000px) {
+                text-align: left !important;
+            }
+        }
+
+        text-align: center;
+    }
+
     .titolo-hero {
         &:first-of-type {
             margin-bottom: 0;
@@ -24,8 +85,6 @@
                             content: url(../img/segno_grafico.svg);
                         }
                     }
-
-                    &::after {}
                 }
             }
         }
@@ -247,7 +306,8 @@
     @media screen and (max-width: 1000px) {
         margin-bottom: 15vh;
         margin-top: 5vh;
-        p{
+
+        p {
             font-size: 24px !important;
         }
     }
@@ -336,12 +396,6 @@
     display: block;
     width: 100%;
     height: 20px;
-}
-
-.string {
-    stroke: black;
-    stroke-width: 1px;
-    fill: none;
 }
 
 .string {
