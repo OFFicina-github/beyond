@@ -142,26 +142,29 @@ document.addEventListener("DOMContentLoaded", () => {
        Scribble DELAYED → DOPO INTRO
     ========================== */
     const delayedContainer = document.querySelector(".delay-scribble");
-    if (!delayedContainer) return;
+    setTimeout(() => {
 
-    if (document.documentElement.classList.contains("intro-finished")) {
-        initScribbles(delayedContainer);
-        ScrollTrigger.refresh();
-        return;
-    }
+        if (!delayedContainer) return;
 
-    const observer = new MutationObserver(() => {
-        if (document.documentElement.classList.contains("intro-finished")) {
+        if (document.body.classList.contains("intro-finished")) {
             initScribbles(delayedContainer);
             ScrollTrigger.refresh();
-            observer.disconnect();
+            return;
         }
-    });
 
-    observer.observe(document.documentElement, {
-        attributes: true,
-        attributeFilter: ["class"]
-    });
+        const observer = new MutationObserver(() => {
+            if (document.body.classList.contains("intro-finished")) {
+                initScribbles(delayedContainer);
+                ScrollTrigger.refresh();
+                observer.disconnect();
+            }
+        });
+
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ["class"]
+        });
+    }, 1000);
 });
 
 
@@ -1060,6 +1063,7 @@ window.addEventListener('load', function () {
         if (overlay) overlay.remove();
         if (header) header.classList.add('intro-ended');
         document.body.classList.remove('intro-lock');
+        document.body.classList.add('intro-finished');
         return;
     }
 
@@ -1093,8 +1097,9 @@ window.addEventListener('load', function () {
             if (overlay) overlay.remove();
             document.body.classList.remove('intro-lock');
             if (header) header.classList.add('intro-ended');
+            document.body.classList.add('intro-finished');
         }, exitDuration);
-
+        
     }, introDuration);
 });
 

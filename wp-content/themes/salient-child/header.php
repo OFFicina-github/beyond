@@ -7,7 +7,6 @@
 	<script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.25/build/spline-viewer.js"></script>
 
 	<script>
-		// Intro cookie – resta inline perché deve girare SUBITO
 		(function () {
 			const KEY = 'intro_seen';
 			const TTL = 60 * 60 * 1000;
@@ -28,6 +27,12 @@
 					#header-outer { opacity: 1 !important; }
 				`;
 				document.head.appendChild(style);
+
+				// ✅ BODY, NON HTML
+				document.addEventListener('DOMContentLoaded', () => {
+					document.body.classList.add('intro-finished');
+				});
+
 				window.__INTRO_SKIPPED__ = true;
 
 			} catch (e) {
