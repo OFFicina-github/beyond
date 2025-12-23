@@ -1,130 +1,95 @@
 <?php
 
-add_action('wp_enqueue_scripts', 'salient_child_enqueue_styles', 100);
-
-function salient_child_enqueue_styles()
+/* ---------------------------------------------------------
+ * ENQUEUE STYLES & SCRIPTS
+ * --------------------------------------------------------- */
+add_action('wp_enqueue_scripts', 'off_enqueue_assets', 100);
+function off_enqueue_assets()
 {
 
-    $nectar_theme_version = nectar_get_theme_version();
-    wp_enqueue_style('salient-child-font-style', get_stylesheet_directory_uri() . '/assets/css/typography.css', '', $nectar_theme_version);
-    wp_enqueue_style('salient-child-style', get_stylesheet_directory_uri() . '/assets/css/style.css', '', $nectar_theme_version);
-    wp_enqueue_style('salient-global-style', get_stylesheet_directory_uri() . '/assets/css/global.css', '', $nectar_theme_version);
-    wp_enqueue_style('reputation-driven-style', get_stylesheet_directory_uri() . '/assets/css/reputation-driven.css', '', $nectar_theme_version);
-    wp_enqueue_style('reputation-media-style', get_stylesheet_directory_uri() . '/assets/css/media-relations.css', '', $nectar_theme_version);
-    wp_enqueue_style('salient-header-style', get_stylesheet_directory_uri() . '/assets/css/header.css', '', $nectar_theme_version);
+    $version = nectar_get_theme_version();
 
-    // -fl4v10-
-    wp_enqueue_style('off-fla-style', get_stylesheet_directory_uri() . '/assets/css/fla_style.css', '', $nectar_theme_version);
 
+    /* CSS */
+    wp_enqueue_style('off-typography', get_stylesheet_directory_uri() . '/assets/css/typography.css', [], $version);
+    // wp_enqueue_style('off-style', get_stylesheet_directory_uri() . '/assets/css/style.css', [], $version);
+    wp_enqueue_style('salient-child-style', get_stylesheet_directory_uri() . '/assets/css/style.css', '', $version);
+    wp_enqueue_style('off-global', get_stylesheet_directory_uri() . '/assets/css/global.css', [], $version);
+    wp_enqueue_style('off-reputation-driven', get_stylesheet_directory_uri() . '/assets/css/reputation-driven.css', [], $version);
+    wp_enqueue_style('off-media-relations', get_stylesheet_directory_uri() . '/assets/css/media-relations.css', [], $version);
+    wp_enqueue_style('off-header', get_stylesheet_directory_uri() . '/assets/css/header.css', [], $version);
+    wp_enqueue_style('off-fla', get_stylesheet_directory_uri() . '/assets/css/fla_style.css', [], $version);
+
+    wp_enqueue_style(
+        'splide',
+        'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css',
+        [],
+        '4.1.4'
+    );
 
     if (is_rtl()) {
-        wp_enqueue_style('salient-rtl', get_template_directory_uri() . '/rtl.css', array(), '1', 'screen');
+        wp_enqueue_style('salient-rtl', get_template_directory_uri() . '/rtl.css', [], $version);
     }
 
-    wp_enqueue_script(
-        'child-custom-script',
-        get_stylesheet_directory_uri() . '/assets/js/script.js',
-        array('jquery'),
-        null,
-        true
-    );
-    wp_enqueue_script(
-        'child-custom-script-string',
-        get_stylesheet_directory_uri() . '/assets/js/string.js',
-        array('jquery'),
-        null,
-        true
-    );
+    /* JS LIBRARIES */
+    wp_enqueue_script('lenis', 'https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1/bundled/lenis.min.js', [], null, true);
+    wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js', [], null, true);
+    wp_enqueue_script('gsap-scrolltrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js', ['gsap'], null, true);
+    wp_enqueue_script('split-type', 'https://unpkg.com/split-type', [], null, true);
+    wp_enqueue_script('splide', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js', [], null, true);
+    wp_enqueue_script('matter', 'https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js', [], null, true);
 
+    /* CUSTOM JS */
+    wp_enqueue_script('off-main', get_stylesheet_directory_uri() . '/assets/js/script.js', ['jquery'], $version, true);
+    wp_enqueue_script('off-string', get_stylesheet_directory_uri() . '/assets/js/string.js', ['jquery'], $version, true);
+
+    /* SPLINE MODULE */
+    wp_enqueue_script(
+        'spline-init',
+        get_stylesheet_directory_uri() . '/assets/js/spline-init.js',
+        [],
+        $version,
+        true
+    );
 }
 
-// Abilitare il caricamento degli SVG su WordPress
-function abilita_caricamento_svg($mimes)
-{
+/* ---------------------------------------------------------
+ * SCRIPT MODULE ATTRIBUTES
+ * --------------------------------------------------------- */
+add_filter('script_loader_tag', function ($tag, $handle, $src) {
+    if ($handle === 'spline-init') {
+        return '<script type="module" src="' . esc_url($src) . '"></script>';
+    }
+    return $tag;
+}, 10, 3);
+
+/* ---------------------------------------------------------
+ * SVG SUPPORT
+ * --------------------------------------------------------- */
+add_filter('upload_mimes', function ($mimes) {
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
-}
-add_filter('upload_mimes', 'abilita_caricamento_svg');
+});
 
-// Pulizia e sicurezza degli SVG caricati
-function pulisci_svg($data, $file, $filename, $mimes, $real_mime)
-{
+add_filter('wp_check_filetype_and_ext', function ($data, $file, $filename) {
     if (strpos($filename, '.svg') !== false && function_exists('simplexml_load_file')) {
-        $xml = simplexml_load_file($file);
-        if (!$xml) {
-            // Blocca SVG malformati per evitare vulnerabilità
-            wp_die(__('Il file SVG contiene codice non valido o pericoloso.'));
+        if (!simplexml_load_file($file)) {
+            wp_die(__('SVG non valido.'));
         }
     }
     return $data;
-}
-add_filter('wp_check_filetype_and_ext', 'pulisci_svg', 10, 5);
+}, 10, 3);
 
-function add_excerpt_to_pages()
-{
+/* ---------------------------------------------------------
+ * EXTRAS
+ * --------------------------------------------------------- */
+add_action('init', function () {
     add_post_type_support('page', 'excerpt');
-}
-add_action('init', 'add_excerpt_to_pages');
-
-
-function add_module_attribute_to_spline($tag, $handle)
-{
-    if ($handle === 'spline-viewer') {
-        return str_replace('<script ', '<script type="module" ', $tag);
-    }
-    return $tag;
-}
-add_filter('script_loader_tag', 'add_module_attribute_to_spline', 10, 2);
-
-function add_gsap_scripts()
-{
-    wp_enqueue_script(
-        'gsap',
-        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js',
-        array(),
-        null,
-        true
-    );
-
-    wp_enqueue_script(
-        'gsap-scrolltrigger',
-        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js',
-        array('gsap'),
-        null,
-        true
-    );
-}
-add_action('wp_enqueue_scripts', 'add_gsap_scripts');
-
-function off_register_footer_menu()
-{
-    register_nav_menus(
-        array(
-            'footer_menu' => __('Footer Menu', 'off-theme'),
-        )
-    );
-    register_nav_menus(
-        array(
-            'footer_social_menu' => __('Footer Social Menu', 'off-theme'),
-        )
-    );
-}
-add_action('after_setup_theme', 'off_register_footer_menu');
-
-add_action('wp_enqueue_scripts', function () {
-
-  wp_enqueue_script(
-    'spline-init',
-    get_stylesheet_directory_uri() . '/assets/js/spline-init.js',
-    [],
-    null,
-    true
-  );
 });
 
-add_filter('script_loader_tag', function ($tag, $handle, $src) {
-  if ($handle === 'spline-init') {
-    return '<script type="module" src="' . esc_url($src) . '"></script>';
-  }
-  return $tag;
-}, 10, 3);
+add_action('after_setup_theme', function () {
+    register_nav_menus([
+        'footer_menu' => __('Footer Menu', 'off-theme'),
+        'footer_social_menu' => __('Footer Social Menu', 'off-theme'),
+    ]);
+});
