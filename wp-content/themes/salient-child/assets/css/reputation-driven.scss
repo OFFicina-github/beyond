@@ -18,14 +18,16 @@
 
     /* Wrapper dei sottotitoli */
     .subtitle-wrapper {
+        max-width: 70%;
+        margin-right: auto;
+        margin-left: auto;
         position: relative;
         margin-top: 1.2em;
 
         @media screen and (max-width: 1000px) {
             margin-top: 0;
+            max-width: 100%;
         }
-
-        /* distanza visiva dal titolo principale */
     }
 
     /* Sottotitoli sovrapposti */
@@ -66,9 +68,14 @@
         }
     }
 
+    .colonna-title-reputation {
+        margin-bottom: 120px !important;
+    }
+
     @media screen and (max-width: 1000px) {
 
         .colonna-title-reputation {
+            margin-bottom: 60px !important;
             .vc_column-inner {
                 padding-right: 0 !important;
 
@@ -105,7 +112,7 @@
     }
 
     h2 {
-        font-size: clamp(32px, 6vw, 64px) !important;
+        font-size: clamp(32px, 5vw, 64px) !important;
         line-height: 1.2 !important;
 
         .black-bg {

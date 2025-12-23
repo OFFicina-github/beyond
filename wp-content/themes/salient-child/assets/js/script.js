@@ -574,8 +574,16 @@ if (document.querySelector("#hero.reputation-driven")) {
 
     // FADE VELOCE NELLA PRIMA PARTE DELLO SCROLL
     tlHero
-        .to(".subtitle-1", { opacity: 0, duration: 0.05 })
-        .to(".subtitle-2", { opacity: 1, duration: 0.01 }, "<")
+        .to(".subtitle-1", {
+            opacity: 0,
+            duration: 0.02,
+            ease: "steps(1)"
+        })
+        .to(".subtitle-2", {
+            opacity: 1,
+            duration: 0.02,
+            ease: "steps(1)"
+        }, "<")
         .to({}, { duration: 0.8 });
 }
 
@@ -1044,50 +1052,50 @@ const observer = new IntersectionObserver((entries) => {
 
 window.addEventListener('load', function () {
 
-  const overlay = document.getElementById('intro-overlay');
-  const header = document.getElementById('header-outer');
+    const overlay = document.getElementById('intro-overlay');
+    const header = document.getElementById('header-outer');
 
-  // ⛔️ INTRO BLOCCATA
-  if (window.__INTRO_SKIPPED__) {
-    if (overlay) overlay.remove();
-    if (header) header.classList.add('intro-ended');
-    document.body.classList.remove('intro-lock');
-    return;
-  }
+    // ⛔️ INTRO BLOCCATA
+    if (window.__INTRO_SKIPPED__) {
+        if (overlay) overlay.remove();
+        if (header) header.classList.add('intro-ended');
+        document.body.classList.remove('intro-lock');
+        return;
+    }
 
-  // ⛔️ Non home → niente intro
-  if (!document.body.classList.contains('home')) {
-    if (overlay) overlay.remove();
-    return;
-  }
+    // ⛔️ Non home → niente intro
+    if (!document.body.classList.contains('home')) {
+        if (overlay) overlay.remove();
+        return;
+    }
 
-  // ✅ INTRO PARTE → MARCA SUBITO
-  localStorage.setItem(
-    'intro_seen',
-    JSON.stringify({ time: Date.now() })
-  );
+    // ✅ INTRO PARTE → MARCA SUBITO
+    localStorage.setItem(
+        'intro_seen',
+        JSON.stringify({ time: Date.now() })
+    );
 
-  document.body.classList.add('intro-lock');
+    document.body.classList.add('intro-lock');
 
-  const introDuration = 2500;
-  const exitDuration = 2200;
-  const exitDurationHeader = 900;
-  const textExtraDelay = 1000;
-
-  setTimeout(() => {
-    overlay.classList.add('exit');
+    const introDuration = 2500;
+    const exitDuration = 2200;
+    const exitDurationHeader = 900;
+    const textExtraDelay = 1000;
 
     setTimeout(() => {
-      if (header) header.classList.add('intro-ended');
-    }, exitDurationHeader + textExtraDelay);
+        overlay.classList.add('exit');
 
-    setTimeout(() => {
-      if (overlay) overlay.remove();
-      document.body.classList.remove('intro-lock');
-      if (header) header.classList.add('intro-ended');
-    }, exitDuration);
+        setTimeout(() => {
+            if (header) header.classList.add('intro-ended');
+        }, exitDurationHeader + textExtraDelay);
 
-  }, introDuration);
+        setTimeout(() => {
+            if (overlay) overlay.remove();
+            document.body.classList.remove('intro-lock');
+            if (header) header.classList.add('intro-ended');
+        }, exitDuration);
+
+    }, introDuration);
 });
 
 

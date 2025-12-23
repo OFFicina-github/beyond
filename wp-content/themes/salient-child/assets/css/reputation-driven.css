@@ -17,13 +17,16 @@
   margin-bottom: 0;
 }
 #hero.reputation-driven .subtitle-wrapper {
+  max-width: 70%;
+  margin-right: auto;
+  margin-left: auto;
   position: relative;
   margin-top: 1.2em;
-  /* distanza visiva dal titolo principale */
 }
 @media screen and (max-width: 1000px) {
   #hero.reputation-driven .subtitle-wrapper {
     margin-top: 0;
+    max-width: 100%;
   }
 }
 #hero.reputation-driven .subtitle {
@@ -55,7 +58,13 @@
 #hero.reputation-driven .titolo-hero:first-of-type {
   margin-bottom: 0;
 }
+#hero.reputation-driven .colonna-title-reputation {
+  margin-bottom: 120px !important;
+}
 @media screen and (max-width: 1000px) {
+  #hero.reputation-driven .colonna-title-reputation {
+    margin-bottom: 60px !important;
+  }
   #hero.reputation-driven .colonna-title-reputation .vc_column-inner {
     padding-right: 0 !important;
   }
@@ -84,7 +93,7 @@
   }
 }
 .title-reputation h2 {
-  font-size: clamp(32px, 6vw, 64px) !important;
+  font-size: clamp(32px, 5vw, 64px) !important;
   line-height: 1.2 !important;
 }
 .title-reputation h2 .black-bg {
