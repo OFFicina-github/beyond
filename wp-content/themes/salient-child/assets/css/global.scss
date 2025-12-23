@@ -466,12 +466,17 @@ body.home {
 
     p {
       text-align: left;
-      color: #d9d9d973;
-      font-size: 12px;
+      color: #c9c9c9;
+      font-size: 14px;
       font-weight: 500;
       text-transform: none;
       line-height: 1.2;
       padding: 0 !important;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      /* numero di righe */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .inner {
@@ -482,7 +487,7 @@ body.home {
       background-color: #000;
       padding: 20px;
       border-radius: 20px;
-      height: 100px;
+      height: 105px;
       display: flex;
       gap:10px;
       flex-direction: column;
@@ -555,7 +560,7 @@ body.home {
 
     p {
       text-align: left;
-      color: #d9d9d973;
+      color: #c9c9c9;
       font-size: 12px;
       font-weight: 500;
       text-transform: none;
