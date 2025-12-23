@@ -66,17 +66,6 @@ function add_excerpt_to_pages()
 }
 add_action('init', 'add_excerpt_to_pages');
 
-function enqueue_spline_viewer()
-{
-    wp_enqueue_script(
-        'spline-viewer',
-        'https://unpkg.com/@splinetool/viewer@1.12.6/build/spline-viewer.js',
-        array(),
-        null,
-        true
-    );
-}
-add_action('wp_enqueue_scripts', 'enqueue_spline_viewer');
 
 function add_module_attribute_to_spline($tag, $handle)
 {

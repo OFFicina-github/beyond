@@ -1082,3 +1082,111 @@ window.addEventListener('load', function () {
 
     }, introDuration);
 });
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    if (document.getElementById("physics-logos")) {
+
+        (() => {
+            const {
+                Engine,
+                Render,
+                Runner,
+                Bodies,
+                Composite,
+                Mouse,
+                MouseConstraint
+            } = Matter;
+
+            const container = document.getElementById("physics-logos");
+            if (!container) return;
+
+            const width = container.offsetWidth;
+            const height = container.offsetHeight;
+
+            const engine = Engine.create();
+            engine.gravity.y = 1;
+
+            const render = Render.create({
+                element: container,
+                engine,
+                options: {
+                    width,
+                    height,
+                    wireframes: false,
+                    background: "transparent"
+                }
+            });
+
+            Render.run(render);
+            Runner.run(Runner.create(), engine);
+
+            /* BORDI */
+            Composite.add(engine.world, [
+                Bodies.rectangle(width / 2, height + 60, width, 120, { isStatic: true }),
+                Bodies.rectangle(-60, height / 2, 120, height, { isStatic: true }),
+                Bodies.rectangle(width + 60, height / 2, 120, height, { isStatic: true })
+            ]);
+
+            /* ARRAY LOGHI (FACILE DA CAMBIARE IN FUTURO) */
+            const logos = [
+                ...Array(20).fill({
+                    src: "https://beyondpress.it/wp-content/uploads/2025/12/logo-youtrend.svg",
+                    width: 140,
+                    height: 60
+                })
+            ];
+
+            // const logos = [
+            //     { src: "logo-1.svg", width: 120, height: 50 },
+            //     { src: "logo-2.svg", width: 160, height: 70 },
+            //     { src: "logo-3.svg", width: 100, height: 40 },
+            //     ...
+            // ];
+
+            const bodies = [];
+
+            logos.forEach((logo, i) => {
+                const body = Bodies.rectangle(
+                    Math.random() * width,
+                    -100 - i * 80,
+                    logo.width,
+                    logo.height,
+                    {
+                        restitution: 0.6,
+                        friction: 0.3,
+                        render: {
+                            sprite: {
+                                texture: logo.src,
+                                xScale: logo.width / 300,
+                                yScale: logo.height / 120
+                            }
+                        }
+                    }
+                );
+
+                bodies.push(body);
+            });
+
+            Composite.add(engine.world, bodies);
+
+            /* DRAG */
+            const mouse = Mouse.create(container);
+            const mouseConstraint = MouseConstraint.create(engine, {
+                mouse,
+                constraint: {
+                    stiffness: 0.2,
+                    render: { visible: false }
+                }
+            });
+
+            Composite.add(engine.world, mouseConstraint);
+            render.mouse = mouse;
+        })();
+    }
+
+});

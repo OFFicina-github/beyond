@@ -142,7 +142,7 @@ body.home {
       aspect-ratio: 1.5 / 1;
 
       @media(max-width:1000px) {
-        aspect-ratio: 1 / 1.8 !important;
+        aspect-ratio: 1.5 / 1.8 !important;
       }
     }
 
@@ -639,6 +639,7 @@ body.home {
     max-width: 350px;
 
   }
+
   .splide {
     display: inline-flex;
   }
@@ -2143,5 +2144,28 @@ body.home {
 @media screen and (max-width: 1000px) {
   #spline-container-full-height {
     margin-top: unset !important;
+  }
+}
+
+.falling-section {
+
+  position: absolute;
+  margin-top: -100vh;
+
+  .falling-logos-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: transparent;
+    overflow: hidden;
+  }
+
+  #physics-logos {
+    width: 100%;
+    height: 100%;
+  }
+
+  canvas {
+    display: block;
   }
 }
