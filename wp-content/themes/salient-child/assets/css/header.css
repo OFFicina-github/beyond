@@ -10,6 +10,16 @@ body.home #header-outer.intro-ended {
   opacity: 1;
 }
 
+html.intro-skip #intro-overlay {
+  display: none !important;
+}
+html.intro-skip body {
+  overflow: auto !important;
+}
+html.intro-skip #header-outer {
+  opacity: 1 !important;
+}
+
 #header-outer {
   -webkit-backdrop-filter: unset !important;
   backdrop-filter: unset !important;

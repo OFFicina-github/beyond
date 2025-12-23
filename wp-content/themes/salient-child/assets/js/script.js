@@ -1040,48 +1040,56 @@ const observer = new IntersectionObserver((entries) => {
     svgs.forEach(svg => new StringImpulse(svg));
 })();
 
-// Animazione intro HP
+
+
 window.addEventListener('load', function () {
-    if (!document.body.classList.contains('home')) return;
 
-    document.body.classList.add('intro-lock');
+  const overlay = document.getElementById('intro-overlay');
+  const header = document.getElementById('header-outer');
 
-    const overlay = document.getElementById('intro-overlay');
-    const video = document.getElementById('intro-video');
-    const header = document.getElementById('header-outer');
+  // ⛔️ INTRO BLOCCATA
+  if (window.__INTRO_SKIPPED__) {
+    if (overlay) overlay.remove();
+    if (header) header.classList.add('intro-ended');
+    document.body.classList.remove('intro-lock');
+    return;
+  }
 
-    const introDuration = 2500;
-    const exitDuration = 2200;
-    const exitDurationHeader = 900;
-    const textExtraDelay = 1000; // ⏱ +1 secondo testo
+  // ⛔️ Non home → niente intro
+  if (!document.body.classList.contains('home')) {
+    if (overlay) overlay.remove();
+    return;
+  }
+
+  // ✅ INTRO PARTE → MARCA SUBITO
+  localStorage.setItem(
+    'intro_seen',
+    JSON.stringify({ time: Date.now() })
+  );
+
+  document.body.classList.add('intro-lock');
+
+  const introDuration = 2500;
+  const exitDuration = 2200;
+  const exitDurationHeader = 900;
+  const textExtraDelay = 1000;
+
+  setTimeout(() => {
+    overlay.classList.add('exit');
 
     setTimeout(() => {
-        overlay.classList.add('exit');
+      if (header) header.classList.add('intro-ended');
+    }, exitDurationHeader + textExtraDelay);
 
-        // ⬇️ TESTO / HEADER resta visibile più a lungo
-        setTimeout(() => {
-            if (header) {
-                header.classList.add('intro-ended');
-            }
-        }, exitDurationHeader + textExtraDelay);
+    setTimeout(() => {
+      if (overlay) overlay.remove();
+      document.body.classList.remove('intro-lock');
+      if (header) header.classList.add('intro-ended');
+    }, exitDuration);
 
-        // ⬇️ Fine animazione overlay
-        setTimeout(() => {
-            overlay.remove();
-
-            document.documentElement.classList.remove('intro-lock');
-            document.body.classList.remove('intro-lock');
-
-            if (header) {
-                header.classList.add('intro-ended');
-            }
-
-            document.documentElement.classList.add('intro-finished');
-
-        }, exitDuration);
-
-    }, introDuration);
+  }, introDuration);
 });
+
 
 
 

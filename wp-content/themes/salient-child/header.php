@@ -11,7 +11,41 @@
 	<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
-	
+
+	<script>
+		// Questa cosa serve per settare un cookie per l'intro, una volta che l'hai vista per un'ore non la vedi 
+		(function () {
+			const KEY = 'intro_seen';
+			const TTL = 1 * 60 * 60 * 1000; // 1 ore
+
+			try {
+				const raw = localStorage.getItem(KEY);
+				if (!raw) return;
+
+				const data = JSON.parse(raw);
+				if (Date.now() - data.time > TTL) {
+					localStorage.removeItem(KEY);
+					return;
+				}
+
+				// 👉 INTRO GIÀ VISTA → BLOCCA SUBITO
+				const style = document.createElement('style');
+				style.innerHTML = `
+					#intro-overlay { display: none !important; }
+					#header-outer { opacity: 1 !important; }
+				`;
+				document.head.appendChild(style);
+
+				// flag utile per JS
+				window.__INTRO_SKIPPED__ = true;
+
+			} catch (e) {
+				localStorage.removeItem(KEY);
+			}
+		})();
+	</script>
+
+
 	<script type="importmap">
 	  {
 		"imports": {

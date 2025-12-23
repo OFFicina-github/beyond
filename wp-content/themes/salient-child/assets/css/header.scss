@@ -18,6 +18,20 @@ body.home {
     }
 }
 
+html.intro-skip {
+  #intro-overlay {
+    display: none !important;
+  }
+
+  body {
+    overflow: auto !important;
+  }
+
+  #header-outer {
+    opacity: 1 !important;
+  }
+}
+
 #header-outer {
     -webkit-backdrop-filter: unset !important;
     backdrop-filter: unset !important;
