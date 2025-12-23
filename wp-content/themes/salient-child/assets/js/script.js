@@ -1088,7 +1088,7 @@ window.addEventListener('load', function () {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-
+    // Animazione cose che cadono
     if (document.getElementById("physics-logos")) {
 
         (() => {
