@@ -224,7 +224,7 @@ html.intro-skip #header-outer {
 }
 @media (max-width: 1000px) {
   .footer-inner .footer-nav {
-    margin-top: 160px;
+    margin-top: 0px;
   }
 }
 
@@ -289,7 +289,8 @@ html.intro-skip #header-outer {
     padding-left: 8px;
     color: white !important;
   }
-  #linea-con-occhi .text-occhi a, #linea-con-occhi .text-occhi * {
+  #linea-con-occhi .text-occhi a,
+  #linea-con-occhi .text-occhi * {
     color: white !important;
   }
   .footer-inner {

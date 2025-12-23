@@ -1,76 +1,84 @@
+ /*
+Theme Name: Salient child
+Theme URI: https://example.com/
+Description: Figlio di Salient
+Author: Off 
+Version: 1.0
+*/
+
  #hero {
 
-  .titolo-hero {
-    margin-bottom: 50px;
-  }
+   .titolo-hero {
+     margin-bottom: 50px;
+   }
 
-  .cta {
+   .cta {
 
-    .wpb_wrapper {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 3vw;
+     .wpb_wrapper {
+       display: flex;
+       align-items: flex-end;
+       justify-content: space-between;
+       gap: 3vw;
 
-      > div {
-          &.nectar-responsive-text {
-            width: 100%;
-          
-          p {
-          text-align: right;
-          }
-        }
-      }
-    }
-  }
-}
+       >div {
+         &.nectar-responsive-text {
+           width: 100%;
 
-#servizi {
+           p {
+             text-align: right;
+           }
+         }
+       }
+     }
+   }
+ }
 
-  .nectar-post-grid-wrap {
-    pointer-events: none;
+ #servizi {
 
-    .nectar-post-grid-item.animated-in {
-      
-      &[data-post-id="49"] {
+   .nectar-post-grid-wrap {
+     pointer-events: none;
 
-        h2.post-heading {
-          // &::after {
-          //   content: 'strategia, relazioni e operatività';
-          //   display: block;
-          //   font-size: min(30px,5vw);
-          //   font-family: 'IBM PLEX SANS';
-          //   line-height: 1.2;
-          //   margin-top: 20px;
-          // }
-        }
-      }
+     .nectar-post-grid-item.animated-in {
 
-      h2.post-heading {
-        line-height: 1;
+       &[data-post-id="49"] {
 
-        @media screen and (max-width: 767px) {
-          font-size: clamp(30px, 12vw, 37px) !important;
-        }
+         h2.post-heading {
+           // &::after {
+           //   content: 'strategia, relazioni e operatività';
+           //   display: block;
+           //   font-size: min(30px,5vw);
+           //   font-family: 'IBM PLEX SANS';
+           //   line-height: 1.2;
+           //   margin-top: 20px;
+           // }
+         }
+       }
 
-        @media screen and (min-width: 768px) and (max-width: 999px) {
-          font-size: clamp(40px, 12vw, 47px) !important;
-        }
-      }
-    }
+       h2.post-heading {
+         line-height: 1;
 
-    .nectar-post-grid-item__meta-wrap {
-      display: none;
-    }
-  }
-}
+         @media screen and (max-width: 767px) {
+           font-size: clamp(30px, 12vw, 37px) !important;
+         }
 
-#contatti {
-  .text.nectar-text-reveal-button__text {
-    line-height: 1.2;
+         @media screen and (min-width: 768px) and (max-width: 999px) {
+           font-size: clamp(40px, 12vw, 47px) !important;
+         }
+       }
+     }
 
-    @media screen and (max-width: 690px) {
-      font-size: min(20px,10vw) !important;
-    }
-  }
-}
+     .nectar-post-grid-item__meta-wrap {
+       display: none;
+     }
+   }
+ }
+
+ #contatti {
+   .text.nectar-text-reveal-button__text {
+     line-height: 1.2;
+
+     @media screen and (max-width: 690px) {
+       font-size: min(20px, 10vw) !important;
+     }
+   }
+ }

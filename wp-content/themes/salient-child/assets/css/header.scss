@@ -19,17 +19,17 @@ body.home {
 }
 
 html.intro-skip {
-  #intro-overlay {
-    display: none !important;
-  }
+    #intro-overlay {
+        display: none !important;
+    }
 
-  body {
-    overflow: auto !important;
-  }
+    body {
+        overflow: auto !important;
+    }
 
-  #header-outer {
-    opacity: 1 !important;
-  }
+    #header-outer {
+        opacity: 1 !important;
+    }
 }
 
 #header-outer {
@@ -259,9 +259,11 @@ html.intro-skip {
 
         .footer-info {
             font-size: 18px;
+
             @media(min-width:1001px) {
                 text-align: right !important;
             }
+
             a {
                 text-transform: none !important;
             }
@@ -288,9 +290,10 @@ html.intro-skip {
     .footer-info {
         margin-bottom: 60px;
     }
+
     .footer-nav {
         @media(max-width:1000px) {
-            margin-top:160px;
+            margin-top: 0px;
         }
     }
 }
@@ -362,7 +365,7 @@ html.intro-skip {
                 -webkit-mask-image: linear-gradient(to top,
                         rgba(0, 0, 0, 1) 30%,
                         rgba(0, 0, 0, 0) 80%);
-                        width: 100%;
+                width: 100%;
 
                 position: absolute;
                 top: 1px;
@@ -380,7 +383,9 @@ html.intro-skip {
             padding-top: 16px !important;
             padding-left: 8px;
             color: white !important;
-            a, * {
+
+            a,
+            * {
                 color: white !important;
             }
         }
