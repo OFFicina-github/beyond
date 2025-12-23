@@ -21,11 +21,10 @@
   margin-right: auto;
   margin-left: auto;
   position: relative;
-  margin-top: 1.2em;
+  margin-top: 0;
 }
 @media screen and (max-width: 1000px) {
   #hero.reputation-driven .subtitle-wrapper {
-    margin-top: 0;
     max-width: 100%;
   }
 }
