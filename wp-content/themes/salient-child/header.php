@@ -11,6 +11,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+	<script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.25/build/spline-viewer.js"></script>
 
 	<script>
 		// Questa cosa serve per settare un cookie per l'intro, una volta che l'hai vista per un'ore non la vedi 
