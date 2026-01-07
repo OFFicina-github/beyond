@@ -1110,6 +1110,9 @@ window.addEventListener('load', function () {
 
 document.addEventListener("DOMContentLoaded", () => {
     // Animazione cose che cadono
+    // falling-logos-section
+    // falling-items
+    // physics-container
     if (document.getElementById("physics-logos")) {
 
         (() => {

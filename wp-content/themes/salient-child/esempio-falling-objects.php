@@ -1,5 +1,5 @@
 
-<section class="falling-buttons-section">
+<section class="falling-logos-section">
   <div id="physics-container"></div>
 </section>
 
