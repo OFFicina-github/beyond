@@ -1099,7 +1099,7 @@ window.addEventListener('load', function () {
             if (header) header.classList.add('intro-ended');
             document.body.classList.add('intro-finished');
         }, exitDuration);
-        
+
     }, introDuration);
 });
 
@@ -1158,23 +1158,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
             /* ARRAY LOGHI (FACILE DA CAMBIARE IN FUTURO) */
             const logos = [
-                ...Array(20).fill({
-                    src: "https://beyondpress.it/wp-content/uploads/2025/12/logo-youtrend.svg",
-                    width: 140,
-                    height: 60
-                })
+                // GOOGLE
+                { src: "https://beyondpress.it/wp-content/uploads/2026/01/google-grey.svg", width: 44, height: 44 },
+                { src: "https://beyondpress.it/wp-content/uploads/2026/01/google-black.svg", width: 44, height: 44 },
+                { src: "https://beyondpress.it/wp-content/uploads/2026/01/google-yellow.svg", width: 44, height: 44 },
+
+                // WHATSAPP
+                { src: "https://beyondpress.it/wp-content/uploads/2026/01/whatsapp-grey.svg", width: 44, height: 44 },
+                { src: "https://beyondpress.it/wp-content/uploads/2026/01/whatsapp-black.svg", width: 44, height: 44 },
+                { src: "https://beyondpress.it/wp-content/uploads/2026/01/whatsapp-yellow.svg", width: 44, height: 44 },
+
+                // LINKEDIN
+                { src: "https://beyondpress.it/wp-content/uploads/2026/01/linkedin-grey.svg", width: 44, height: 44 },
+                { src: "https://beyondpress.it/wp-content/uploads/2026/01/linkedin-black.svg", width: 44, height: 44 },
+                { src: "https://beyondpress.it/wp-content/uploads/2026/01/linkedin-yellow.svg", width: 44, height: 44 },
+
+                // INSTAGRAM
+                { src: "https://beyondpress.it/wp-content/uploads/2026/01/instagram-grey.svg", width: 44, height: 44 },
+                { src: "https://beyondpress.it/wp-content/uploads/2026/01/instagram-black.svg", width: 44, height: 44 },
+                { src: "https://beyondpress.it/wp-content/uploads/2026/01/instagram-yellow.svg", width: 44, height: 44 },
+
+                // YOUTUBE
+                { src: "https://beyondpress.it/wp-content/uploads/2026/01/youtube-grey.svg", width: 44, height: 44 },
+                { src: "https://beyondpress.it/wp-content/uploads/2026/01/youtube-black.svg", width: 44, height: 44 },
+                { src: "https://beyondpress.it/wp-content/uploads/2026/01/youtube-yellow.svg", width: 44, height: 44 },
+
+                // FACEBOOK
+                { src: "https://beyondpress.it/wp-content/uploads/2026/01/facebook-grey.svg", width: 44, height: 44 },
+                { src: "https://beyondpress.it/wp-content/uploads/2026/01/facebook-black.svg", width: 44, height: 44 },
+                { src: "https://beyondpress.it/wp-content/uploads/2026/01/facebook-yellow.svg", width: 44, height: 44 }
             ];
 
-            // const logos = [
-            //     { src: "logo-1.svg", width: 120, height: 50 },
-            //     { src: "logo-2.svg", width: 160, height: 70 },
-            //     { src: "logo-3.svg", width: 100, height: 40 },
-            //     ...
-            // ];
+            const shuffledLogos = logos.sort(() => Math.random() - 0.5);
 
             const bodies = [];
 
-            logos.forEach((logo, i) => {
+            shuffledLogos.forEach((logo, i) => {
                 const body = Bodies.rectangle(
                     Math.random() * width,
                     -100 - i * 80,
@@ -1186,8 +1205,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         render: {
                             sprite: {
                                 texture: logo.src,
-                                xScale: logo.width / 300,
-                                yScale: logo.height / 120
+                                xScale: logo.width / 44,
+                                yScale: logo.height / 44
                             }
                         }
                     }
