@@ -1789,6 +1789,7 @@ html {
   }
 }
 .falling-section {
+  z-index: 0;
   position: absolute;
   margin-top: -100vh;
 }
