@@ -1104,129 +1104,131 @@ window.addEventListener('load', function () {
 });
 
 
-
 document.addEventListener("DOMContentLoaded", () => {
     // Animazione cose che cadono
     // falling-logos-section
     // falling-items
     // physics-container
-    if (document.getElementById("physics-logos")) {
+    const container = document.getElementById("physics-logos");
+    if (!container) return;
 
-        (() => {
-            const {
-                Engine,
-                Render,
-                Runner,
-                Bodies,
-                Composite,
-                Mouse,
-                MouseConstraint
-            } = Matter;
+    let started = false;
 
-            const container = document.getElementById("physics-logos");
-            if (!container) return;
+    const startPhysics = () => {
+        if (started) return;
+        started = true;
 
-            const width = container.offsetWidth;
-            const height = container.offsetHeight;
+        const { Engine, Render, Runner, Bodies, Composite, Mouse, MouseConstraint } = Matter;
 
-            const engine = Engine.create();
-            engine.gravity.y = 1;
+        // Se la sezione è "collassata" (height 0) all’avvio, Matter non vede bene le misure.
+        // Qui ci assicuriamo di leggere le dimensioni reali al momento dell'avvio.
+        const width = container.offsetWidth;
+        const height = container.offsetHeight;
 
-            const render = Render.create({
-                element: container,
-                engine,
-                options: {
-                    width,
-                    height,
-                    wireframes: false,
-                    background: "transparent"
+        const engine = Engine.create();
+        engine.gravity.y = 1;
+
+        const render = Render.create({
+            element: container,
+            engine,
+            options: {
+                width,
+                height,
+                wireframes: false,
+                background: "transparent",
+            },
+        });
+
+        Render.run(render);
+        const runner = Runner.create();
+        Runner.run(runner, engine);
+
+        // BORDI
+        Composite.add(engine.world, [
+            Bodies.rectangle(width / 2, height + 60, width, 120, { isStatic: true }),
+            Bodies.rectangle(-60, height / 2, 120, height, { isStatic: true }),
+            Bodies.rectangle(width + 60, height / 2, 120, height, { isStatic: true }),
+        ]);
+
+        // LOGHI
+        const logos = [
+            { src: "https://beyondpress.it/wp-content/uploads/2026/01/google-grey.svg", width: 44, height: 44 },
+            { src: "https://beyondpress.it/wp-content/uploads/2026/01/google-black.svg", width: 44, height: 44 },
+            { src: "https://beyondpress.it/wp-content/uploads/2026/01/google-yellow.svg", width: 44, height: 44 },
+
+            { src: "https://beyondpress.it/wp-content/uploads/2026/01/whatsapp-grey.svg", width: 44, height: 44 },
+            { src: "https://beyondpress.it/wp-content/uploads/2026/01/whatsapp-black.svg", width: 44, height: 44 },
+            { src: "https://beyondpress.it/wp-content/uploads/2026/01/whatsapp-yellow.svg", width: 44, height: 44 },
+
+            { src: "https://beyondpress.it/wp-content/uploads/2026/01/linkedin-grey.svg", width: 44, height: 44 },
+            { src: "https://beyondpress.it/wp-content/uploads/2026/01/linkedin-black.svg", width: 44, height: 44 },
+            { src: "https://beyondpress.it/wp-content/uploads/2026/01/linkedin-yellow.svg", width: 44, height: 44 },
+
+            { src: "https://beyondpress.it/wp-content/uploads/2026/01/instagram-grey.svg", width: 44, height: 44 },
+            { src: "https://beyondpress.it/wp-content/uploads/2026/01/instagram-black.svg", width: 44, height: 44 },
+            { src: "https://beyondpress.it/wp-content/uploads/2026/01/instagram-yellow.svg", width: 44, height: 44 },
+
+            { src: "https://beyondpress.it/wp-content/uploads/2026/01/youtube-grey.svg", width: 44, height: 44 },
+            { src: "https://beyondpress.it/wp-content/uploads/2026/01/youtube-black.svg", width: 44, height: 44 },
+            { src: "https://beyondpress.it/wp-content/uploads/2026/01/youtube-yellow.svg", width: 44, height: 44 },
+
+            { src: "https://beyondpress.it/wp-content/uploads/2026/01/facebook-grey.svg", width: 44, height: 44 },
+            { src: "https://beyondpress.it/wp-content/uploads/2026/01/facebook-black.svg", width: 44, height: 44 },
+            { src: "https://beyondpress.it/wp-content/uploads/2026/01/facebook-yellow.svg", width: 44, height: 44 },
+        ];
+
+        const shuffledLogos = logos.slice().sort(() => Math.random() - 0.5);
+        const bodies = shuffledLogos.map((logo, i) =>
+            Bodies.rectangle(
+                Math.random() * width,
+                -100 - i * 80,
+                logo.width,
+                logo.height,
+                {
+                    restitution: 0.6,
+                    friction: 0.3,
+                    render: {
+                        sprite: {
+                            texture: logo.src,
+                            xScale: logo.width / 44,
+                            yScale: logo.height / 44,
+                        },
+                    },
+                }
+            )
+        );
+
+        Composite.add(engine.world, bodies);
+
+        // DRAG
+        const mouse = Mouse.create(container);
+        const mouseConstraint = MouseConstraint.create(engine, {
+            mouse,
+            constraint: {
+                stiffness: 0.2,
+                render: { visible: false },
+            },
+        });
+
+        Composite.add(engine.world, mouseConstraint);
+        render.mouse = mouse;
+    };
+
+    // Start quando entra in viewport
+    const io = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    startPhysics();
+                    io.disconnect(); // parte una sola volta
                 }
             });
+        },
+        {
+            threshold: 0.15,
+            rootMargin: "0px 0px -10% 0px", // avvia un filo prima che sia pienamente visibile
+        }
+    );
 
-            Render.run(render);
-            Runner.run(Runner.create(), engine);
-
-            /* BORDI */
-            Composite.add(engine.world, [
-                Bodies.rectangle(width / 2, height + 60, width, 120, { isStatic: true }),
-                Bodies.rectangle(-60, height / 2, 120, height, { isStatic: true }),
-                Bodies.rectangle(width + 60, height / 2, 120, height, { isStatic: true })
-            ]);
-
-            /* ARRAY LOGHI (FACILE DA CAMBIARE IN FUTURO) */
-            const logos = [
-                // GOOGLE
-                { src: "https://beyondpress.it/wp-content/uploads/2026/01/google-grey.svg", width: 44, height: 44 },
-                { src: "https://beyondpress.it/wp-content/uploads/2026/01/google-black.svg", width: 44, height: 44 },
-                { src: "https://beyondpress.it/wp-content/uploads/2026/01/google-yellow.svg", width: 44, height: 44 },
-
-                // WHATSAPP
-                { src: "https://beyondpress.it/wp-content/uploads/2026/01/whatsapp-grey.svg", width: 44, height: 44 },
-                { src: "https://beyondpress.it/wp-content/uploads/2026/01/whatsapp-black.svg", width: 44, height: 44 },
-                { src: "https://beyondpress.it/wp-content/uploads/2026/01/whatsapp-yellow.svg", width: 44, height: 44 },
-
-                // LINKEDIN
-                { src: "https://beyondpress.it/wp-content/uploads/2026/01/linkedin-grey.svg", width: 44, height: 44 },
-                { src: "https://beyondpress.it/wp-content/uploads/2026/01/linkedin-black.svg", width: 44, height: 44 },
-                { src: "https://beyondpress.it/wp-content/uploads/2026/01/linkedin-yellow.svg", width: 44, height: 44 },
-
-                // INSTAGRAM
-                { src: "https://beyondpress.it/wp-content/uploads/2026/01/instagram-grey.svg", width: 44, height: 44 },
-                { src: "https://beyondpress.it/wp-content/uploads/2026/01/instagram-black.svg", width: 44, height: 44 },
-                { src: "https://beyondpress.it/wp-content/uploads/2026/01/instagram-yellow.svg", width: 44, height: 44 },
-
-                // YOUTUBE
-                { src: "https://beyondpress.it/wp-content/uploads/2026/01/youtube-grey.svg", width: 44, height: 44 },
-                { src: "https://beyondpress.it/wp-content/uploads/2026/01/youtube-black.svg", width: 44, height: 44 },
-                { src: "https://beyondpress.it/wp-content/uploads/2026/01/youtube-yellow.svg", width: 44, height: 44 },
-
-                // FACEBOOK
-                { src: "https://beyondpress.it/wp-content/uploads/2026/01/facebook-grey.svg", width: 44, height: 44 },
-                { src: "https://beyondpress.it/wp-content/uploads/2026/01/facebook-black.svg", width: 44, height: 44 },
-                { src: "https://beyondpress.it/wp-content/uploads/2026/01/facebook-yellow.svg", width: 44, height: 44 }
-            ];
-
-            const shuffledLogos = logos.sort(() => Math.random() - 0.5);
-
-            const bodies = [];
-
-            shuffledLogos.forEach((logo, i) => {
-                const body = Bodies.rectangle(
-                    Math.random() * width,
-                    -100 - i * 80,
-                    logo.width,
-                    logo.height,
-                    {
-                        restitution: 0.6,
-                        friction: 0.3,
-                        render: {
-                            sprite: {
-                                texture: logo.src,
-                                xScale: logo.width / 44,
-                                yScale: logo.height / 44
-                            }
-                        }
-                    }
-                );
-
-                bodies.push(body);
-            });
-
-            Composite.add(engine.world, bodies);
-
-            /* DRAG */
-            const mouse = Mouse.create(container);
-            const mouseConstraint = MouseConstraint.create(engine, {
-                mouse,
-                constraint: {
-                    stiffness: 0.2,
-                    render: { visible: false }
-                }
-            });
-
-            Composite.add(engine.world, mouseConstraint);
-            render.mouse = mouse;
-        })();
-    }
-
+    io.observe(container);
 });
