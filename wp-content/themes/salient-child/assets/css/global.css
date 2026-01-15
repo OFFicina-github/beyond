@@ -1454,6 +1454,7 @@ html {
 .cit-homepage {
   position: absolute;
   top: 50%;
+  width: 100%;
 }
 
 .hero-full-affidi {
