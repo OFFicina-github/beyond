@@ -1451,6 +1451,11 @@ html {
   margin-bottom: 0;
 }
 
+.cit-homepage {
+  position: absolute;
+  top: 50%;
+}
+
 .hero-full-affidi {
   padding-top: 12vh !important;
   padding-bottom: 5vh !important;
