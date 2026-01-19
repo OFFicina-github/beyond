@@ -2237,6 +2237,7 @@ body.home {
   background: linear-gradient(to right,
       rgba(26, 26, 26, 1) 50%,
       rgba(26, 26, 26, 0) 100%);
+
   @media screen and (max-width:1000px) {
     background: unset;
   }
@@ -2248,6 +2249,10 @@ body.home {
   background: linear-gradient(to left,
       rgba(26, 26, 26, 1) 50%,
       rgba(26, 26, 26, 0) 100%);
+
+  @media screen and (max-width:1000px) {
+    background: unset;
+  }
 }
 
 
