@@ -1933,6 +1933,12 @@ html {
   border-radius: 32px;
   align-content: flex-end;
 }
+#persone-affidi .carosel-container .custom-carosel .carosel-content h2.name {
+  font-family: "polymath-text", sans-serif !important;
+}
+#persone-affidi .carosel-container .custom-carosel .carosel-content h2.name em {
+  font-family: "georgia", sans-serif !important;
+}
 @media screen and (min-width: 2000px) {
   #persone-affidi .carosel-container .custom-carosel .carosel-content {
     min-height: 70vh;

@@ -2310,6 +2310,14 @@ body.home {
       }
 
       .carosel-content {
+        h2.name {
+          font-family: "polymath-text", sans-serif !important;
+
+          em {
+            font-family: "georgia", sans-serif !important;
+          }
+        }
+
         @media screen and (min-width: 2000px) {
           min-height: 70vh;
         }
