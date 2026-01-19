@@ -116,6 +116,10 @@ select {
   }
 }
 
+.georgia {
+  font-family: "georgia", sans-serif !important;
+}
+
 .icon {
   content: "";
 }

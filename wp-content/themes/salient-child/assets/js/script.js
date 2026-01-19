@@ -79,6 +79,55 @@ addEventListener("DOMContentLoaded", (event) => {
 
         addServiziIDs();
     }
+
+    document.querySelectorAll('.custom-carosel').forEach((slider) => {
+        let isDown = false;
+        let startX = 0;
+        let startScrollLeft = 0;
+        let moved = false;
+        const DRAG_THRESHOLD = 6;
+
+        const getX = (e) => (e.touches ? e.touches[0].pageX : e.pageX);
+
+        const onDown = (e) => {
+            if (e.type === 'mousedown' && e.button !== 0) return;
+            isDown = true; moved = false;
+            slider.classList.add('is-dragging');
+            startX = getX(e);
+            startScrollLeft = slider.scrollLeft;
+        };
+
+        const onMove = (e) => {
+            if (!isDown) return;
+            const x = getX(e);
+            const walk = x - startX;
+            if (Math.abs(walk) > DRAG_THRESHOLD) moved = true;
+            e.preventDefault();
+            slider.scrollLeft = startScrollLeft - walk;
+        };
+
+        const onUp = () => {
+            if (!isDown) return;
+            isDown = false;
+            slider.classList.remove('is-dragging');
+            if (moved) {
+                const preventClick = (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    slider.removeEventListener('click', preventClick, true);
+                };
+                slider.addEventListener('click', preventClick, true);
+            }
+        };
+
+        slider.addEventListener('mousedown', onDown);
+        window.addEventListener('mousemove', onMove, { passive: false });
+        window.addEventListener('mouseup', onUp);
+
+        slider.addEventListener('touchstart', onDown, { passive: true });
+        slider.addEventListener('touchmove', onMove, { passive: false });
+        slider.addEventListener('touchend', onUp);
+    });
 })
 
 document.addEventListener("DOMContentLoaded", addServiziIDs);
