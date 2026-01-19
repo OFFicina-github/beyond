@@ -1859,6 +1859,11 @@ html {
   left: 0;
   background: linear-gradient(to right, rgb(26, 26, 26) 50%, rgba(26, 26, 26, 0) 100%);
 }
+@media screen and (max-width: 1000px) {
+  .clients-section .carousel-outer::before {
+    background: unset;
+  }
+}
 
 /* fade destro */
 .clients-section .carousel-outer::after {
