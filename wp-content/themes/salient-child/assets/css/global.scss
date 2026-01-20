@@ -2159,7 +2159,7 @@ body.home {
 }
 
 .falling-section {
-  z-index: 0;
+  z-index: 10;
   position: absolute;
   margin-top: -100vh;
 
@@ -2401,7 +2401,7 @@ body.home {
     }
 
     @media screen and (max-width: 576px) {
-      width: 80vw;
+      width: 85vw;
     }
   }
 
@@ -2414,16 +2414,32 @@ body.home {
           min-height: 50vh;
         }
       }
+
+      .show-desktop {
+        min-height: 40vh !important;
+        width: 90vw !important;
+        // display: none !important;
+        position: relative !important;
+        margin-bottom: 32px;
+      }
+
+      .empty-card {
+        display: none !important;
+      }
     }
 
-    .show-desktop {
-      display: none !important;
-    }
 
-    .hidden-desktop {
-      display: -webkit-inline-box !important;
-    }
+
+    // .hidden-desktop {
+    //   display: -webkit-inline-box !important;
+    // }
 
   }
 
+}
+
+@media screen and (max-width: 768px) {
+  .text-visibility-all-around {
+    padding-bottom: 120px !important;
+  }
 }

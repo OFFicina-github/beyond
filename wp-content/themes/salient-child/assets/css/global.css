@@ -1795,7 +1795,7 @@ html {
   }
 }
 .falling-section {
-  z-index: 0;
+  z-index: 10;
   position: absolute;
   margin-top: -100vh;
 }
@@ -2006,7 +2006,7 @@ html {
 @media screen and (max-width: 576px) {
   #persone-affidi .carosel-container .custom-carosel .carosel-item,
   #persone-affidi .carosel-container .card-trasparente {
-    width: 80vw;
+    width: 85vw;
   }
 }
 @media screen and (max-width: 768px) {
@@ -2014,10 +2014,19 @@ html {
   #persone-affidi .carosel-container .custom-carosel .card-trasparente {
     min-height: 50vh;
   }
-  #persone-affidi .show-desktop {
+  #persone-affidi .carosel-container .show-desktop {
+    min-height: 40vh !important;
+    width: 90vw !important;
+    position: relative !important;
+    margin-bottom: 32px;
+  }
+  #persone-affidi .carosel-container .empty-card {
     display: none !important;
   }
-  #persone-affidi .hidden-desktop {
-    display: -webkit-inline-box !important;
+}
+
+@media screen and (max-width: 768px) {
+  .text-visibility-all-around {
+    padding-bottom: 120px !important;
   }
 }/*# sourceMappingURL=global.css.map */
