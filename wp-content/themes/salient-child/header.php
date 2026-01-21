@@ -4,6 +4,7 @@
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<link rel="stylesheet" href="https://use.typekit.net/ulf6rnd.css">
+	<link rel="icon" href="<?php echo esc_url( home_url( '/favicon_new.ico' ) ); ?>" sizes="any" type="image/x-icon">
 	<script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.25/build/spline-viewer.js"></script>
 
 	<script>

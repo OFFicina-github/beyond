@@ -14,6 +14,7 @@
 !/wp-content/themes/salient/**
 !/wp-content/themes/salient-child/
 !/wp-content/themes/salient-child/**
+!*.ico
 
 # Ignora file temporanei o cache
 *.log
