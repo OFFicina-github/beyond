@@ -72,12 +72,26 @@ add_filter('upload_mimes', function ($mimes) {
     return $mimes;
 });
 
+
+
 add_filter('wp_check_filetype_and_ext', function ($data, $file, $filename) {
-    if (strpos($filename, '.svg') !== false && function_exists('simplexml_load_file')) {
+
+    // Validazione SVG (come avevi già)
+    if (stripos($filename, '.svg') !== false && function_exists('simplexml_load_file')) {
         if (!simplexml_load_file($file)) {
             wp_die(__('SVG non valido.'));
         }
+        // forza type/ext per evitare blocchi
+        $data['ext']  = 'svg';
+        $data['type'] = 'image/svg+xml';
     }
+
+    // Supporto ICO (forza type/ext per evitare blocchi)
+    if (stripos($filename, '.ico') !== false) {
+        $data['ext']  = 'ico';
+        $data['type'] = 'image/x-icon';
+    }
+
     return $data;
 }, 10, 3);
 
