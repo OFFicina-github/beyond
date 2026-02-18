@@ -393,6 +393,11 @@ html {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+@media (min-width: 1001px) {
+  #stay-in-touch .item_evento .inner {
+    max-width: 170px;
+  }
+}
 #stay-in-touch .item_evento .inner {
   background-color: #000;
   padding: 20px;
@@ -403,27 +408,22 @@ html {
   flex-direction: column;
   justify-content: space-between;
 }
-@media (min-width: 1001px) {
-  #stay-in-touch .item_evento .inner {
-    max-width: 170px;
-  }
-}
 #stay-in-touch .item_evento .inner.text_custom.color_y p {
   color: #f2ef4a;
 }
 #stay-in-touch .item_evento .inner.text_custom p:last-child {
   font-family: Georgia;
 }
-#stay-in-touch .item_evento .inner.img_custom {
-  background-color: transparent;
-  padding: 0 !important;
-  padding: 0 20px !important;
-}
 @media (max-width: 1000px) {
   #stay-in-touch .item_evento .inner.img_custom {
     flex-direction: row-reverse;
     align-items: center;
   }
+}
+#stay-in-touch .item_evento .inner.img_custom {
+  background-color: transparent;
+  padding: 0 !important;
+  padding: 0 20px !important;
 }
 #stay-in-touch .item_evento .inner.img_custom img {
   margin: 0 0 0 auto !important;
@@ -447,11 +447,31 @@ html {
   }
 }
 
+#stay-in-touch .item_evento .inner.img_custom p {
+  color: black !important;
+}
+
+#stay-in-touch .eventi-futuri-card > .vc_column-inner > .wpb_wrapper {
+  background-color: white !important;
+}
+
 @media (max-width: 1000px) {
   .item_evento,
   .inner {
     width: 100%;
   }
+}
+.item_evento.futuri,
+.inner.futuri {
+  background-color: white !important;
+}
+.item_evento.futuri .inner.color_y,
+.inner.futuri .inner.color_y {
+  background-color: rgba(0, 0, 0, 0.12) !important;
+}
+.item_evento.futuri .inner.color_y p,
+.inner.futuri .inner.color_y p {
+  color: black !important;
 }
 .item_evento .item_evento,
 .inner .item_evento {
@@ -475,6 +495,12 @@ html {
   line-height: 1.2;
   padding: 0 !important;
 }
+@media (min-width: 1001px) {
+  .item_evento .item_evento .inner,
+  .inner .item_evento .inner {
+    max-width: 170px;
+  }
+}
 .item_evento .item_evento .inner,
 .inner .item_evento .inner {
   background-color: #000;
@@ -486,12 +512,6 @@ html {
   flex-direction: column;
   justify-content: space-between;
 }
-@media (min-width: 1001px) {
-  .item_evento .item_evento .inner,
-  .inner .item_evento .inner {
-    max-width: 170px;
-  }
-}
 .item_evento .item_evento .inner.text_custom.color_y p,
 .inner .item_evento .inner.text_custom.color_y p {
   color: #f2ef4a;
@@ -500,18 +520,18 @@ html {
 .inner .item_evento .inner.text_custom p:last-child {
   font-family: Georgia;
 }
-.item_evento .item_evento .inner.img_custom,
-.inner .item_evento .inner.img_custom {
-  background-color: transparent;
-  padding: 0 !important;
-  padding: 0 20px !important;
-}
 @media (max-width: 1000px) {
   .item_evento .item_evento .inner.img_custom,
   .inner .item_evento .inner.img_custom {
     flex-direction: row-reverse;
     align-items: center;
   }
+}
+.item_evento .item_evento .inner.img_custom,
+.inner .item_evento .inner.img_custom {
+  background-color: transparent;
+  padding: 0 !important;
+  padding: 0 20px !important;
 }
 .item_evento .item_evento .inner.img_custom img,
 .inner .item_evento .inner.img_custom img {
@@ -583,10 +603,6 @@ html {
   font-weight: 400 !important;
   font-family: "georgia", sans-serif !important;
 }
-#persona .colonna-persona-experience,
-.persona .colonna-persona-experience {
-  padding-left: 5vw;
-}
 #persona .colonna-persona-experience.right,
 .persona .colonna-persona-experience.right {
   padding-left: 0vw;
@@ -597,6 +613,10 @@ html {
   .persona .colonna-persona-experience.right {
     padding-right: 0vw;
   }
+}
+#persona .colonna-persona-experience,
+.persona .colonna-persona-experience {
+  padding-left: 5vw;
 }
 @media screen and (max-width: 1000px) {
   #persona .colonna-persona-experience,
@@ -720,7 +740,6 @@ html {
   min-height: 80vh;
   align-content: flex-end;
   position: relative;
-  /* posizionamento base */
 }
 .colonna-espandibile-esperienza .svg-logo-youtrend {
   max-width: 125px !important;
@@ -760,6 +779,9 @@ html {
   border-radius: 20px;
   transition: all 0.4s ease;
   z-index: 1;
+}
+.colonna-espandibile-esperienza {
+  /* posizionamento base */
 }
 .colonna-espandibile-esperienza .colonna-youtrend::before {
   left: 0;
@@ -1034,8 +1056,7 @@ html {
   text-align: center;
   color: #f5f5f5;
   background: rgba(20, 20, 20, 0.85);
-  -webkit-backdrop-filter: blur(6px);
-          backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.35);
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15), 0 0 40px rgba(0, 0, 0, 0.8), 0 0 80px rgba(0, 0, 0, 0.9);
 }
@@ -1505,7 +1526,6 @@ html {
 
 #form-contatti {
   border-radius: 12px;
-  /* CF7 validation */
 }
 #form-contatti .form-row {
   margin-bottom: 16px;
@@ -1588,6 +1608,9 @@ html {
 }
 #form-contatti .privacy-row input[type=checkbox] {
   width: 30px !important;
+}
+#form-contatti {
+  /* CF7 validation */
 }
 #form-contatti .wpcf7-not-valid-tip {
   font-size: 11px;
@@ -1882,8 +1905,7 @@ html {
   padding: 32px;
   border-radius: 32px;
   background: rgba(99.56, 99.56, 99.56, 0.15);
-  -webkit-backdrop-filter: blur(17px);
-          backdrop-filter: blur(17px);
+  backdrop-filter: blur(17px);
   position: absolute;
   width: 26vw;
   z-index: 2;
@@ -1924,15 +1946,6 @@ html {
   flex: 0 0 auto;
   scroll-snap-align: start;
 }
-#persone-affidi .carosel-container .custom-carosel .carosel-content {
-  min-height: 60vh;
-  background-position: center center !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  padding: 32px;
-  border-radius: 32px;
-  align-content: flex-end;
-}
 #persone-affidi .carosel-container .custom-carosel .carosel-content h2.name {
   font-family: "polymath-text", sans-serif !important;
 }
@@ -1943,6 +1956,15 @@ html {
   #persone-affidi .carosel-container .custom-carosel .carosel-content {
     min-height: 70vh;
   }
+}
+#persone-affidi .carosel-container .custom-carosel .carosel-content {
+  min-height: 60vh;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  padding: 32px;
+  border-radius: 32px;
+  align-content: flex-end;
 }
 #persone-affidi .carosel-container .custom-carosel .carosel-content a {
   text-align: left;

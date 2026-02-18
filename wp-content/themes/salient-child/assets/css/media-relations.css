@@ -1,10 +1,6 @@
 @charset "UTF-8";
 #block-media-relations {
   margin-top: 10vh;
-  /* header */
-  /* colonne */
-  /* testo */
-  /* parole */
 }
 #block-media-relations .row_col_wrap_12_inner > .vc_col-sm-12 > .vc_column-inner > .wpb_wrapper * {
   color: black;
@@ -22,6 +18,9 @@
   position: relative;
   padding-left: 5vw;
   padding-right: 5vw;
+}
+#block-media-relations {
+  /* header */
 }
 #block-media-relations .manifesto-header {
   position: relative;
@@ -61,6 +60,9 @@
   display: inline-block;
   will-change: transform, filter, opacity;
 }
+#block-media-relations {
+  /* colonne */
+}
 #block-media-relations .manifesto-columns {
   max-width: 1000px;
   margin: 0 auto;
@@ -71,10 +73,16 @@
 #block-media-relations .manifesto-col {
   position: relative;
 }
+#block-media-relations {
+  /* testo */
+}
 #block-media-relations .text {
   font-size: 18px;
   line-height: 1.4;
   color: #bdbdbd;
+}
+#block-media-relations {
+  /* parole */
 }
 #block-media-relations .word {
   display: inline-block;
@@ -91,12 +99,6 @@
 
 .colonna-meme-media {
   /* FRASE EVIDENZIATA */
-  /* MINI GIF INLINE (opzionale, se la tieni) */
-  /* TOOLTIP BASE */
-  /* CARD */
-  /* GIF GRANDE */
-  /* SOTTOTITOLO */
-  /* MOBILE */
 }
 .colonna-meme-media .highlight {
   display: inline-flex;
@@ -107,6 +109,9 @@
   color: #f4ea00;
   border-radius: 0.4em;
   cursor: pointer;
+}
+.colonna-meme-media {
+  /* MINI GIF INLINE (opzionale, se la tieni) */
 }
 .colonna-meme-media .gif-trigger {
   width: 28px;
@@ -124,6 +129,9 @@
 .colonna-meme-media .gif-trigger.gif-2 {
   background-image: url(../img/gif-2.gif);
 }
+.colonna-meme-media {
+  /* TOOLTIP BASE */
+}
 .colonna-meme-media .gif-tooltip {
   position: fixed;
   pointer-events: none;
@@ -133,10 +141,16 @@
   transition: opacity 0.15s ease;
   will-change: transform, opacity;
 }
+.colonna-meme-media {
+  /* CARD */
+}
 .colonna-meme-media .gif-card {
   background: #000;
   border-radius: 22px;
   padding: 10px;
+}
+.colonna-meme-media {
+  /* GIF GRANDE */
 }
 .colonna-meme-media .gif-card img {
   width: 260px;
@@ -144,11 +158,17 @@
   display: block;
   border-radius: 16px;
 }
+.colonna-meme-media {
+  /* SOTTOTITOLO */
+}
 .colonna-meme-media .gif-caption {
   margin-top: 10px;
   text-align: center;
   font-size: 1rem;
   color: #f4ea00;
+}
+.colonna-meme-media {
+  /* MOBILE */
 }
 @media screen and (max-width: 1000px) {
   .colonna-meme-media .gif-tooltip {

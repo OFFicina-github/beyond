@@ -2,19 +2,21 @@
   position: relative;
   height: 100vh;
   overflow: hidden;
-  /* Titolo principale */
-  /* Wrapper dei sottotitoli */
-  /* Sottotitoli sovrapposti */
-  /* Stato iniziale */
 }
 #hero.reputation-driven .reputation-section {
   position: relative;
   height: 100%;
 }
+#hero.reputation-driven {
+  /* Titolo principale */
+}
 #hero.reputation-driven .title-main {
   position: relative;
   z-index: 2;
   margin-bottom: 0;
+}
+#hero.reputation-driven {
+  /* Wrapper dei sottotitoli */
 }
 #hero.reputation-driven .subtitle-wrapper {
   max-width: 70%;
@@ -28,11 +30,17 @@
     max-width: 100%;
   }
 }
+#hero.reputation-driven {
+  /* Sottotitoli sovrapposti */
+}
 #hero.reputation-driven .subtitle {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+}
+#hero.reputation-driven {
+  /* Stato iniziale */
 }
 #hero.reputation-driven .subtitle-1 {
   opacity: 1;
@@ -44,7 +52,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
 }
 #hero.reputation-driven .colonna-hero > .vc_column-inner > .wpb_wrapper h2 {
   text-align: center !important;
@@ -53,6 +60,9 @@
   #hero.reputation-driven .colonna-hero > .vc_column-inner > .wpb_wrapper h2 {
     text-align: left !important;
   }
+}
+#hero.reputation-driven .colonna-hero > .vc_column-inner > .wpb_wrapper {
+  text-align: center;
 }
 #hero.reputation-driven .titolo-hero:first-of-type {
   margin-bottom: 0;
@@ -139,12 +149,13 @@
   padding: 40px 20px;
   color: white;
   margin-top: 100px;
-  /* BLOCCO SUPERIORE */
-  /* BLOCCO FRASE */
 }
 .matching-words .row_col_wrap_12 {
   background: #EDEDED;
   border-radius: 48px;
+}
+.matching-words {
+  /* BLOCCO SUPERIORE */
 }
 .matching-words .top-block {
   position: sticky;
@@ -188,6 +199,9 @@
   transform: translateX(-80px);
   top: 60px;
 }
+.matching-words {
+  /* BLOCCO FRASE */
+}
 .matching-words .sentence-block {
   margin-top: 40vh;
   text-align: center;
@@ -214,7 +228,6 @@
   vertical-align: middle;
   margin: 0px 14px;
   /* elemento fantasma che determina la dimensione */
-  /* buco visivo */
 }
 .matching-words .sentence-block .slot .slot-size {
   visibility: hidden;
@@ -223,6 +236,9 @@
   font-weight: 700;
   padding: 12px 15px;
   line-height: 1;
+}
+.matching-words .sentence-block .slot {
+  /* buco visivo */
 }
 .matching-words .sentence-block .slot .slot-outline {
   position: absolute;

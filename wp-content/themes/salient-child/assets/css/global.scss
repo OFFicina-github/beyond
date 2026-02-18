@@ -543,10 +543,36 @@ body.home {
   }
 }
 
+#stay-in-touch .item_evento .inner.img_custom p{
+  color: black !important;
+}
+
+#stay-in-touch .eventi-futuri-card > .vc_column-inner > .wpb_wrapper{
+  background-color: white !important;
+}
+
+
 .item_evento,
 .inner {
   @media(max-width:1000px) {
     width: 100%;
+  }
+
+
+  &.futuri {
+    background-color: white !important;
+
+    p {
+    }
+
+    .inner.color_y {
+      background-color: rgba(0, 0, 0, 0.12) !important;
+
+      p {
+        color: black !important;
+      }
+
+    }
   }
 
   .item_evento {
