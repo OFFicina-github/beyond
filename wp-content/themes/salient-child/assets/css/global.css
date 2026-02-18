@@ -456,6 +456,10 @@ html {
 }
 
 @media (max-width: 1000px) {
+  .item_evento > a,
+  .inner > a {
+    width: 100%;
+  }
   .item_evento,
   .inner {
     width: 100%;

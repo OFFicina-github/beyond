@@ -555,7 +555,10 @@ body.home {
 .item_evento,
 .inner {
   @media(max-width:1000px) {
-    width: 100%;
+     > a{
+       width: 100%;
+      }
+      width: 100%;
   }
 
 
