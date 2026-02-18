@@ -1782,6 +1782,13 @@ body.home {
   position: absolute;
   top: 50%;
   width: 100%;
+  p:not(.h2){
+    top: -40px;
+    left: 10vw;
+    @media(max-width:1000px) {
+      left: 0;
+    }
+  }
 }
 
 .hero-full-affidi {
