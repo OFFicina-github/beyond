@@ -123,7 +123,8 @@ select {
   }
 }
 
-.georgia {
+.georgia,
+.georgia * {
   font-family: "georgia", sans-serif !important;
 }
 
