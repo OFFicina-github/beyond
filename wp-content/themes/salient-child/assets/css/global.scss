@@ -536,6 +536,12 @@ body.home {
   background-color: white !important;
 }
 
+@media(min-width:1000px) {
+
+  #stay-in-touch .item_evento.passati .inner.img_custom{
+    padding: 0 !important;
+  }
+}
 
 .item_evento,
 .inner {

@@ -441,6 +441,11 @@ html {
   background-color: white !important;
 }
 
+@media (min-width: 1000px) {
+  #stay-in-touch .item_evento.passati .inner.img_custom {
+    padding: 0 !important;
+  }
+}
 @media (max-width: 1000px) {
   .item_evento > a,
   .inner > a {
