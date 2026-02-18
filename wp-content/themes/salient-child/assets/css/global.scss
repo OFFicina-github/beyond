@@ -1,23 +1,8 @@
-#wpadminbar {
-  max-height: 6px !important;
-  overflow: hidden !important;
-  transition: max-height 0.1s;
-
-  &:hover {
-    max-height: 100px !important;
-  }
-}
 
 html {
   margin-top: 0 !important;
 }
 
-
-@media screen and (max-width: 768px) {
-  #wpadminbar {
-    display: none !important;
-  }
-}
 
 .full-width-section .light .nectar-button:hover,
 .nectar-button:hover {
