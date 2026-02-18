@@ -35,6 +35,7 @@ $query = new WP_Query($args);
             <?php
             $nome_evento = get_field('nome_evento');
             $data_raw = get_field('data_evento');
+            $allegato = get_field('allegato');
 
             try {
                 $data = new DateTime($data_raw);
@@ -43,12 +44,20 @@ $query = new WP_Query($args);
             }
             ?>
 
+            <?php if (!empty($allegato)) : ?>
+                <a href="<?php echo esc_url($allegato); ?>" target="_blank" rel="noopener noreferrer">
+            <?php endif; ?>
+
             <div class="inner text_custom color_y">
                 <p>
                     <?php echo esc_html(str_replace('/', '.', $data_raw)); ?>
                 </p>
                 <p><?php echo esc_html($nome_evento); ?></p>
             </div>
+
+            <?php if (!empty($allegato)) : ?>
+                </a>
+            <?php endif; ?>
 
         <?php endwhile; ?>
     <?php else: ?>
