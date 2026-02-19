@@ -8,6 +8,10 @@
   letter-spacing: 0.05em;
   cursor: pointer;
 }
+.single-evento .img-locandina {
+  width: 100%;
+  max-width: 400px;
+}
 .single-evento .evento__hero {
   position: relative !important;
   width: 100%;
