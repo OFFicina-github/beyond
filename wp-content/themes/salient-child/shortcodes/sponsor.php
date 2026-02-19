@@ -11,6 +11,11 @@ add_shortcode('sponsor_evento', function () {
 
     ob_start();
     ?>
+    <div>
+        <p class="speaker-title h2 text-center">
+            Sponsor:
+        </p>
+    </div>
     <div class="clients-section">
     <div class="carousel-outer sc evento__sponsor-slider splide" aria-label="Sponsor">
         <div class="splide__track">
