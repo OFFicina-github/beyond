@@ -12,7 +12,12 @@ add_shortcode('moderatori_evento', function () {
 
     ob_start();
     ?>
-    <div class="sc evento__moderatori">
+    <div>
+        <p class="speaker-title h2">
+            Moderano l'evento:
+        </p>
+    </div>
+    <div class="sc evento__moderatori custom-carosel">
         <?php foreach ($rows as $row) :
             $posts_collegati = $row['link_alla_pagina'] ?? [];
             if (empty($posts_collegati)) continue;

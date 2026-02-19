@@ -12,7 +12,12 @@ add_shortcode('discutono_evento', function () {
 
     ob_start();
     ?>
-    <div class="sc evento__discutono">
+    <div>
+        <p class="speaker-title h2">
+            Discutono:
+        </p>
+    </div>
+    <div class="sc evento__discutono custom-carosel">
         <?php foreach ($rows as $persona) :
             $img  = _bp_resolve_img($persona['foto'] ?? null, $persona['nome'] ?? '');
             $nome = $persona['nome'] ?? '';

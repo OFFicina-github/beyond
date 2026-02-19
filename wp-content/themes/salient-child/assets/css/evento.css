@@ -42,7 +42,7 @@
 .single-evento .evento__hero .evento__hero-info .evento__titolo {
   color: #fff;
   margin-bottom: 30px;
-  font-size: 8rem !important;
+  font-size: clamp(3.5rem, 6vw, 8rem) !important;
 }
 .single-evento .evento__hero .evento__hero-info .info-title {
   padding-bottom: 10px;
@@ -62,15 +62,50 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
+@media screen and (max-width: 1024px) {
+  .single-evento .evento__hero .evento__hero-info .evento__meta {
+    justify-content: left;
+  }
+  .single-evento .evento__hero .evento__hero-info .evento__meta .yellow {
+    margin-bottom: 24px;
+  }
+}
 .single-evento .evento__hero .evento__hero-info .evento__meta span {
   color: #fff;
+}
+.single-evento .speaker-title {
+  padding-bottom: 20px;
 }
 .single-evento .evento__discutono,
 .single-evento .evento__moderatori {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   gap: 16px;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding-right: 5vw;
+  padding-bottom: 16px;
+}
+.single-evento .evento__discutono:active,
+.single-evento .evento__moderatori:active {
+  cursor: grabbing;
+}
+.single-evento .evento__discutono::-webkit-scrollbar,
+.single-evento .evento__moderatori::-webkit-scrollbar {
+  height: 8px;
+}
+.single-evento .evento__discutono::-webkit-scrollbar-thumb,
+.single-evento .evento__moderatori::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+}
+.single-evento .evento__discutono::-webkit-scrollbar-track,
+.single-evento .evento__moderatori::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
 }
 .single-evento .evento__discutono .carosel-item,
 .single-evento .evento__moderatori .carosel-item {
@@ -79,6 +114,7 @@
   width: 26vw;
   border-radius: 32px;
   overflow: hidden;
+  scroll-snap-align: start;
 }
 @media screen and (max-width: 1400px) {
   .single-evento .evento__discutono .carosel-item,
@@ -95,8 +131,20 @@
 @media screen and (max-width: 576px) {
   .single-evento .evento__discutono .carosel-item,
   .single-evento .evento__moderatori .carosel-item {
-    width: 85vw;
+    width: 78vw;
   }
+}
+.single-evento .evento__discutono .discutono__immagine,
+.single-evento .evento__moderatori .discutono__immagine {
+  filter: grayscale(1);
+  position: relative;
+}
+.single-evento .evento__discutono .discutono__immagine::after,
+.single-evento .evento__moderatori .discutono__immagine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
 }
 .single-evento .evento__discutono .discutono__immagine,
 .single-evento .evento__discutono .moderatore__immagine,
@@ -114,6 +162,8 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-user-drag: none;
+  pointer-events: none;
 }
 .single-evento .evento__discutono .carosel-content,
 .single-evento .evento__moderatori .carosel-content {
@@ -130,6 +180,9 @@
 .single-evento .evento__moderatori .carosel-content h2.name {
   color: white;
   font-family: "polymath-text", sans-serif;
+  -moz-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
 }
 .single-evento .evento__discutono .carosel-content h2.name em,
 .single-evento .evento__moderatori .carosel-content h2.name em {
@@ -156,43 +209,21 @@
   padding: 10px 20px !important;
   margin-top: 16px !important;
 }
-.single-evento .evento__sponsor {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 24px;
-}
-.single-evento .evento__sponsor .sponsor__item {
-  flex: 1 1 0;
-  min-width: 80px;
-  max-width: 160px;
+.single-evento .clients-section .carousel-outer .sponsor__item {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.single-evento .evento__sponsor .sponsor__item a {
+.single-evento .clients-section .carousel-outer .sponsor__item a {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-.single-evento .evento__sponsor .sponsor__item img {
+.single-evento .clients-section .carousel-outer .sponsor__item img {
   width: 100%;
-  height: auto;
+  height: 60px;
   -o-object-fit: contain;
      object-fit: contain;
   display: block;
-}
-@media screen and (max-width: 576px) {
-  .single-evento .evento__sponsor {
-    gap: 24px;
-  }
-  .single-evento .evento__sponsor .sponsor__item {
-    flex: 1 1 40%;
-    max-width: 120px;
-  }
 }/*# sourceMappingURL=evento.css.map */

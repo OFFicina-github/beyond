@@ -48,7 +48,7 @@
             .evento__titolo {
                 color: #fff;
                 margin-bottom: 30px;
-                font-size: 8rem !important;
+                font-size: clamp(3.5rem, 6vw, 8rem) !important;
             }
 
             .info-title{
@@ -71,6 +71,12 @@
                 text-transform: uppercase;
                 letter-spacing: 0.05em;
 
+                @media screen and (max-width: 1024px) {
+                    justify-content: left;
+                    .yellow{
+                        margin-bottom: 24px;
+                    }
+                }
                 span {
                     color: #fff;
 
@@ -80,12 +86,34 @@
     }
 
     // ── Discutono & Moderatori — stili comuni ──────────────
+    .speaker-title {
+        padding-bottom: 20px;
+    }
+
     .evento__discutono,
     .evento__moderatori {
         display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
         gap: 16px;
+        cursor: grab;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        padding-right: 5vw;
+        padding-bottom: 16px;
+
+        &:active { cursor: grabbing; }
+
+        &::-webkit-scrollbar { height: 8px; }
+        &::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 999px;
+        }
+        &::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+        }
 
         .carosel-item {
             position: relative;
@@ -93,13 +121,24 @@
             width: 26vw;
             border-radius: 32px;
             overflow: hidden;
+            scroll-snap-align: start;
 
             @media screen and (max-width: 1400px) { width: 33vw; }
             @media screen and (max-width: 1024px) { width: 50vw; }
-            @media screen and (max-width: 576px)  { width: 85vw; }
+            @media screen and (max-width: 576px)  { width: 78vw; }
         }
 
-        // immagine — sia .discutono__immagine che .moderatore__immagine
+        .discutono__immagine {
+            filter: grayscale(1);
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.0));
+            }
+        }
+
         .discutono__immagine,
         .moderatore__immagine {
             display: block;
@@ -110,11 +149,12 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                -webkit-user-drag: none;
+                pointer-events: none;
             }
         }
 
         .carosel-content {
-
             position: absolute;
             bottom: 0;
             left: 0;
@@ -127,6 +167,8 @@
             h2.name {
                 color: white;
                 font-family: "polymath-text", sans-serif;
+                user-select: none;
+                -webkit-user-select: none;
 
                 em {
                     color: white;
@@ -134,7 +176,6 @@
                 }
             }
 
-            // titolo sotto il nome (solo discutono)
             .discutono__titolo {
                 color: #f6e937;
                 font-family: "polymath-text", sans-serif;
@@ -143,7 +184,6 @@
                 margin-top: 8px;
             }
 
-            // bottone (solo moderatori)
             a {
                 background-color: #f6e937 !important;
                 color: black !important;
@@ -159,45 +199,26 @@
     }
 
     // ── Sponsor ────────────────────────────────────────────
-    .evento__sponsor {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        align-items: center;
-        gap: 24px;
-
-        .sponsor__item {
-            flex: 1 1 0;
-            min-width: 80px;
-            max-width: 160px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            a {
+    .clients-section {
+        .carousel-outer {
+            .sponsor__item {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 100%;
-            }
 
-            img {
-                width: 100%;
-                height: auto;
-                object-fit: contain;
-                display: block;
-            }
-        }
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                }
 
-        @media screen and (max-width: 576px) {
-            gap: 24px;
-
-            .sponsor__item {
-                flex: 1 1 40%;
-                max-width: 120px;
+                img {
+                    width: 100%;
+                    height: 60px;
+                    object-fit: contain;
+                    display: block;
+                }
             }
         }
     }
