@@ -57,7 +57,7 @@ while (have_posts()):
                         <?php endif; ?>
 
                         <h1 class="evento__titolo super h1">
-                            <?php echo esc_html($nome_evento); ?>
+                            <?php the_title(); ?>
                         </h1>
                     <?php endif; ?>
                 </div>
