@@ -1,5 +1,16 @@
 .single-evento {
 
+    .sc-allegato-evento {
+        background: #f2ef4a;
+        color: black;
+        border: none;
+        padding: 10px 22px;
+        border-radius: 999px;
+        font-size: 12px;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+    }
+
     // ── Hero ───────────────────────────────────────────────
     .evento__hero {
         position: relative !important;
@@ -28,7 +39,7 @@
                 position: absolute;
                 inset: 0;
                 z-index: 1;
-                background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 50%);
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 50%);
             }
         }
 
@@ -41,7 +52,7 @@
             padding: 5vw;
             color: #fff;
 
-            .presentatore{
+            .presentatore {
                 padding-bottom: 20px;
             }
 
@@ -51,13 +62,13 @@
                 font-size: clamp(3.5rem, 6vw, 8rem) !important;
             }
 
-            .info-title{
+            .info-title {
                 padding-bottom: 10px;
             }
 
             .evento__data,
             .evento__ora,
-            .evento__luogo{
+            .evento__luogo {
                 font-weight: 800;
             }
 
@@ -73,10 +84,12 @@
 
                 @media screen and (max-width: 1024px) {
                     justify-content: left;
-                    .yellow{
+
+                    .yellow {
                         margin-bottom: 24px;
                     }
                 }
+
                 span {
                     color: #fff;
 
@@ -88,8 +101,9 @@
     // ── Discutono & Moderatori — stili comuni ──────────────
     .speaker-title {
         padding-bottom: 20px;
-        &.text-center{
-            text-align: center  ;
+
+        &.text-center {
+            text-align: center;
             padding-bottom: 50px;
         }
     }
@@ -107,13 +121,19 @@
         padding-right: 5vw;
         padding-bottom: 16px;
 
-        &:active { cursor: grabbing; }
+        &:active {
+            cursor: grabbing;
+        }
 
-        &::-webkit-scrollbar { height: 8px; }
+        &::-webkit-scrollbar {
+            height: 8px;
+        }
+
         &::-webkit-scrollbar-thumb {
             background: rgba(255, 255, 255, 0.25);
             border-radius: 999px;
         }
+
         &::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.08);
             border-radius: 999px;
@@ -127,14 +147,23 @@
             overflow: hidden;
             scroll-snap-align: start;
 
-            @media screen and (max-width: 1400px) { width: 33vw; }
-            @media screen and (max-width: 1024px) { width: 50vw; }
-            @media screen and (max-width: 576px)  { width: 78vw; }
+            @media screen and (max-width: 1400px) {
+                width: 33vw;
+            }
+
+            @media screen and (max-width: 1024px) {
+                width: 50vw;
+            }
+
+            @media screen and (max-width: 576px) {
+                width: 78vw;
+            }
         }
 
         .discutono__immagine {
             filter: grayscale(1);
             position: relative;
+
             &::after {
                 content: '';
                 position: absolute;

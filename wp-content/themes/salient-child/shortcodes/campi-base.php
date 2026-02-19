@@ -51,7 +51,7 @@ add_shortcode('indirizzo_evento', function () {
 
 add_shortcode('allegato_evento', function () {
     $v = get_field('allegato');
-    return $v ? '<a class="sc sc-allegato-evento" href="' . esc_url($v) . '" target="_blank" rel="noopener noreferrer">Scarica allegato</a>' : '';
+    return $v ? '<a class="sc sc-allegato-evento" target="_blank" href="' . esc_url($v) . '" target="_blank" rel="noopener noreferrer">Scarica la locandina</a>' : '';
 });
 
 add_shortcode('presentatore_evento', function () {

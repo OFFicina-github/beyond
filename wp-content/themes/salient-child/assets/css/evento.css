@@ -1,3 +1,13 @@
+.single-evento .sc-allegato-evento {
+  background: #f2ef4a;
+  color: black;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
 .single-evento .evento__hero {
   position: relative !important;
   width: 100%;

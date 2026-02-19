@@ -80,27 +80,34 @@ addEventListener("DOMContentLoaded", (event) => {
         addServiziIDs();
     }
 
-    setTimeout(() => {
-
-        if (document.querySelector('.evento__sponsor-slider')) {
+    const sponsorEl = document.querySelector('.evento__sponsor-slider');
+    console.log('[BP] sponsor el:', sponsorEl);
+    console.log('[BP] typeof Splide:', typeof Splide);
+    if (sponsorEl) {
+        try {
             new Splide('.evento__sponsor-slider', {
-                type: 'loop',
-                autoplay: true,
-                interval: 2000,
-                speed: 800,
+                type        : 'loop',
+                autoplay    : true,
+                interval    : 2000,
+                speed       : 800,
                 pauseOnHover: false,
-                arrows: false,
-                pagination: false,
-                perPage: 5,
-                gap: '3rem',
-                breakpoints: {
+                arrows      : false,
+                pagination  : false,
+                perPage     : 5,
+                gap         : '3rem',
+                breakpoints : {
                     1024: { perPage: 4 },
-                    768: { perPage: 3 },
-                    480: { perPage: 2 },
+                    768 : { perPage: 3 },
+                    480 : { perPage: 2 },
                 },
             }).mount();
+            console.log('[BP] sponsor slider montato OK');
+        } catch(e) {
+            console.error('[BP] Splide error:', e);
         }
-    }, 1000);
+    } else {
+        console.warn('[BP] .evento__sponsor-slider non trovato nel DOM');
+    }
 
 
     document.querySelectorAll('.custom-carosel').forEach((slider) => {
