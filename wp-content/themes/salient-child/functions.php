@@ -19,6 +19,7 @@ function off_enqueue_assets()
     wp_enqueue_style('off-media-relations', get_stylesheet_directory_uri() . '/assets/css/media-relations.css', [], $version);
     wp_enqueue_style('off-header', get_stylesheet_directory_uri() . '/assets/css/header.css', [], $version);
     wp_enqueue_style('off-fla', get_stylesheet_directory_uri() . '/assets/css/fla_style.css', [], $version);
+    wp_enqueue_style('off-evento', get_stylesheet_directory_uri() . '/assets/css/evento.css', [], $version);
 
     wp_enqueue_style(
         'splide',

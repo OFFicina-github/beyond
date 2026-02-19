@@ -1,0 +1,198 @@
+.single-evento .evento__hero {
+  position: relative !important;
+  width: 100%;
+  height: 90vh !important;
+  min-height: 90vh;
+  overflow: hidden;
+}
+.single-evento .evento__hero .evento__hero-bg {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 0;
+}
+.single-evento .evento__hero .evento__hero-bg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.single-evento .evento__hero .evento__hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 50%);
+}
+.single-evento .evento__hero .evento__hero-info {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 2;
+  padding: 5vw;
+  color: #fff;
+}
+.single-evento .evento__hero .evento__hero-info .presentatore {
+  padding-bottom: 20px;
+}
+.single-evento .evento__hero .evento__hero-info .evento__titolo {
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 8rem !important;
+}
+.single-evento .evento__hero .evento__hero-info .info-title {
+  padding-bottom: 10px;
+}
+.single-evento .evento__hero .evento__hero-info .evento__data,
+.single-evento .evento__hero .evento__hero-info .evento__ora,
+.single-evento .evento__hero .evento__hero-info .evento__luogo {
+  font-weight: 800;
+}
+.single-evento .evento__hero .evento__hero-info .evento__meta {
+  display: flex;
+  justify-content: right;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  font-family: "polymath-text", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.single-evento .evento__hero .evento__hero-info .evento__meta span {
+  color: #fff;
+}
+.single-evento .evento__discutono,
+.single-evento .evento__moderatori {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.single-evento .evento__discutono .carosel-item,
+.single-evento .evento__moderatori .carosel-item {
+  position: relative;
+  flex: 0 0 auto;
+  width: 26vw;
+  border-radius: 32px;
+  overflow: hidden;
+}
+@media screen and (max-width: 1400px) {
+  .single-evento .evento__discutono .carosel-item,
+  .single-evento .evento__moderatori .carosel-item {
+    width: 33vw;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .single-evento .evento__discutono .carosel-item,
+  .single-evento .evento__moderatori .carosel-item {
+    width: 50vw;
+  }
+}
+@media screen and (max-width: 576px) {
+  .single-evento .evento__discutono .carosel-item,
+  .single-evento .evento__moderatori .carosel-item {
+    width: 85vw;
+  }
+}
+.single-evento .evento__discutono .discutono__immagine,
+.single-evento .evento__discutono .moderatore__immagine,
+.single-evento .evento__moderatori .discutono__immagine,
+.single-evento .evento__moderatori .moderatore__immagine {
+  display: block;
+  width: 100%;
+}
+.single-evento .evento__discutono .discutono__immagine img,
+.single-evento .evento__discutono .moderatore__immagine img,
+.single-evento .evento__moderatori .discutono__immagine img,
+.single-evento .evento__moderatori .moderatore__immagine img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.single-evento .evento__discutono .carosel-content,
+.single-evento .evento__moderatori .carosel-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.single-evento .evento__discutono .carosel-content h2.name,
+.single-evento .evento__moderatori .carosel-content h2.name {
+  color: white;
+  font-family: "polymath-text", sans-serif;
+}
+.single-evento .evento__discutono .carosel-content h2.name em,
+.single-evento .evento__moderatori .carosel-content h2.name em {
+  color: white;
+  font-family: "georgia", sans-serif;
+}
+.single-evento .evento__discutono .carosel-content .discutono__titolo,
+.single-evento .evento__moderatori .carosel-content .discutono__titolo {
+  color: #f6e937;
+  font-family: "polymath-text", sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+.single-evento .evento__discutono .carosel-content a,
+.single-evento .evento__moderatori .carosel-content a {
+  background-color: #f6e937 !important;
+  color: black !important;
+  text-align: left;
+  font-size: 13px;
+  font-family: "polymath-text", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 10px 20px !important;
+  margin-top: 16px !important;
+}
+.single-evento .evento__sponsor {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+.single-evento .evento__sponsor .sponsor__item {
+  flex: 1 1 0;
+  min-width: 80px;
+  max-width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.single-evento .evento__sponsor .sponsor__item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.single-evento .evento__sponsor .sponsor__item img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+}
+@media screen and (max-width: 576px) {
+  .single-evento .evento__sponsor {
+    gap: 24px;
+  }
+  .single-evento .evento__sponsor .sponsor__item {
+    flex: 1 1 40%;
+    max-width: 120px;
+  }
+}/*# sourceMappingURL=evento.css.map */

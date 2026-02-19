@@ -1,0 +1,13 @@
+[nome_evento]          → nome dell'evento
+[copertina_evento]     → immagine copertina
+[descrizione_evento]   → testo descrizione
+[data_evento]          → data formattata
+[ora_evento]           → ora
+[luogo_evento]         → luogo
+[indirizzo_evento]     → indirizzo
+[allegato_evento]      → link "Scarica allegato"
+[presentatore_evento]  → nome del presentatore
+
+[discutono_evento]     → lista con foto, nome, titolo
+[moderatori_evento]    → lista con foto + link alla pagina
+[sponsor_evento]       → lista loghi con link
