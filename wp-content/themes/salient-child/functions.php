@@ -41,7 +41,7 @@ function off_enqueue_assets()
     wp_enqueue_script('matter', 'https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js', [], null, true);
 
     /* CUSTOM JS */
-    wp_enqueue_script('off-main', get_stylesheet_directory_uri() . '/assets/js/script.js', ['jquery'], $version, true);
+    wp_enqueue_script('off-main', get_stylesheet_directory_uri() . '/assets/js/script.js', ['jquery', 'splide'], $version, true);
     wp_enqueue_script('off-string', get_stylesheet_directory_uri() . '/assets/js/string.js', ['jquery'], $version, true);
 
     /* SPLINE MODULE */
