@@ -13,7 +13,7 @@ add_shortcode('sponsor_evento', function () {
     ?>
     <div>
         <p class="speaker-title h2 text-center">
-            Sponsor:
+            L’incontro è promosso da:
         </p>
     </div>
     <div class="clients-section">

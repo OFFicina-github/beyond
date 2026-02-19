@@ -48,7 +48,7 @@ while (have_posts()):
 
             <div class="evento__hero-info">
 
-                <div>
+                <div class="box-1">
                     <?php if ($nome_evento): ?>
                         <?php if ($presentatore): ?>
                             <p class="h4 presentatore">
@@ -56,7 +56,7 @@ while (have_posts()):
                             </p>
                         <?php endif; ?>
 
-                        <h1 class="evento__titolo super h1">
+                        <h1 class="evento__titolo  h1">
                             <?php the_title(); ?>
                         </h1>
                     <?php endif; ?>

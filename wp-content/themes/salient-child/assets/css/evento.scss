@@ -11,7 +11,7 @@
         cursor: pointer;
     }
 
-    .img-locandina{
+    .img-locandina {
         width: 100%;
         max-width: 400px;
     }
@@ -56,6 +56,19 @@
             z-index: 2;
             padding: 5vw;
             color: #fff;
+            display: flex;
+            justify-content: space-between;
+
+            @media screen and (max-width: 1024px) {
+                flex-wrap: wrap;
+                .box-1 {
+                    flex: 0 0 100%;
+                }
+            }
+            .box-1 {
+                flex: 0 0 65%;
+
+            }
 
             .presentatore {
                 padding-bottom: 20px;
@@ -79,16 +92,18 @@
 
             .evento__meta {
                 display: flex;
-                justify-content: right;
                 flex-wrap: wrap;
-                gap: 8px 24px;
+                gap: 24px 50px;
                 font-family: "polymath-text", sans-serif;
                 font-size: 14px;
                 text-transform: uppercase;
                 letter-spacing: 0.05em;
+                flex: 0 0 35%;
 
                 @media screen and (max-width: 1024px) {
                     justify-content: left;
+                    flex: 0 0 100%;
+                    gap: 0px 50px;
 
                     .yellow {
                         margin-bottom: 24px;
@@ -157,7 +172,7 @@
             }
 
             @media screen and (max-width: 1024px) {
-                width: 50vw;
+                width: 40vw;
             }
 
             @media screen and (max-width: 576px) {
