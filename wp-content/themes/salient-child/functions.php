@@ -97,6 +97,15 @@ add_filter('wp_check_filetype_and_ext', function ($data, $file, $filename) {
 }, 10, 3);
 
 /* ---------------------------------------------------------
+ * SHORTCODES
+ * --------------------------------------------------------- */
+require_once get_stylesheet_directory() . '/shortcodes/helper.php';
+require_once get_stylesheet_directory() . '/shortcodes/campi-base.php';
+require_once get_stylesheet_directory() . '/shortcodes/discutono.php';
+require_once get_stylesheet_directory() . '/shortcodes/moderatori.php';
+require_once get_stylesheet_directory() . '/shortcodes/sponsor.php';
+
+/* ---------------------------------------------------------
  * EXTRAS
  * --------------------------------------------------------- */
 add_action('init', function () {
