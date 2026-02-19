@@ -98,12 +98,12 @@ while (have_posts()):
         <div class="container-wrap">
             <div class="container main-content">
                 <?php
-                echo do_shortcode('[allegato_evento]');
-                echo do_shortcode('[descrizione_evento]');
-                echo do_shortcode('[presentatore_evento]');
-                echo do_shortcode('[discutono_evento]');
-                echo do_shortcode('[moderatori_evento]');
-                echo do_shortcode('[sponsor_evento]');
+                // echo do_shortcode('[allegato_evento]');
+                // echo do_shortcode('[descrizione_evento]');
+                // echo do_shortcode('[presentatore_evento]');
+                // echo do_shortcode('[discutono_evento]');
+                // echo do_shortcode('[moderatori_evento]');
+                // echo do_shortcode('[sponsor_evento]');
                 the_content();
                 ?>
             </div>
