@@ -165,9 +165,9 @@
         padding: 0;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
-        gap: 32px;
+        gap: 24px;
 
         .sponsor__item {
             flex: 1 1 0;
