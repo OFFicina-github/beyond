@@ -55,6 +55,48 @@ add_shortcode('allegato_evento', function () {
 });
 
 add_shortcode('presentatore_evento', function () {
-    $v = get_field('presentatore');
-    return $v ? '<span class="sc sc-presentatore-evento">' . esc_html($v) . '</span>' : '';
+    $nome  = get_field('presentatore');
+    $foto  = _bp_resolve_img(get_field('foto_presentatore'), $nome ?: '');
+    $ruolo = get_field('ruolo_presentatore');
+
+    if (!$nome && !$foto) return '';
+
+    $parts     = $nome ? explode(' ', trim($nome), 2) : ['', ''];
+    $firstname = $parts[0];
+    $lastname  = $parts[1] ?? '';
+
+    ob_start();
+    ?>
+    <div>
+        <p class="speaker-title h2">
+            Presenta l'evento:
+        </p>
+    </div>
+    <div class="sc evento__presentatore">
+        <div class="carosel-item">
+
+            <?php if ($foto) : ?>
+                <div class="presentatore__immagine">
+                    <img src="<?php echo esc_url($foto['url']); ?>"
+                         alt="<?php echo esc_attr($foto['alt']); ?>">
+                </div>
+            <?php endif; ?>
+
+            <div class="carosel-content">
+                <?php if ($nome) : ?>
+                    <h2 class="name">
+                        <?php echo esc_html($firstname); ?>
+                        <?php if ($lastname) : ?><br><em><?php echo esc_html($lastname); ?></em><?php endif; ?>
+                    </h2>
+                <?php endif; ?>
+
+                <?php if ($ruolo) : ?>
+                    <p class="ruolo"><?php echo esc_html($ruolo); ?></p>
+                <?php endif; ?>
+            </div>
+
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
 });

@@ -129,7 +129,8 @@
     }
 
     .evento__discutono,
-    .evento__moderatori {
+    .evento__moderatori,
+    .evento__presentatore {
         display: flex;
         gap: 16px;
         cursor: grab;
@@ -180,7 +181,8 @@
             }
         }
 
-        .discutono__immagine {
+        .discutono__immagine,
+        .presentatore__immagine {
             filter: grayscale(1);
             position: relative;
 
@@ -193,7 +195,8 @@
         }
 
         .discutono__immagine,
-        .moderatore__immagine {
+        .moderatore__immagine,
+        .presentatore__immagine {
             display: block;
             width: 100%;
 
@@ -229,7 +232,8 @@
                 }
             }
 
-            .discutono__titolo {
+            .discutono__titolo,
+            .ruolo {
                 color: #f6e937;
                 font-family: "polymath-text", sans-serif;
                 font-size: 13px;
@@ -248,6 +252,17 @@
                 padding: 10px 20px !important;
                 margin-top: 16px !important;
             }
+        }
+    }
+
+    // ── Presentatore (single card – no scroll) ─────────────
+    .evento__presentatore {
+        overflow: visible;
+        cursor: default;
+        padding-right: 0;
+
+        &:active {
+            cursor: default;
         }
     }
 

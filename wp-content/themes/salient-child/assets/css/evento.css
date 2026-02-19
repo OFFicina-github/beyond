@@ -110,7 +110,8 @@
   padding-bottom: 50px;
 }
 .single-evento .evento__discutono,
-.single-evento .evento__moderatori {
+.single-evento .evento__moderatori,
+.single-evento .evento__presentatore {
   display: flex;
   gap: 16px;
   cursor: grab;
@@ -123,25 +124,30 @@
   padding-bottom: 16px;
 }
 .single-evento .evento__discutono:active,
-.single-evento .evento__moderatori:active {
+.single-evento .evento__moderatori:active,
+.single-evento .evento__presentatore:active {
   cursor: grabbing;
 }
 .single-evento .evento__discutono::-webkit-scrollbar,
-.single-evento .evento__moderatori::-webkit-scrollbar {
+.single-evento .evento__moderatori::-webkit-scrollbar,
+.single-evento .evento__presentatore::-webkit-scrollbar {
   height: 8px;
 }
 .single-evento .evento__discutono::-webkit-scrollbar-thumb,
-.single-evento .evento__moderatori::-webkit-scrollbar-thumb {
+.single-evento .evento__moderatori::-webkit-scrollbar-thumb,
+.single-evento .evento__presentatore::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.25);
   border-radius: 999px;
 }
 .single-evento .evento__discutono::-webkit-scrollbar-track,
-.single-evento .evento__moderatori::-webkit-scrollbar-track {
+.single-evento .evento__moderatori::-webkit-scrollbar-track,
+.single-evento .evento__presentatore::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.08);
   border-radius: 999px;
 }
 .single-evento .evento__discutono .carosel-item,
-.single-evento .evento__moderatori .carosel-item {
+.single-evento .evento__moderatori .carosel-item,
+.single-evento .evento__presentatore .carosel-item {
   position: relative;
   flex: 0 0 auto;
   width: 26vw;
@@ -151,29 +157,40 @@
 }
 @media screen and (max-width: 1400px) {
   .single-evento .evento__discutono .carosel-item,
-  .single-evento .evento__moderatori .carosel-item {
+  .single-evento .evento__moderatori .carosel-item,
+  .single-evento .evento__presentatore .carosel-item {
     width: 33vw;
   }
 }
 @media screen and (max-width: 1024px) {
   .single-evento .evento__discutono .carosel-item,
-  .single-evento .evento__moderatori .carosel-item {
+  .single-evento .evento__moderatori .carosel-item,
+  .single-evento .evento__presentatore .carosel-item {
     width: 40vw;
   }
 }
 @media screen and (max-width: 576px) {
   .single-evento .evento__discutono .carosel-item,
-  .single-evento .evento__moderatori .carosel-item {
+  .single-evento .evento__moderatori .carosel-item,
+  .single-evento .evento__presentatore .carosel-item {
     width: 78vw;
   }
 }
 .single-evento .evento__discutono .discutono__immagine,
-.single-evento .evento__moderatori .discutono__immagine {
+.single-evento .evento__discutono .presentatore__immagine,
+.single-evento .evento__moderatori .discutono__immagine,
+.single-evento .evento__moderatori .presentatore__immagine,
+.single-evento .evento__presentatore .discutono__immagine,
+.single-evento .evento__presentatore .presentatore__immagine {
   filter: grayscale(1);
   position: relative;
 }
 .single-evento .evento__discutono .discutono__immagine::after,
-.single-evento .evento__moderatori .discutono__immagine::after {
+.single-evento .evento__discutono .presentatore__immagine::after,
+.single-evento .evento__moderatori .discutono__immagine::after,
+.single-evento .evento__moderatori .presentatore__immagine::after,
+.single-evento .evento__presentatore .discutono__immagine::after,
+.single-evento .evento__presentatore .presentatore__immagine::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -181,15 +198,25 @@
 }
 .single-evento .evento__discutono .discutono__immagine,
 .single-evento .evento__discutono .moderatore__immagine,
+.single-evento .evento__discutono .presentatore__immagine,
 .single-evento .evento__moderatori .discutono__immagine,
-.single-evento .evento__moderatori .moderatore__immagine {
+.single-evento .evento__moderatori .moderatore__immagine,
+.single-evento .evento__moderatori .presentatore__immagine,
+.single-evento .evento__presentatore .discutono__immagine,
+.single-evento .evento__presentatore .moderatore__immagine,
+.single-evento .evento__presentatore .presentatore__immagine {
   display: block;
   width: 100%;
 }
 .single-evento .evento__discutono .discutono__immagine img,
 .single-evento .evento__discutono .moderatore__immagine img,
+.single-evento .evento__discutono .presentatore__immagine img,
 .single-evento .evento__moderatori .discutono__immagine img,
-.single-evento .evento__moderatori .moderatore__immagine img {
+.single-evento .evento__moderatori .moderatore__immagine img,
+.single-evento .evento__moderatori .presentatore__immagine img,
+.single-evento .evento__presentatore .discutono__immagine img,
+.single-evento .evento__presentatore .moderatore__immagine img,
+.single-evento .evento__presentatore .presentatore__immagine img {
   display: block;
   width: 100%;
   height: 100%;
@@ -199,7 +226,8 @@
   pointer-events: none;
 }
 .single-evento .evento__discutono .carosel-content,
-.single-evento .evento__moderatori .carosel-content {
+.single-evento .evento__moderatori .carosel-content,
+.single-evento .evento__presentatore .carosel-content {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -210,7 +238,8 @@
   align-items: flex-start;
 }
 .single-evento .evento__discutono .carosel-content h2.name,
-.single-evento .evento__moderatori .carosel-content h2.name {
+.single-evento .evento__moderatori .carosel-content h2.name,
+.single-evento .evento__presentatore .carosel-content h2.name {
   color: white;
   font-family: "polymath-text", sans-serif;
   -moz-user-select: none;
@@ -218,12 +247,17 @@
   -webkit-user-select: none;
 }
 .single-evento .evento__discutono .carosel-content h2.name em,
-.single-evento .evento__moderatori .carosel-content h2.name em {
+.single-evento .evento__moderatori .carosel-content h2.name em,
+.single-evento .evento__presentatore .carosel-content h2.name em {
   color: white;
   font-family: "georgia", sans-serif;
 }
 .single-evento .evento__discutono .carosel-content .discutono__titolo,
-.single-evento .evento__moderatori .carosel-content .discutono__titolo {
+.single-evento .evento__discutono .carosel-content .ruolo,
+.single-evento .evento__moderatori .carosel-content .discutono__titolo,
+.single-evento .evento__moderatori .carosel-content .ruolo,
+.single-evento .evento__presentatore .carosel-content .discutono__titolo,
+.single-evento .evento__presentatore .carosel-content .ruolo {
   color: #f6e937;
   font-family: "polymath-text", sans-serif;
   font-size: 13px;
@@ -231,7 +265,8 @@
   margin-top: 8px;
 }
 .single-evento .evento__discutono .carosel-content a,
-.single-evento .evento__moderatori .carosel-content a {
+.single-evento .evento__moderatori .carosel-content a,
+.single-evento .evento__presentatore .carosel-content a {
   background-color: #f6e937 !important;
   color: black !important;
   text-align: left;
@@ -241,6 +276,14 @@
   text-transform: uppercase;
   padding: 10px 20px !important;
   margin-top: 16px !important;
+}
+.single-evento .evento__presentatore {
+  overflow: visible;
+  cursor: default;
+  padding-right: 0;
+}
+.single-evento .evento__presentatore:active {
+  cursor: default;
 }
 .single-evento .clients-section .carousel-outer .sponsor__item {
   display: flex;

@@ -100,7 +100,7 @@ while (have_posts()):
                 <?php
                 // echo do_shortcode('[allegato_evento]');
                 // echo do_shortcode('[descrizione_evento]');
-                // echo do_shortcode('[presentatore_evento]');
+                echo do_shortcode('[presentatore_evento]');
                 // echo do_shortcode('[discutono_evento]');
                 // echo do_shortcode('[moderatori_evento]');
                 // echo do_shortcode('[sponsor_evento]');
