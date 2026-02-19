@@ -80,24 +80,28 @@ addEventListener("DOMContentLoaded", (event) => {
         addServiziIDs();
     }
 
-    if (document.querySelector('.evento__sponsor-slider')) {
-        new Splide('.evento__sponsor-slider', {
-            type        : 'loop',
-            autoplay    : true,
-            interval    : 2000,
-            speed       : 800,
-            pauseOnHover: false,
-            arrows      : false,
-            pagination  : false,
-            perPage     : 5,
-            gap         : '3rem',
-            breakpoints : {
-                1024: { perPage: 4 },
-                768 : { perPage: 3 },
-                480 : { perPage: 2 },
-            },
-        }).mount();
-    }
+    setTimeout(() => {
+
+        if (document.querySelector('.evento__sponsor-slider')) {
+            new Splide('.evento__sponsor-slider', {
+                type: 'loop',
+                autoplay: true,
+                interval: 2000,
+                speed: 800,
+                pauseOnHover: false,
+                arrows: false,
+                pagination: false,
+                perPage: 5,
+                gap: '3rem',
+                breakpoints: {
+                    1024: { perPage: 4 },
+                    768: { perPage: 3 },
+                    480: { perPage: 2 },
+                },
+            }).mount();
+        }
+    }, 1000);
+
 
     document.querySelectorAll('.custom-carosel').forEach((slider) => {
         let isDown = false;
