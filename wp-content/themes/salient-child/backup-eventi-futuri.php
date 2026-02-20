@@ -3,11 +3,11 @@ $today = current_time('Ymd');
 
 $args = [
     'post_type' => 'evento',
-    'posts_per_page' => 1,                // 🔥 solo 1
+    'posts_per_page' => 1,
     'post_status' => 'publish',
     'meta_key' => 'data_evento',
     'orderby' => 'meta_value',
-    'order' => 'ASC',             // 🔥 il più vicino nel futuro
+    'order' => 'ASC',
     'meta_query' => [
         [
             'key' => 'data_evento',
@@ -35,29 +35,18 @@ $query = new WP_Query($args);
             <?php
             $nome_evento = get_field('nome_evento');
             $data_raw = get_field('data_evento');
-            $allegato = get_field('allegato');
-
-            try {
-                $data = new DateTime($data_raw);
-            } catch (Exception $e) {
-                $data = null;
-            }
             ?>
 
-            <?php if (!empty($allegato)) : ?>
-                <a href="<?php echo esc_url($allegato); ?>" target="_blank" rel="noopener noreferrer">
-            <?php endif; ?>
+            <a href="<?php echo esc_url(get_permalink()); ?>">
 
-            <div class="inner text_custom color_y">
-                <p>
-                    <?php echo esc_html(str_replace('/', '.', $data_raw)); ?>
-                </p>
-                <p><?php echo esc_html($nome_evento); ?></p>
-            </div>
+                <div class="inner text_custom color_y">
+                    <p>
+                        <?php echo esc_html(str_replace('/', '.', $data_raw)); ?>
+                    </p>
+                    <p><?php echo esc_html($nome_evento); ?></p>
+                </div>
 
-            <?php if (!empty($allegato)) : ?>
-                </a>
-            <?php endif; ?>
+            </a>
 
         <?php endwhile; ?>
     <?php else: ?>
