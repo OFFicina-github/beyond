@@ -149,11 +149,11 @@ function loghi_sliders($atts)
 
     static $instance = 0;
     $instance++;
-    $slider_id = 'cranchi-logo-slider-' . $instance;
+    $slider_id = 'beyond-logo-slider-' . $instance;
 
     ob_start();
 ?>
-    <div class="cranchi-logo-slider-wrapper">
+    <div class="beyond-logo-slider-wrapper">
         <div class="swiper <?php echo esc_attr($slider_id); ?>" data-speed="<?php echo esc_attr($atts['speed']); ?>">
             <div class="swiper-wrapper">
                 <?php foreach ($ids as $id) :
@@ -177,7 +177,7 @@ function loghi_sliders($atts)
 
     <script>
         (function() {
-            function initCranchiLogoSlider() {
+            function initBeyondSlider() {
                 if (typeof Swiper === 'undefined') {
                     return;
                 }
@@ -205,9 +205,9 @@ function loghi_sliders($atts)
             }
 
             if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initCranchiLogoSlider);
+                document.addEventListener('DOMContentLoaded', initBeyondSlider);
             } else {
-                initCranchiLogoSlider();
+                initBeyondSlider();
             }
         })();
     </script>
@@ -237,26 +237,21 @@ function loghi_slider_assets()
 
     // Stili base per lo slider loghi
     $custom_css = '
-        .cranchi-logo-slider-wrapper { width: 100%; padding: 20px 0; }
-        .cranchi-logo-slider-wrapper .swiper-slide {
+        .beyond-logo-slider-wrapper { width: 100%; padding: 20px 0; }
+        .beyond-logo-slider-wrapper .swiper-slide {
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        .cranchi-logo-slider-wrapper .logo-slide-img {
+        .beyond-logo-slider-wrapper .logo-slide-img {
             max-width: 100%;
             height: auto;
             max-height: 60px;
             width: auto;
             object-fit: contain;
-            filter: grayscale(100%);
-            opacity: 0.7;
             transition: filter 0.3s ease, opacity 0.3s ease;
         }
-        .cranchi-logo-slider-wrapper .swiper-slide:hover .logo-slide-img {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
+       
     ';
     wp_add_inline_style('swiper-css', $custom_css);
 }
