@@ -191,7 +191,7 @@ function loghi_sliders($atts)
                         disableOnInteraction: true
                     },
                     freeModeMomentum: false,
-                    speed: 800,
+                    speed: 4000,
                     breakpoints: {
                         0: {
                             slidesPerView: 2,
