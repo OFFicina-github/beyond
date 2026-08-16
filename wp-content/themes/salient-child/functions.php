@@ -130,8 +130,8 @@ function loghi_sliders($atts)
 
     $atts = shortcode_atts(
         array(
-            'ids'   => '',   // lista ID immagini separati da virgola
-            'speed' => 4000, // velocità autoplay in ms (opzionale, sovrascrivibile)
+            'ids'   => '',
+            'speed' => 3000,
         ),
         $atts,
         'logo_slider'
@@ -185,11 +185,14 @@ function loghi_sliders($atts)
                     slidesPerView: 4,
                     spaceBetween: 30,
                     loop: true,
-                    autoplay: {
-                        delay: <?php echo (int) $atts['speed']; ?>,
-                        disableOnInteraction: false,
-                        pauseOnMouseEnter: true,
-                    },
+                    // autoplay: {
+                    //     delay: 
+                    <?php // echo (int) $atts['speed'];  
+                    ?>,
+                    //     disableOnInteraction: false,
+                    //     pauseOnMouseEnter: true,
+                    // },
+
                     speed: 800,
                     breakpoints: {
                         0: {
@@ -220,7 +223,6 @@ add_shortcode('loghi_sliders', 'loghi_sliders');
 
 function loghi_slider_assets()
 {
-    // Swiper via CDN — se preferisci, sostituisci con la versione locale nel tema
     wp_enqueue_style(
         'swiper-css',
         'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
@@ -235,8 +237,7 @@ function loghi_slider_assets()
         true
     );
 
-    // Stili base per lo slider loghi
-    $custom_css = '
+    $css = '
         .beyond-logo-slider-wrapper { width: 100%; padding: 20px 0; }
         .beyond-logo-slider-wrapper .swiper-slide {
             display: flex;
@@ -246,13 +247,13 @@ function loghi_slider_assets()
         .beyond-logo-slider-wrapper .logo-slide-img {
             max-width: 100%;
             height: auto;
-            max-height: 60px;
+            max-height: 180px;
             width: auto;
             object-fit: contain;
             transition: filter 0.3s ease, opacity 0.3s ease;
         }
        
     ';
-    wp_add_inline_style('swiper-css', $custom_css);
+    wp_add_inline_style('swiper-css', $css);
 }
 add_action('wp_enqueue_scripts', 'loghi_slider_assets');
