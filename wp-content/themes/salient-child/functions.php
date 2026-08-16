@@ -187,10 +187,8 @@ function loghi_sliders($atts)
                     freeMode: true,
                     loop: true,
                     autoplay: {
-                        delay: <?php echo (int) $atts['speed'];
-                                ?>,
-                        disableOnInteraction: true,
-                        pauseOnMouseEnter: true,
+                        delay: 1,
+                        disableOnInteraction: true
                     },
                     freeModeMomentum: false,
                     speed: 800,
