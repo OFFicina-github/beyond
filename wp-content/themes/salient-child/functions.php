@@ -182,8 +182,8 @@ function loghi_sliders($atts)
                     return;
                 }
                 new Swiper('.<?php echo esc_js($slider_id); ?>', {
-                    slidesPerView: 4,
-                    spaceBetween: 30,
+                    slidesPerView: 8,
+                    spaceBetween: 15,
                     loop: true,
                     // autoplay: {
                     //     delay: 
@@ -200,9 +200,13 @@ function loghi_sliders($atts)
                             slidesPerView: 2,
                             spaceBetween: 16,
                         },
-                        768: {
+                        500: {
                             slidesPerView: 4,
-                            spaceBetween: 30,
+                            spaceBetween: 16,
+                        },
+                        768: {
+                            slidesPerView: 6,
+                            spaceBetween: 15,
                         },
                     },
                 });
@@ -248,7 +252,7 @@ function loghi_slider_assets()
         .beyond-logo-slider-wrapper .logo-slide-img {
             max-width: 100%;
             height: auto;
-            max-height: 180px;
+            max-height: 100px;
             width: auto;
             object-fit: contain;
             transition: filter 0.3s ease, opacity 0.3s ease;
