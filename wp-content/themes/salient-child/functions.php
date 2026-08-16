@@ -241,8 +241,8 @@ function loghi_slider_assets()
 
     $css = '
 
-    .title-loghi{
-    color: var(--nectar-accent-color);
+    .title-loghi,.light h2.title-loghi{
+    /* color: var(--nectar-accent-color); */
     text-align:center;
     margin-bottom:50px;
     }
