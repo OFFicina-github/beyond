@@ -240,6 +240,17 @@ function loghi_slider_assets()
     );
 
     $css = '
+
+    .title-loghi{
+    color: var(--nectar-accent-color);
+    text-align:center;
+    margin-bottom:50px;
+    }
+
+    .beyond-logo-slider-wrapper{
+    margin-bottom:0;
+    }
+
     .beyond-logo-slider-wrapper .swiper-wrapper{
      -webkit-transition-timing-function:linear!important; 
   -o-transition-timing-function:linear!important;
