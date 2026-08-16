@@ -153,6 +153,14 @@ function loghi_sliders($atts)
 
     ob_start();
 ?>
+    <style>
+        .<?php echo esc_attr($slider_id);
+
+            ?>.swiper-wrapper {
+            transition-timing-function: linear !important;
+        }
+    </style>
+
     <div class="beyond-logo-slider-wrapper">
         <div class="swiper <?php echo esc_attr($slider_id); ?>" data-speed="<?php echo esc_attr($atts['speed']); ?>">
             <div class="swiper-wrapper">
@@ -185,16 +193,15 @@ function loghi_sliders($atts)
                     slidesPerView: 8,
                     spaceBetween: 15,
                     loop: true,
-                    // autoplay: {
-                    //     delay: 
-                    <?php // echo (int) $atts['speed'];  
-                    ?>
-                    // ,
-                    //     disableOnInteraction: false,
-                    //     pauseOnMouseEnter: true,
-                    // },
+                    loopAdditionalSlides: 8,
+                    allowTouchMove: false,
+                    autoplay: {
+                        delay: 1,
+                        disableOnInteraction: true,
+                        pauseOnMouseEnter: false,
+                    },
 
-                    speed: 800,
+                    speed: <?php echo (int) $atts['speed']; ?>,
                     breakpoints: {
                         0: {
                             slidesPerView: 2,
