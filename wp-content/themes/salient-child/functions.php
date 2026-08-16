@@ -248,7 +248,7 @@ function loghi_slider_assets()
     }
 
     .beyond-logo-slider-wrapper{
-    margin-bottom:0;
+    margin-bottom:0 !important;
     }
 
     .beyond-logo-slider-wrapper .swiper-wrapper{
@@ -269,6 +269,14 @@ function loghi_slider_assets()
             width: auto;
             object-fit: contain;
             transition: filter 0.3s ease, opacity 0.3s ease;
+        }
+
+        @media(max-width:768px){
+
+        .title-loghi,.light h2.title-loghi{
+           margin-bottom:20px;
+         }
+
         }
        
     ';
