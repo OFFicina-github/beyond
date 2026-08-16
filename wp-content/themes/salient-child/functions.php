@@ -188,7 +188,7 @@ function loghi_sliders($atts)
                     loop: true,
                     autoplay: {
                         delay: 1,
-                        disableOnInteraction: true
+                        disableOnInteraction: false
                     },
                     freeModeMomentum: false,
                     speed: 4000,
