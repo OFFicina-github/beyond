@@ -153,14 +153,6 @@ function loghi_sliders($atts)
 
     ob_start();
 ?>
-    <style>
-        .<?php echo esc_attr($slider_id);
-
-            ?>.swiper-wrapper {
-            transition-timing-function: linear !important;
-        }
-    </style>
-
     <div class="beyond-logo-slider-wrapper">
         <div class="swiper <?php echo esc_attr($slider_id); ?>" data-speed="<?php echo esc_attr($atts['speed']); ?>">
             <div class="swiper-wrapper">
@@ -192,16 +184,16 @@ function loghi_sliders($atts)
                 new Swiper('.<?php echo esc_js($slider_id); ?>', {
                     slidesPerView: 8,
                     spaceBetween: 15,
+                    freeMode: true,
                     loop: true,
-                    loopAdditionalSlides: 8,
-                    allowTouchMove: false,
                     autoplay: {
-                        delay: 1,
+                        delay: <?php echo (int) $atts['speed'];
+                                ?>,
                         disableOnInteraction: true,
-                        pauseOnMouseEnter: false,
+                        pauseOnMouseEnter: true,
                     },
-
-                    speed: <?php echo (int) $atts['speed']; ?>,
+                    freeModeMomentum: false,
+                    speed: 800,
                     breakpoints: {
                         0: {
                             slidesPerView: 2,
@@ -250,6 +242,11 @@ function loghi_slider_assets()
     );
 
     $css = '
+    .beyond-logo-slider-wrapper .swiper-wrapper{
+     -webkit-transition-timing-function:linear!important; 
+  -o-transition-timing-function:linear!important;
+  transition-timing-function:linear!important; 
+    }
         .beyond-logo-slider-wrapper { width: 100%; padding: 20px 0; }
         .beyond-logo-slider-wrapper .swiper-slide {
             display: flex;
