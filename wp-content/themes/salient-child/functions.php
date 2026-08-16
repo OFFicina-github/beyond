@@ -188,7 +188,8 @@ function loghi_sliders($atts)
                     // autoplay: {
                     //     delay: 
                     <?php // echo (int) $atts['speed'];  
-                    ?>,
+                    ?>
+                    // ,
                     //     disableOnInteraction: false,
                     //     pauseOnMouseEnter: true,
                     // },
