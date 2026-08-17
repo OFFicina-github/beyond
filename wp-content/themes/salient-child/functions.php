@@ -153,10 +153,10 @@ function loghi_sliders($atts)
 
     ob_start();
 ?>
-    <div class="beyond-logo-slider-wrapper">
-        <div class="swiper <?php echo esc_attr($slider_id); ?>" data-speed="<?php echo esc_attr($atts['speed']); ?>">
-            <div class="swiper-wrapper">
-                <?php foreach ($ids as $id) :
+<div class="beyond-logo-slider-wrapper">
+    <div class="swiper <?php echo esc_attr($slider_id); ?>" data-speed="<?php echo esc_attr($atts['speed']); ?>">
+        <div class="swiper-wrapper">
+            <?php foreach ($ids as $id) :
                     $img = wp_get_attachment_image(
                         $id,
                         'medium',
@@ -167,55 +167,55 @@ function loghi_sliders($atts)
                         continue;
                     }
                 ?>
-                    <div class="swiper-slide">
-                        <?php echo $img; ?>
-                    </div>
-                <?php endforeach; ?>
+            <div class="swiper-slide">
+                <?php echo $img; ?>
             </div>
+            <?php endforeach; ?>
         </div>
     </div>
+</div>
 
-    <script>
-        (function() {
-            function initBeyondSlider() {
-                if (typeof Swiper === 'undefined') {
-                    return;
-                }
-                new Swiper('.<?php echo esc_js($slider_id); ?>', {
-                    slidesPerView: 8,
+<script>
+(function() {
+    function initBeyondSlider() {
+        if (typeof Swiper === 'undefined') {
+            return;
+        }
+        new Swiper('.<?php echo esc_js($slider_id); ?>', {
+            slidesPerView: 8,
+            spaceBetween: 15,
+            freeMode: true,
+            loop: true,
+            autoplay: {
+                delay: 1,
+                disableOnInteraction: false
+            },
+            freeModeMomentum: false,
+            speed: 4000,
+            breakpoints: {
+                0: {
+                    slidesPerView: 2,
+                    spaceBetween: 16,
+                },
+                500: {
+                    slidesPerView: 4,
+                    spaceBetween: 16,
+                },
+                768: {
+                    slidesPerView: 6,
                     spaceBetween: 15,
-                    freeMode: true,
-                    loop: true,
-                    autoplay: {
-                        delay: 1,
-                        disableOnInteraction: false
-                    },
-                    freeModeMomentum: false,
-                    speed: 4000,
-                    breakpoints: {
-                        0: {
-                            slidesPerView: 2,
-                            spaceBetween: 16,
-                        },
-                        500: {
-                            slidesPerView: 4,
-                            spaceBetween: 16,
-                        },
-                        768: {
-                            slidesPerView: 6,
-                            spaceBetween: 15,
-                        },
-                    },
-                });
-            }
+                },
+            },
+        });
+    }
 
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initBeyondSlider);
-            } else {
-                initBeyondSlider();
-            }
-        })();
-    </script>
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initBeyondSlider);
+    } else {
+        initBeyondSlider();
+    }
+})();
+</script>
 <?php
 
     return ob_get_clean();
@@ -261,6 +261,7 @@ function loghi_slider_assets()
             display: flex;
             align-items: center;
             justify-content: center;
+            height:auto;
         }
         .beyond-logo-slider-wrapper .logo-slide-img {
             max-width: 100%;
@@ -268,6 +269,7 @@ function loghi_slider_assets()
             max-height: 100px;
             width: auto;
             object-fit: contain;
+            margin-bottom:0 !important;
             transition: filter 0.3s ease, opacity 0.3s ease;
         }
 
