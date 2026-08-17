@@ -270,7 +270,12 @@ function loghi_slider_assets()
             width: auto;
             object-fit: contain;
             margin-bottom:0 !important;
-            transition: filter 0.3s ease, opacity 0.3s ease;
+            filter: grayscale(1);
+            transition: all 0.3s ease;
+        }
+
+        .beyond-logo-slider-wrapper .logo-slide-img:hover{
+         filter: grayscale(0);
         }
 
         @media(max-width:768px){
