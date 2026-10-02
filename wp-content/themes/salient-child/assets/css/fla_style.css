@@ -51,14 +51,22 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
   color: #f6e937;
   text-transform: capitalize;
   font-weight: 900;
+  font-size: 16px;
 }
 .special {
   position: relative;
 }
 .special::after {
-  margin-left: 4px;
-  margin-right: 2px;
+  margin-left: -16px;
+  margin-right: auto;
   content: url("../img/segno_grafico.svg");
+}
+.special::before {
+  content: "LEGGI >";
+  display: inline;
+  color: #f6e937;
+  font-weight: 300;
+  font-size: 13px;
 }
 
 /*.inner_row.spline-content {
