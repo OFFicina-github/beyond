@@ -67,6 +67,10 @@ hana-viewer {
 
 //menu
 .special {
+    margin-left: 12.5vw;
+
+    @media(max-width:999px) {}
+
     .menu-title-text {
         white-space: nowrap;
         font-family: "polymath-text", sans-serif;
@@ -90,6 +94,10 @@ hana-viewer {
         color: #f6e937;
         font-weight: 300;
         font-size: 13px;
+        width: fit-content;
+        display: inline-block;
+        white-space: nowrap;
+        margin-right: 2px;
     }
 }
 

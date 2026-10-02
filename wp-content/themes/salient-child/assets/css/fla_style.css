@@ -45,6 +45,9 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
   }
 }
 
+.special {
+  margin-left: 12.5vw;
+}
 .special .menu-title-text {
   white-space: nowrap;
   font-family: "polymath-text", sans-serif;
@@ -67,6 +70,11 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
   color: #f6e937;
   font-weight: 300;
   font-size: 13px;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 2px;
 }
 
 /*.inner_row.spline-content {
