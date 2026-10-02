@@ -51,7 +51,7 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
   color: #f6e937;
   text-transform: capitalize;
   font-weight: 900;
-  font-size: 16px;
+  font-size: 16px !important;
 }
 .special {
   position: relative;
