@@ -48,6 +48,13 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
 .special {
   margin-left: 12.5vw;
 }
+@media (max-width: 999px) {
+  .special {
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2784313725);
+  }
+}
 .special .menu-title-text {
   white-space: nowrap;
   font-family: "polymath-text", sans-serif;

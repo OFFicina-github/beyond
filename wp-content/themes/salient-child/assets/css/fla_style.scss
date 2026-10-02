@@ -69,7 +69,11 @@ hana-viewer {
 .special {
     margin-left: 12.5vw;
 
-    @media(max-width:999px) {}
+    @media(max-width:999px) {
+        padding-top: 40px;
+        margin-top: 40px;
+        border-top: 1px solid #ffffff47;
+    }
 
     .menu-title-text {
         white-space: nowrap;
