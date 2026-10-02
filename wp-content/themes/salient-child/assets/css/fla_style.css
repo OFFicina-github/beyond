@@ -45,6 +45,20 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
   }
 }
 
+.special .menu-title-text {
+  white-space: nowrap;
+  font-family: "polymath-text", sans-serif;
+  color: #f6e937;
+}
+.special {
+  position: relative;
+}
+.special .icon::after {
+  margin-left: 4px;
+  margin-right: 2px;
+  content: url("../img/segno_grafico.svg");
+}
+
 /*.inner_row.spline-content {
     .row_col_wrap_12_inner {
         .vc_col-sm-12 {
