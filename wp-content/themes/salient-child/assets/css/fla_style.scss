@@ -77,7 +77,7 @@ hana-viewer {
 
     position: relative;
 
-    .icon::after {
+    &::after {
         margin-left: 4px;
         margin-right: 2px;
         content: url("../img/segno_grafico.svg");

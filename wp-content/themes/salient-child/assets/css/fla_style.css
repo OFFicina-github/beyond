@@ -55,7 +55,7 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
 .special {
   position: relative;
 }
-.special .icon::after {
+.special::after {
   margin-left: 4px;
   margin-right: 2px;
   content: url("../img/segno_grafico.svg");
