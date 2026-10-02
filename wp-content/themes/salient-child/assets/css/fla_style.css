@@ -54,6 +54,9 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
     margin-top: 40px !important;
     border-top: 1px solid rgba(255, 255, 255, 0.2784313725);
   }
+  .special a {
+    color: #f6e937 !important;
+  }
 }
 .special .menu-title-text {
   white-space: nowrap;
