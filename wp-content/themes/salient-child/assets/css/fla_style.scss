@@ -234,6 +234,10 @@ hana-viewer {
         .uscita-card__cta {
             color: #fff !important;
             border-color: #fff !important;
+
+            &.no_border {
+                border-color: transparent !important;
+            }
         }
     }
 
@@ -247,6 +251,10 @@ hana-viewer {
         .uscita-card__cta {
             color: #f6e937 !important;
             border-color: #f6e937 !important;
+
+            &.no_border {
+                border-color: transparent !important;
+            }
         }
     }
 

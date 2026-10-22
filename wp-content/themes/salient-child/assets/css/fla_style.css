@@ -188,6 +188,9 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
   color: #fff !important;
   border-color: #fff !important;
 }
+.uscita-card:hover .uscita-card__cta.no_border {
+  border-color: transparent !important;
+}
 .uscita-card.is-active {
   border-color: #f6e937;
 }
@@ -197,6 +200,9 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
 .uscita-card.is-active .uscita-card__cta {
   color: #f6e937 !important;
   border-color: #f6e937 !important;
+}
+.uscita-card.is-active .uscita-card__cta.no_border {
+  border-color: transparent !important;
 }
 .uscita-card__tipo {
   position: absolute;
