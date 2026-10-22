@@ -169,6 +169,13 @@ hana-viewer {
             margin: 0;
             padding: 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+            a {
+                text-align: right !important;
+                font-size: 16px;
+                text-align: center;
+                letter-spacing: 1px;
+            }
         }
     }
 
