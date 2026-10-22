@@ -44,10 +44,12 @@ function off_enqueue_assets()
     wp_enqueue_script('off-main', get_stylesheet_directory_uri() . '/assets/js/script.js', ['jquery', 'splide'], filemtime(get_stylesheet_directory() . '/assets/js/script.js'), true);
     wp_enqueue_script('off-string', get_stylesheet_directory_uri() . '/assets/js/string.js', ['jquery'], filemtime(get_stylesheet_directory() . '/assets/js/string.js'), true);
 
-    /* ARCHIVIO PORTFOLIO */
+    /* PORTFOLIO: archivio (filtro) + single (indice uscite stampa) */
     if (is_post_type_archive('portfolio')) {
         wp_enqueue_style('off-portfolio', get_stylesheet_directory_uri() . '/assets/css/portfolio.css', [], filemtime(get_stylesheet_directory() . '/assets/css/portfolio.css'));
-        wp_enqueue_script('off-portfolio', get_stylesheet_directory_uri() . '/assets/js/portfolio-archive.js', [], filemtime(get_stylesheet_directory() . '/assets/js/portfolio-archive.js'), true);
+    }
+    if (is_post_type_archive('portfolio') || is_singular('portfolio')) {
+        wp_enqueue_script('off-portfolio', get_stylesheet_directory_uri() . '/assets/js/portfolio-archive.js', ['off-main'], filemtime(get_stylesheet_directory() . '/assets/js/portfolio-archive.js'), true);
     }
 
     /* SPLINE MODULE */
@@ -110,6 +112,7 @@ require_once get_stylesheet_directory() . '/shortcodes/campi-base.php';
 require_once get_stylesheet_directory() . '/shortcodes/discutono.php';
 require_once get_stylesheet_directory() . '/shortcodes/moderatori.php';
 require_once get_stylesheet_directory() . '/shortcodes/sponsor.php';
+require_once get_stylesheet_directory() . '/shortcodes/uscite-stampa.php';
 
 /* ---------------------------------------------------------
  * EXTRAS

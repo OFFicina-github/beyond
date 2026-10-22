@@ -66,3 +66,99 @@
 
     applyFilter(decodeURIComponent(location.hash.replace('#', '')));
 })();
+
+
+/**
+ * Single portfolio: shortcode [uscite_stampa].
+ * Indice laterale -> click evidenzia voce + card e scrolla fino alla card.
+ * Scroll-spy: mentre scorri il feed si evidenzia la voce della card in vista.
+ */
+(function () {
+    const sections = document.querySelectorAll('[data-uscite-stampa]');
+    if (!sections.length) return;
+
+    // Lenis è dichiarato globalmente in script.js
+    const smooth = typeof lenis !== 'undefined' ? lenis : null;
+
+    function headerOffset() {
+        const header = document.getElementById('header-outer');
+        return header ? header.offsetHeight + 20 : 20;
+    }
+
+    sections.forEach(function (section) {
+        const nav = section.querySelector('.uscite-stampa__nav');
+        const links = section.querySelectorAll('.uscite-stampa__nav-link');
+        const cards = section.querySelectorAll('.uscita-card');
+        const toggle = section.querySelector('.uscite-stampa__toggle');
+        let lockSpy = false;
+        let lockTimer;
+
+        function setActive(id, scrollNav) {
+            links.forEach(function (link) {
+                const isActive = link.dataset.target === id;
+                link.classList.toggle('is-active', isActive);
+
+                // Tiene la voce attiva visibile dentro l'indice (scroll interno)
+                if (isActive && scrollNav && nav.scrollHeight > nav.clientHeight) {
+                    const top = link.offsetTop - nav.clientHeight / 2 + link.offsetHeight / 2;
+                    nav.scrollTo({ top: top, behavior: 'smooth' });
+                }
+            });
+            cards.forEach(function (card) {
+                card.classList.toggle('is-active', card.id === id);
+            });
+        }
+
+        links.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.getElementById(link.dataset.target);
+                if (!target) return;
+
+                setActive(link.dataset.target, false);
+
+                // Blocca lo scroll-spy durante lo scroll automatico
+                lockSpy = true;
+                clearTimeout(lockTimer);
+                lockTimer = setTimeout(function () { lockSpy = false; }, 1400);
+
+                const offset = -headerOffset();
+                if (smooth) {
+                    smooth.scrollTo(target, { offset: offset });
+                } else {
+                    const y = target.getBoundingClientRect().top + window.scrollY + offset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+
+                if (toggle && window.matchMedia('(max-width: 767px)').matches) {
+                    section.classList.remove('index-open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        if (toggle) {
+            toggle.addEventListener('click', function () {
+                const open = section.classList.toggle('index-open');
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+        }
+
+        // Scroll-spy: prima card (in ordine) che attraversa la fascia centrale dello schermo
+        if ('IntersectionObserver' in window) {
+            const visible = new Set();
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) visible.add(entry.target);
+                    else visible.delete(entry.target);
+                });
+                if (lockSpy || !visible.size) return;
+
+                const first = Array.prototype.find.call(cards, function (card) { return visible.has(card); });
+                if (first) setActive(first.id, true);
+            }, { rootMargin: '-35% 0px -60% 0px' });
+
+            cards.forEach(function (card) { observer.observe(card); });
+        }
+    });
+})();

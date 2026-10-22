@@ -128,3 +128,235 @@ hana-viewer {
         }
     }
 }
+//uscite stampa — shortcode [uscite_stampa]
+.uscite-stampa {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    gap: 40px;
+    align-items: start;
+    color: #fff;
+
+    // ── INDICE ──
+    &__index {
+        position: sticky;
+        top: 0;
+        max-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__toggle {
+        display: none;
+    }
+
+    &__nav {
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        max-height: 100vh;
+        padding: 20px 10px 20px 0;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+    }
+
+    &__nav-link {
+        display: block;
+        padding: 10px 0 10px 0;
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 14px;
+        line-height: 1.35;
+        text-decoration: none;
+        transition: color 0.25s ease, padding-left 0.25s ease;
+
+        &:hover {
+            color: #fff;
+        }
+
+        &.is-active {
+            color: #f6e937 !important;
+            padding-left: 10px;
+        }
+    }
+
+    // ── FEED ──
+    &__feed {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+    }
+}
+
+.uscita-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+    scroll-margin-top: 20px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.4);
+
+        .uscita-card__media img {
+            transform: scale(1.04);
+        }
+    }
+
+    &.is-active {
+        border-color: #f6e937;
+
+        .uscita-card__titolo {
+            color: #f6e937;
+        }
+    }
+
+    // Immagine ancorata in alto
+    &__media {
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        background: #1a1a1a;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100% !important;
+            object-fit: cover;
+            margin: 0 !important;
+            transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+    }
+
+    // Info ancorate in basso
+    &__info {
+        margin-top: auto;
+        padding: 24px 20px 20px;
+    }
+
+    &__data {
+        margin: 0 0 8px;
+        padding: 0;
+        color: #f6e937;
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+    &__titolo {
+        margin: 0;
+        color: #fff;
+        transition: color 0.25s ease;
+    }
+
+    &__descrizione {
+        margin-top: 12px;
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 14px;
+        line-height: 1.5;
+
+        p,
+        ul,
+        ol {
+            margin: 0 0 8px;
+            padding-bottom: 0;
+            font-size: inherit;
+            line-height: inherit;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        ul,
+        ol {
+            padding-left: 18px;
+        }
+
+        strong {
+            color: #fff;
+        }
+    }
+
+    &__cta {
+        display: inline-block;
+        margin-top: 16px;
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 13px;
+
+        &::after {
+            content: " →";
+        }
+    }
+}
+
+@media (max-width: 1279px) {
+    .uscite-stampa__feed {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .uscite-stampa {
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        &__index {
+            position: relative;
+            max-height: none;
+        }
+
+        &__toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 12px 18px;
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 100px;
+            color: #fff;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        &__count {
+            margin-left: auto;
+            color: #f6e937;
+        }
+
+        &__nav {
+            display: none;
+            max-height: 60vh;
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 12px;
+        }
+
+        &.index-open .uscite-stampa__nav {
+            display: block;
+        }
+
+        &__feed {
+            grid-template-columns: 1fr;
+        }
+    }
+}
