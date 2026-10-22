@@ -116,7 +116,8 @@ hana-viewer {
         padding-top: 0 !important;
     }
 
-    .row.heading-title.hentry {
+    .row.heading-title.hentry,
+    .post-featured-img {
         display: none !important;
     }
 
@@ -129,7 +130,6 @@ hana-viewer {
     }
 }
 
-//uscite stampa — shortcode [uscite_stampa]
 .uscite-stampa {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);

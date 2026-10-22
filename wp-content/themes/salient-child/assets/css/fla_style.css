@@ -90,7 +90,8 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
 .single-portfolio .container-wrap.no-sidebar {
   padding-top: 0 !important;
 }
-.single-portfolio .row.heading-title.hentry {
+.single-portfolio .row.heading-title.hentry,
+.single-portfolio .post-featured-img {
   display: none !important;
 }
 .single-portfolio #section_hero_portfolio .nectar-cta .arrow-circle-animation-arrow-wrap {
