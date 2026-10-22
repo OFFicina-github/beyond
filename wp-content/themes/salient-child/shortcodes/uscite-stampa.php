@@ -69,8 +69,8 @@ add_shortcode('uscite_stampa', function () {
                     $tipo = $tipo['value'] ?? '';
                 }
                 $tipi = [
-                    'servizio_tv' => ['label' => 'Servizio TV', 'cta' => 'Guarda il servizio'],
-                    'articolo'    => ['label' => 'Articolo', 'cta' => "Leggi l'articolo"],
+                    'servizio_tv' => ['label' => 'TV', 'cta' => 'Guarda il servizio'],
+                    'articolo'    => ['label' => 'STAMPA', 'cta' => "Leggi l'articolo"],
                 ];
                 if (!isset($tipi[$tipo])) {
                     // Return format "etichetta": risalgo al valore
