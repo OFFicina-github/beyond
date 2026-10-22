@@ -93,6 +93,6 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
 .single-portfolio .row.heading-title.hentry {
   display: none !important;
 }
-.single-portfolio .section_hero_portfolio .nectar-cta .arrow-circle-animation-arrow-wrap {
+.single-portfolio #section_hero_portfolio .nectar-cta .arrow-circle-animation-arrow-wrap {
   transform: rotate(135deg);
 }/*# sourceMappingURL=fla_style.css.map */
