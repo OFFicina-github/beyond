@@ -80,7 +80,6 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
   color: #f6e937;
   font-weight: 300;
   font-size: 13px;
-  width: -moz-fit-content;
   width: fit-content;
   display: inline-block;
   white-space: nowrap;
@@ -106,8 +105,8 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
 }
 .uscite-stampa__index {
   position: sticky;
-  top: 0;
-  max-height: 100vh;
+  top: var(--uscite-header-h, 0px);
+  max-height: calc(100vh - var(--uscite-header-h, 0px));
   display: flex;
   flex-direction: column;
 }
@@ -115,9 +114,10 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
   display: none;
 }
 .uscite-stampa__nav {
+  flex: 1 1 auto;
+  min-height: 0;
   overflow-y: auto;
   overscroll-behavior: contain;
-  max-height: 100vh;
   padding: 20px 10px 20px 0;
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
@@ -220,8 +220,7 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
   display: block;
   width: 100% !important;
   height: 100% !important;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin: 0 !important;
   transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -334,4 +333,6 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
   .uscite-stampa__feed {
     grid-template-columns: 1fr;
   }
-}/*# sourceMappingURL=fla_style.css.map */
+}
+
+/*# sourceMappingURL=fla_style.css.map */

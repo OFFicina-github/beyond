@@ -80,10 +80,36 @@
     // Lenis è dichiarato globalmente in script.js
     const smooth = typeof lenis !== 'undefined' ? lenis : null;
 
-    function headerOffset() {
-        const header = document.getElementById('header-outer');
-        return header ? header.offsetHeight + 20 : 20;
+    const header = document.getElementById('header-outer');
+
+    // Bordo inferiore dell'header fisso (include admin bar e cambi di altezza di Salient)
+    function headerBottom() {
+        return header ? Math.max(0, Math.round(header.getBoundingClientRect().bottom)) : 0;
     }
+
+    function headerOffset() {
+        return headerBottom() + 20;
+    }
+
+    // Aggiorna la variabile CSS usata dallo sticky dell'indice
+    let ticking = false;
+    function updateHeaderVar() {
+        ticking = false;
+        const h = headerBottom() + 'px';
+        sections.forEach(function (section) {
+            section.style.setProperty('--uscite-header-h', h);
+        });
+    }
+    function requestHeaderVar() {
+        if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(updateHeaderVar);
+        }
+    }
+    updateHeaderVar();
+    window.addEventListener('scroll', requestHeaderVar, { passive: true });
+    window.addEventListener('resize', requestHeaderVar);
+    window.addEventListener('load', updateHeaderVar);
 
     sections.forEach(function (section) {
         const nav = section.querySelector('.uscite-stampa__nav');
