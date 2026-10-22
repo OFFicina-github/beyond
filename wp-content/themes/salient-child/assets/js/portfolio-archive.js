@@ -117,14 +117,25 @@
 
                 setActive(link.dataset.target, false);
 
+                const offset = -headerOffset();
+
+                // Durata proporzionale alla distanza: 0.4s – 0.9s
+                const distance = Math.abs(target.getBoundingClientRect().top + offset);
+                const duration = Math.min(0.9, Math.max(0.4, 0.4 + distance / 5000));
+
                 // Blocca lo scroll-spy durante lo scroll automatico
                 lockSpy = true;
                 clearTimeout(lockTimer);
-                lockTimer = setTimeout(function () { lockSpy = false; }, 1400);
+                lockTimer = setTimeout(function () { lockSpy = false; }, duration * 1000 + 150);
 
-                const offset = -headerOffset();
                 if (smooth) {
-                    smooth.scrollTo(target, { offset: offset });
+                    // easeOutCubic: parte subito (senza lo strappo dell'easeOutExpo di default) e frena dolcemente
+                    smooth.scrollTo(target, {
+                        offset: offset,
+                        duration: duration,
+                        easing: function (t) { return 1 - Math.pow(1 - t, 3); },
+                        lock: true,
+                    });
                 } else {
                     const y = target.getBoundingClientRect().top + window.scrollY + offset;
                     window.scrollTo({ top: y, behavior: 'smooth' });
