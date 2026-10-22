@@ -63,6 +63,22 @@ add_shortcode('uscite_stampa', function () {
 
                 $tag = $link_url ? 'a' : 'div';
 
+                // Tipo uscita (radio): gestisce return format valore, etichetta o array
+                $tipo = $row['tipo_uscita'] ?? '';
+                if (is_array($tipo)) {
+                    $tipo = $tipo['value'] ?? '';
+                }
+                $tipi = [
+                    'servizio_tv' => ['label' => 'Servizio TV', 'cta' => 'Guarda il servizio'],
+                    'articolo'    => ['label' => 'Articolo', 'cta' => "Leggi l'articolo"],
+                ];
+                if (!isset($tipi[$tipo])) {
+                    // Return format "etichetta": risalgo al valore
+                    $tipo = array_search($tipo, array_combine(array_keys($tipi), array_column($tipi, 'label'))) ?: '';
+                }
+                $tipo_label = $tipo ? $tipi[$tipo]['label'] : '';
+                $cta        = $tipo ? $tipi[$tipo]['cta'] : "Leggi l'articolo";
+
                 // Se la card è già un link, rimuovo i link dal WYSIWYG (niente <a> annidati)
                 $desc_allowed = wp_kses_allowed_html('post');
                 if ($link_url) {
@@ -77,6 +93,9 @@ add_shortcode('uscite_stampa', function () {
                     <?php endif; ?>>
 
                     <div class="uscita-card__media">
+                        <?php if ($tipo_label) : ?>
+                            <span class="uscita-card__tipo uscita-card__tipo--<?php echo esc_attr($tipo); ?>"><?php echo esc_html($tipo_label); ?></span>
+                        <?php endif; ?>
                         <?php if ($immagine) : ?>
                             <img src="<?php echo esc_url($immagine); ?>" alt="<?php echo esc_attr($titolo); ?>" loading="lazy">
                         <?php else : ?>
@@ -100,7 +119,7 @@ add_shortcode('uscite_stampa', function () {
                         <?php endif; ?>
 
                         <?php if ($link_url) : ?>
-                            <span class="uscita-card__cta">Leggi l'articolo</span>
+                            <span class="uscita-card__cta"><?php echo esc_html($cta); ?></span>
                         <?php endif; ?>
                     </div>
 
