@@ -44,6 +44,12 @@ function off_enqueue_assets()
     wp_enqueue_script('off-main', get_stylesheet_directory_uri() . '/assets/js/script.js', ['jquery', 'splide'], filemtime(get_stylesheet_directory() . '/assets/js/script.js'), true);
     wp_enqueue_script('off-string', get_stylesheet_directory_uri() . '/assets/js/string.js', ['jquery'], filemtime(get_stylesheet_directory() . '/assets/js/string.js'), true);
 
+    /* ARCHIVIO PORTFOLIO */
+    if (is_post_type_archive('portfolio')) {
+        wp_enqueue_style('off-portfolio', get_stylesheet_directory_uri() . '/assets/css/portfolio.css', [], filemtime(get_stylesheet_directory() . '/assets/css/portfolio.css'));
+        wp_enqueue_script('off-portfolio', get_stylesheet_directory_uri() . '/assets/js/portfolio-archive.js', [], filemtime(get_stylesheet_directory() . '/assets/js/portfolio-archive.js'), true);
+    }
+
     /* SPLINE MODULE */
     wp_enqueue_script(
         'spline-init',
@@ -290,3 +296,13 @@ function loghi_slider_assets()
     wp_add_inline_style('swiper-css', $css);
 }
 add_action('wp_enqueue_scripts', 'loghi_slider_assets');
+
+/* ---------------------------------------------------------
+ * ARCHIVIO PORTFOLIO: tutti i progetti in una pagina (filtro JS)
+ * --------------------------------------------------------- */
+add_action('pre_get_posts', function ($query) {
+    if (!is_admin() && $query->is_main_query() && $query->is_post_type_archive('portfolio')) {
+        $query->set('posts_per_page', -1);
+        $query->set('no_found_rows', true);
+    }
+});
