@@ -146,6 +146,45 @@ body:has(.uscite-stampa) {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+.uscite-stampa__group + .uscite-stampa__group {
+  margin-top: 32px;
+}
+.uscite-stampa__group-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0;
+  padding: 0 0 10px;
+  border-bottom: 1px solid #f6e937;
+  color: #f6e937;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.uscite-stampa__group-title span {
+  color: rgba(255, 255, 255, 0.4);
+}
+.uscite-stampa__feed-divider {
+  grid-column: 1/-1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #f6e937;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.uscite-stampa__feed-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.14);
+}
+.uscite-stampa__feed-divider:not(:first-child) {
+  margin-top: 40px;
+}
 .uscite-stampa__nav-link {
   display: block;
   padding: 10px 0 10px 0;

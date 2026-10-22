@@ -126,7 +126,8 @@
 
                 // Tiene la voce attiva visibile dentro l'indice (scroll interno)
                 if (isActive && scrollNav && nav.scrollHeight > nav.clientHeight) {
-                    const top = link.offsetTop - nav.clientHeight / 2 + link.offsetHeight / 2;
+                    const linkTop = link.getBoundingClientRect().top - nav.getBoundingClientRect().top + nav.scrollTop;
+                    const top = linkTop - nav.clientHeight / 2 + link.offsetHeight / 2;
                     nav.scrollTo({ top: top, behavior: 'smooth' });
                 }
             });

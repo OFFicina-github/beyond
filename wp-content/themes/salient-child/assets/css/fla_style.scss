@@ -190,6 +190,53 @@ body:has(.uscite-stampa) {
         }
     }
 
+    // Gruppi dell'indice (TV / Stampa)
+    &__group + &__group {
+        margin-top: 32px;
+    }
+
+    &__group-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin: 0;
+        padding: 0 0 10px;
+        border-bottom: 1px solid #f6e937;
+        color: #f6e937;
+        font-size: 12px;
+        line-height: 1.4;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+
+        span {
+            color: rgba(255, 255, 255, 0.4);
+        }
+    }
+
+    // Divisore tra i gruppi nel feed: occupa tutta la riga della griglia
+    &__feed-divider {
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        color: #f6e937;
+        font-size: 12px;
+        line-height: 1.4;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+
+        &::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+        &:not(:first-child) {
+            margin-top: 40px;
+        }
+    }
+
     &__nav-link {
         display: block;
         padding: 10px 0 10px 0;
