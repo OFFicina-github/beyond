@@ -87,20 +87,9 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
   margin-right: 2px;
 }
 
-/*.inner_row.spline-content {
-    .row_col_wrap_12_inner {
-        .vc_col-sm-12 {
-            @media(max-width:1024px){
-                position: relative;
-                top: 250px;
-            }
-            @media(max-width:768px) {
-                position: relative;
-                top: 140px;
-                max-width: 450px;
-                margin-left: auto !important;
-                margin-right: auto !important;
-            }
-        }
-    }
-}*//*# sourceMappingURL=fla_style.css.map */
+.single-portfolio .container-wrap.no-sidebar {
+  padding-top: 0 !important;
+}
+.single-portfolio .row.heading-title.hentry {
+  display: none !important;
+}/*# sourceMappingURL=fla_style.css.map */
