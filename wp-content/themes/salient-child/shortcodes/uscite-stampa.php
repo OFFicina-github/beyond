@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Shortcode [uscite_stampa]
  *
@@ -16,7 +17,7 @@ add_shortcode('uscite_stampa', function () {
     $prefix = 'uscita-' . $instance . '-';
 
     ob_start();
-    ?>
+?>
     <section class="uscite-stampa" data-uscite-stampa>
 
         <!-- ── INDICE ─────────────────────────────────────── -->
@@ -70,14 +71,16 @@ add_shortcode('uscite_stampa', function () {
             ?>
                 <<?php echo $tag; ?> id="<?php echo esc_attr($prefix . $i); ?>" class="uscita-card"
                     <?php if ($link_url) : ?>
-                        href="<?php echo esc_url($link_url); ?>"
-                        target="<?php echo esc_attr($link_target); ?>"
-                        <?php echo $link_target === '_blank' ? 'rel="noopener noreferrer"' : ''; ?>
+                    href="<?php echo esc_url($link_url); ?>"
+                    target="<?php echo esc_attr($link_target); ?>"
+                    <?php echo $link_target === '_blank' ? 'rel="noopener noreferrer"' : ''; ?>
                     <?php endif; ?>>
 
                     <div class="uscita-card__media">
                         <?php if ($immagine) : ?>
                             <img src="<?php echo esc_url($immagine); ?>" alt="<?php echo esc_attr($titolo); ?>" loading="lazy">
+                        <?php else : ?>
+                            <img src="https://beyondpress.it/wp-content/uploads/2026/10/Screenshot-2026-10-22-alle-16.16.08.jpg" alt="<?php echo esc_attr($titolo); ?>" loading="lazy">
                         <?php endif; ?>
                     </div>
 
@@ -106,6 +109,6 @@ add_shortcode('uscite_stampa', function () {
         </div>
 
     </section>
-    <?php
+<?php
     return ob_get_clean();
 });
