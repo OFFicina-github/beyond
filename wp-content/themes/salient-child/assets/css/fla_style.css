@@ -246,16 +246,18 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
   color: #fff;
 }
 .uscita-card__cta {
-  display: inline-block;
+  display: block;
   margin-top: 16px;
   color: rgba(255, 255, 255, 0.55);
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 4px 8px;
-  background-repeat: 50vh;
-  border: 2px #fff solid;
+  padding: 2px 16px;
+  border-radius: 50vh;
+  border: 2px rgba(255, 255, 255, 0.55) solid;
+  width: 100%;
+  text-align: center;
 }
 .uscita-card__cta::after {
   content: " →";
