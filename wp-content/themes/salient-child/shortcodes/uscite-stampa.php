@@ -120,6 +120,8 @@ add_shortcode('uscite_stampa', function () {
 
                         <?php if ($link_url) : ?>
                             <span class="uscita-card__cta"><?php echo esc_html($cta); ?></span>
+                        <?php else : ?>
+                            <span class="uscita-card__cta">ARTICOLO CARTACEO</span>
                         <?php endif; ?>
                     </div>
 
