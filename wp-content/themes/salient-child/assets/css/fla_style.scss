@@ -130,6 +130,14 @@ hana-viewer {
     }
 }
 
+// Salient mette html{overflow-x:hidden} + body{overflow:hidden}: così il body diventa
+// un contenitore di scroll e position:sticky non si aggancia mai al viewport.
+// "clip" taglia lo sforamento orizzontale senza creare un contenitore di scroll.
+body:has(.uscite-stampa) {
+    overflow: visible !important;
+    overflow-x: clip !important;
+}
+
 .uscite-stampa {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);

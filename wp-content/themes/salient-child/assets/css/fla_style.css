@@ -80,7 +80,6 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
   color: #f6e937;
   font-weight: 300;
   font-size: 13px;
-  width: -moz-fit-content;
   width: fit-content;
   display: inline-block;
   white-space: nowrap;
@@ -96,6 +95,11 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
 }
 .single-portfolio #section_hero_portfolio .nectar-cta .arrow-circle-animation-arrow-wrap {
   transform: rotate(135deg);
+}
+
+body:has(.uscite-stampa) {
+  overflow: visible !important;
+  overflow-x: clip !important;
 }
 
 .uscite-stampa {
@@ -228,8 +232,7 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
   display: block;
   width: 100% !important;
   height: 100% !important;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin: 0 !important;
   transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -345,4 +348,6 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
   .uscite-stampa__feed {
     grid-template-columns: 1fr;
   }
-}/*# sourceMappingURL=fla_style.css.map */
+}
+
+/*# sourceMappingURL=fla_style.css.map */
