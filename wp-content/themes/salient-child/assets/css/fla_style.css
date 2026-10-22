@@ -177,11 +177,19 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
 .uscita-card:hover .uscita-card__media img {
   transform: scale(1.04);
 }
+.uscita-card:hover .uscita-card__cta {
+  color: #fff !important;
+  border-color: #fff !important;
+}
 .uscita-card.is-active {
   border-color: #f6e937;
 }
 .uscita-card.is-active .uscita-card__titolo {
   color: #f6e937;
+}
+.uscita-card.is-active .uscita-card__cta {
+  color: #fff !important;
+  border-color: #fff !important;
 }
 .uscita-card__media {
   aspect-ratio: 4/3;

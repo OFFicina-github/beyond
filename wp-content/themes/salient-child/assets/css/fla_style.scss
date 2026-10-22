@@ -220,6 +220,11 @@ hana-viewer {
         .uscita-card__media img {
             transform: scale(1.04);
         }
+
+        .uscita-card__cta {
+            color: #fff !important;
+            border-color: #fff !important;
+        }
     }
 
     &.is-active {
@@ -227,6 +232,11 @@ hana-viewer {
 
         .uscita-card__titolo {
             color: #f6e937;
+        }
+
+        .uscita-card__cta {
+            color: #fff !important;
+            border-color: #fff !important;
         }
     }
 
@@ -319,6 +329,7 @@ hana-viewer {
             content: " →";
         }
     }
+
 }
 
 @media (max-width: 1279px) {
