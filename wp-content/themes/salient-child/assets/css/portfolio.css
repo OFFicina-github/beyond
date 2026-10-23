@@ -26,6 +26,7 @@
 }
 .portfolio-filter__list > li {
   margin-bottom: 6px;
+  list-style: none;
 }
 .portfolio-filter__group {
   margin-top: 14px;

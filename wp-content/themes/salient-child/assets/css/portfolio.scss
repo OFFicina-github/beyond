@@ -43,6 +43,7 @@ $ease: cubic-bezier(0.22, 1, 0.36, 1);
 
     &__list>li {
         margin-bottom: 6px;
+        list-style: none;
     }
 
     &__group {
