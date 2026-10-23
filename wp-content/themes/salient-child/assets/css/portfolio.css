@@ -27,6 +27,8 @@
 .portfolio-filter__list > li {
   margin-bottom: 6px;
   list-style: none;
+}
+.portfolio-filter__list > li button {
   text-align: right !important;
   font-size: 16px;
   text-align: center;

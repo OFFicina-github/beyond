@@ -45,11 +45,13 @@ $ease: cubic-bezier(0.22, 1, 0.36, 1);
         margin-bottom: 6px;
         list-style: none;
 
-        text-align: right !important;
-        font-size: 16px;
-        text-align: center;
-        letter-spacing: 1px;
-        text-transform: uppercase;
+        button {
+            text-align: right !important;
+            font-size: 16px;
+            text-align: center;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
 
     }
 
