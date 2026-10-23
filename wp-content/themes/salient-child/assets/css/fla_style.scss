@@ -361,7 +361,7 @@ body:has(.uscite-stampa) {
             display: block;
             width: 100% !important;
             height: auto !important;
-            max-width: 200px;
+            max-height: 200px;
             object-fit: cover;
             margin: 0 !important;
             transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);

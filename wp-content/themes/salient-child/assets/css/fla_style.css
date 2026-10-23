@@ -291,7 +291,7 @@ body:has(.uscite-stampa) {
   display: block;
   width: 100% !important;
   height: auto !important;
-  max-width: 200px;
+  max-height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
   margin: 0 !important;
