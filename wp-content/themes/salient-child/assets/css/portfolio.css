@@ -32,6 +32,9 @@
   list-style: none;
   text-align: right !important;
 }
+.portfolio-filter__list > li:first-child button {
+  font-size: 12px;
+}
 .portfolio-filter__list > li button {
   font-size: 16px;
   text-align: center;

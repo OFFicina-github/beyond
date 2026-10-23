@@ -49,6 +49,12 @@ $ease: cubic-bezier(0.22, 1, 0.36, 1);
         list-style: none;
         text-align: right !important;
 
+        &:first-child {
+            button {
+                font-size: 12px;
+            }
+        }
+
         button {
             font-size: 16px;
             text-align: center;
