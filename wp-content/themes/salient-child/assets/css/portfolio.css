@@ -3,7 +3,7 @@
   grid-template-columns: 240px minmax(0, 1fr);
   gap: 60px;
   align-items: start;
-  padding: 60px 0 100px;
+  padding: 120px 0 100px;
   color: #fff;
 }
 .portfolio-archive__sidebar {
