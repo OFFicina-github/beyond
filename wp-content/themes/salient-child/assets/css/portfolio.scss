@@ -19,11 +19,14 @@ $ease: cubic-bezier(0.22, 1, 0.36, 1);
     &__sidebar {
         position: sticky;
         top: 140px;
+        padding-right: 30px;
+        border-right: 1px solid #ffffff30;
     }
 
     &__title {
         margin: 0 0 40px;
         color: $text;
+        text-align: right;
     }
 
     &__empty {

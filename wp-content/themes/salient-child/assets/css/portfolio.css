@@ -9,10 +9,13 @@
 .portfolio-archive__sidebar {
   position: sticky;
   top: 140px;
+  padding-right: 30px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1882352941);
 }
 .portfolio-archive__title {
   margin: 0 0 40px;
   color: #fff;
+  text-align: right;
 }
 .portfolio-archive__empty {
   color: rgba(255, 255, 255, 0.55);
