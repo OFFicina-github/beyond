@@ -117,7 +117,7 @@ body:has(.uscite-stampa) {
 }
 @media (max-width: 767px) {
   .uscite-stampa__index {
-    max-height: 0 !important;
+    top: 0 !important;
   }
   .uscite-stampa__index button {
     border-color: #fff !important;

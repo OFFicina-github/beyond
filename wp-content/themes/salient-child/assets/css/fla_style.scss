@@ -153,7 +153,7 @@ body:has(.uscite-stampa) {
         max-height: calc(100vh - var(--uscite-header-h, 0px));
 
         @media(max-width:767px) {
-            max-height: 0 !important;
+            top: 0 !important;
 
             button {
                 border-color: #fff !important;
