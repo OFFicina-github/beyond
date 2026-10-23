@@ -16,9 +16,13 @@ $ease: cubic-bezier(0.22, 1, 0.36, 1);
     color: $text;
 
     // ── SIDEBAR ───────────────────────────────────────
+    // Sticky sotto l'header fisso: --portfolio-header-h è aggiornata dal JS
     &__sidebar {
         position: sticky;
-        top: 140px;
+        top: calc(var(--portfolio-header-h, 0px) + 30px);
+        max-height: calc(100vh - var(--portfolio-header-h, 0px) - 60px);
+        display: flex;
+        flex-direction: column;
         padding-right: 30px;
         border-right: 1px solid #ffffff30;
     }
@@ -35,7 +39,21 @@ $ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
 }
 
+// Salient mette html{overflow-x:hidden} + body{overflow:hidden}: il body diventa un
+// contenitore di scroll e position:sticky non si aggancia al viewport.
+body:has(.portfolio-archive) {
+    overflow: visible !important;
+    overflow-x: clip !important;
+}
+
 .portfolio-filter {
+    // Se la lista è più lunga dello spazio disponibile scorre al suo interno
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
 
     &__list,
     &__sublist {
@@ -221,6 +239,7 @@ $ease: cubic-bezier(0.22, 1, 0.36, 1);
         &__sidebar {
             position: relative;
             top: auto;
+            max-height: none;
         }
 
         &__title {
@@ -230,6 +249,7 @@ $ease: cubic-bezier(0.22, 1, 0.36, 1);
 
     .portfolio-filter {
         display: none;
+        max-height: 60vh;
         margin-top: 10px;
         padding: 20px;
         border: 1px solid $line;

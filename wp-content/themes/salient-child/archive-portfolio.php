@@ -42,7 +42,7 @@ get_header();
                     <span class="portfolio-filter__current" data-filter-current>Tutti</span>
                 </button>
 
-                <nav id="portfolio-filter" class="portfolio-filter" aria-label="Filtra per categoria">
+                <nav id="portfolio-filter" class="portfolio-filter" aria-label="Filtra per categoria" data-lenis-prevent>
                     <ul class="portfolio-filter__list">
                         <li>
                             <button type="button" class="portfolio-filter__btn is-active" data-filter="" aria-pressed="true">Tutti</button>

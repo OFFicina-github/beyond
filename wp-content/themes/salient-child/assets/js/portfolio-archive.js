@@ -11,6 +11,27 @@
   const emptyMsg = root.querySelector("[data-filter-empty]");
   const toggle = root.querySelector(".portfolio-filter__toggle");
   const current = root.querySelector("[data-filter-current]");
+  const header = document.getElementById("header-outer");
+
+  // Sticky della sidebar: bordo inferiore dell'header fisso in una variabile CSS
+  let ticking = false;
+  function updateHeaderVar() {
+    ticking = false;
+    const bottom = header
+      ? Math.max(0, Math.round(header.getBoundingClientRect().bottom))
+      : 0;
+    root.style.setProperty("--portfolio-header-h", bottom + "px");
+  }
+  function requestHeaderVar() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(updateHeaderVar);
+    }
+  }
+  updateHeaderVar();
+  window.addEventListener("scroll", requestHeaderVar, { passive: true });
+  window.addEventListener("resize", requestHeaderVar);
+  window.addEventListener("load", updateHeaderVar);
 
   function applyFilter(slug) {
     let activeBtn = root.querySelector(
