@@ -126,6 +126,10 @@ hana-viewer {
             .arrow-circle-animation-arrow-wrap {
                 transform: rotate(135deg);
             }
+
+            span.text {
+                white-space: nowrap;
+            }
         }
 
         h2 {

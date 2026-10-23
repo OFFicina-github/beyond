@@ -97,6 +97,9 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
 .single-portfolio #section_hero_portfolio .nectar-cta .arrow-circle-animation-arrow-wrap {
   transform: rotate(135deg);
 }
+.single-portfolio #section_hero_portfolio .nectar-cta span.text {
+  white-space: nowrap;
+}
 @media (max-width: 999px) {
   .single-portfolio #section_hero_portfolio h2 span.inner {
     filter: blur(0) !important;
