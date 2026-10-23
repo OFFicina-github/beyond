@@ -98,7 +98,7 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
   transform: rotate(135deg);
 }
 @media (max-width: 999px) {
-  .single-portfolio h2[aria-label=Olimpichetto] span.inner {
+  .single-portfolio #section_hero_portfolio h2 span.inner {
     filter: blur(0) !important;
   }
 }

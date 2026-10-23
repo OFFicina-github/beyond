@@ -127,12 +127,12 @@ hana-viewer {
                 transform: rotate(135deg);
             }
         }
-    }
 
-    h2[aria-label="Olimpichetto"] {
-        span.inner {
-            @media(max-width:999px) {
-                filter: blur(0) !important;
+        h2 {
+            span.inner {
+                @media(max-width:999px) {
+                    filter: blur(0) !important;
+                }
             }
         }
     }
