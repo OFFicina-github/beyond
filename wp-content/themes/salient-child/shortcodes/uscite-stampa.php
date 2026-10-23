@@ -87,7 +87,7 @@ add_shortcode('uscite_stampa', function () {
                     <div class="uscite-stampa__group uscite-stampa__group--<?php echo esc_attr($key); ?>">
                         <p class="uscite-stampa__group-title">
                             <?php echo esc_html($gruppo['titolo']); ?>
-                            <span><?php echo count($gruppo['items']); ?></span>
+                            <span>(<?php echo count($gruppo['items']); ?>)</span>
                         </p>
                         <ol class="uscite-stampa__list">
                             <?php foreach ($gruppo['items'] as $item) :
