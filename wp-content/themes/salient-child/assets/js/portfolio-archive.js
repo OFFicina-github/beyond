@@ -76,7 +76,6 @@
 /**
  * Single portfolio: shortcode [uscite_stampa].
  * Indice laterale -> click evidenzia voce + card e scrolla fino alla card.
- * Scroll-spy: mentre scorri il feed si evidenzia la voce della card in vista.
  */
 (function () {
   const sections = document.querySelectorAll("[data-uscite-stampa]");
@@ -119,27 +118,13 @@
   window.addEventListener("load", updateHeaderVar);
 
   sections.forEach(function (section) {
-    const nav = section.querySelector(".uscite-stampa__nav");
     const links = section.querySelectorAll(".uscite-stampa__nav-link");
     const cards = section.querySelectorAll(".uscita-card");
     const toggle = section.querySelector(".uscite-stampa__toggle");
-    let lockSpy = false;
-    let lockTimer;
 
-    function setActive(id, scrollNav) {
+    function setActive(id) {
       links.forEach(function (link) {
-        const isActive = link.dataset.target === id;
-        link.classList.toggle("is-active", isActive);
-
-        // Tiene la voce attiva visibile dentro l'indice (scroll interno)
-        if (isActive && scrollNav && nav.scrollHeight > nav.clientHeight) {
-          const linkTop =
-            link.getBoundingClientRect().top -
-            nav.getBoundingClientRect().top +
-            nav.scrollTop;
-          const top = linkTop - nav.clientHeight / 2 + link.offsetHeight / 2;
-          nav.scrollTo({ top: top, behavior: "smooth" });
-        }
+        link.classList.toggle("is-active", link.dataset.target === id);
       });
       cards.forEach(function (card) {
         card.classList.toggle("is-active", card.id === id);
@@ -155,23 +140,13 @@
         const target = document.getElementById(link.dataset.target);
         if (!target) return;
 
-        setActive(link.dataset.target, false);
+        setActive(link.dataset.target);
 
         const offset = -headerOffset();
 
         // Durata proporzionale alla distanza: 0.4s – 0.9s
         const distance = Math.abs(target.getBoundingClientRect().top + offset);
         const duration = Math.min(0.9, Math.max(0.4, 0.4 + distance / 5000));
-
-        // Blocca lo scroll-spy durante lo scroll automatico
-        lockSpy = true;
-        clearTimeout(lockTimer);
-        lockTimer = setTimeout(
-          function () {
-            lockSpy = false;
-          },
-          duration * 1000 + 150,
-        );
 
         if (smooth) {
           // easeOutCubic: parte subito (senza lo strappo dell'easeOutExpo di default) e frena dolcemente
@@ -200,30 +175,6 @@
       toggle.addEventListener("click", function () {
         const open = section.classList.toggle("index-open");
         toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      });
-    }
-
-    // Scroll-spy: prima card (in ordine) che attraversa la fascia centrale dello schermo
-    if ("IntersectionObserver" in window) {
-      const visible = new Set();
-      const observer = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) visible.add(entry.target);
-            else visible.delete(entry.target);
-          });
-          if (lockSpy || !visible.size) return;
-
-          const first = Array.prototype.find.call(cards, function (card) {
-            return visible.has(card);
-          });
-          if (first) setActive(first.id, true);
-        },
-        { rootMargin: "-35% 0px -60% 0px" },
-      );
-
-      cards.forEach(function (card) {
-        observer.observe(card);
       });
     }
   });
