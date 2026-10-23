@@ -149,6 +149,9 @@
     links.forEach(function (link) {
       link.addEventListener("click", function (e) {
         e.preventDefault();
+        // Salient intercetta (delegato sul body) i link "#..." dentro .container-wrap
+        // e avvia un suo scroll jQuery che si scontra con Lenis: lo blocchiamo qui.
+        e.stopPropagation();
         const target = document.getElementById(link.dataset.target);
         if (!target) return;
 
