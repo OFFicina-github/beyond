@@ -185,10 +185,10 @@
           window.scrollTo({ top: y, behavior: "smooth" });
         }
 
-        if (toggle && window.matchMedia("(max-width: 767px)").matches) {
+        /*if (toggle && window.matchMedia("(max-width: 767px)").matches) {
           section.classList.remove("index-open");
           toggle.setAttribute("aria-expanded", "false");
-        }
+        }*/
       });
     });
 
