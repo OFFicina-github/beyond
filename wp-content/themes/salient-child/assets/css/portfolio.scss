@@ -152,6 +152,7 @@ $ease: cubic-bezier(0.22, 1, 0.36, 1);
         overflow: hidden;
         border-radius: 12px;
         background: $card-bg;
+        border: 1px solid #fff;
     }
 
     &__img {

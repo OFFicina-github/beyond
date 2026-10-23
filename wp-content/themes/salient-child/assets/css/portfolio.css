@@ -109,6 +109,7 @@
   overflow: hidden;
   border-radius: 12px;
   background: #111;
+  border: 1px solid #fff;
 }
 .portfolio-card__img {
   display: block;
