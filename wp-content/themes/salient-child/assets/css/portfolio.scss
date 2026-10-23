@@ -44,9 +44,9 @@ $ease: cubic-bezier(0.22, 1, 0.36, 1);
     &__list>li {
         margin-bottom: 6px;
         list-style: none;
+        text-align: right !important;
 
         button {
-            text-align: right !important;
             font-size: 16px;
             text-align: center;
             letter-spacing: 1px;
