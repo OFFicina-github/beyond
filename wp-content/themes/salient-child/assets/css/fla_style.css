@@ -284,14 +284,14 @@ body:has(.uscite-stampa) {
 }
 .uscita-card__media {
   position: relative;
-  aspect-ratio: 4/3;
   overflow: hidden;
   background: #1a1a1a;
 }
 .uscita-card__media img {
   display: block;
   width: 100% !important;
-  height: 100% !important;
+  height: auto !important;
+  max-width: 100px;
   -o-object-fit: cover;
      object-fit: cover;
   margin: 0 !important;

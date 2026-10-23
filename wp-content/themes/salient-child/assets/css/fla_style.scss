@@ -354,14 +354,14 @@ body:has(.uscite-stampa) {
     // Immagine ancorata in alto
     &__media {
         position: relative;
-        aspect-ratio: 4 / 3;
         overflow: hidden;
         background: #1a1a1a;
 
         img {
             display: block;
             width: 100% !important;
-            height: 100% !important;
+            height: auto !important;
+            max-width: 100px;
             object-fit: cover;
             margin: 0 !important;
             transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
