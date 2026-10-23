@@ -121,6 +121,8 @@ body:has(.uscite-stampa) {
   }
   .uscite-stampa__index button {
     border-color: #fff !important;
+    font-size: 12px;
+    letter-spacing: 0.5px;
   }
 }
 .uscite-stampa__index {
