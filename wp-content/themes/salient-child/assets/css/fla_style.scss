@@ -128,6 +128,14 @@ hana-viewer {
             }
         }
     }
+
+    h2[aria-label="Olimpichetto"] {
+        span.inner {
+            @media(max-width:999px) {
+                filter: blur(0) !important;
+            }
+        }
+    }
 }
 
 // Salient mette html{overflow-x:hidden} + body{overflow:hidden}: così il body diventa

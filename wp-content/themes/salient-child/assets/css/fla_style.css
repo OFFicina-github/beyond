@@ -97,6 +97,11 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
 .single-portfolio #section_hero_portfolio .nectar-cta .arrow-circle-animation-arrow-wrap {
   transform: rotate(135deg);
 }
+@media (max-width: 999px) {
+  .single-portfolio h2[aria-label=Olimpichetto] span.inner {
+    filter: blur(0) !important;
+  }
+}
 
 body:has(.uscite-stampa) {
   overflow: visible !important;
