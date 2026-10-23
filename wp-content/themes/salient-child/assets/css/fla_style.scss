@@ -151,6 +151,15 @@ body:has(.uscite-stampa) {
         position: sticky;
         top: var(--uscite-header-h, 0px);
         max-height: calc(100vh - var(--uscite-header-h, 0px));
+
+        @media(max-width:767px) {
+            max-height: 0 !important;
+
+            button {
+                border-color: #fff !important;
+            }
+        }
+
         display: flex;
         flex-direction: column;
     }
@@ -191,7 +200,7 @@ body:has(.uscite-stampa) {
     }
 
     // Gruppi dell'indice (TV / Stampa)
-    &__group + &__group {
+    &__group+&__group {
         margin-top: 32px;
     }
 

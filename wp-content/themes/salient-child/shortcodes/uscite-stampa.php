@@ -78,8 +78,8 @@ add_shortcode('uscite_stampa', function () {
         <!-- ── INDICE ─────────────────────────────────────── -->
         <aside class="uscite-stampa__index">
             <button type="button" class="uscite-stampa__toggle" aria-expanded="false">
-                <span>Indice</span>
-                <span class="uscite-stampa__count"><?php echo count($rows); ?></span>
+                <span>INDICE DELLE USCITE</span>
+                <span class="uscite-stampa__count">(<?php echo count($rows); ?>)</span>
             </button>
 
             <nav class="uscite-stampa__nav" aria-label="Indice uscite stampa" data-lenis-prevent>
