@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .menu-item a {
   cursor: pointer;
 }
@@ -104,6 +105,25 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
   .single-portfolio #section_hero_portfolio h2 span.inner {
     filter: blur(0) !important;
   }
+}
+.single-portfolio .quote {
+  background-color: rgba(255, 255, 255, 0.0784313725);
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 20px;
+  padding: 16px 32px;
+  position: relative;
+}
+.single-portfolio .quote h3 {
+  margin-bottom: 0;
+}
+.single-portfolio .quote::before {
+  content: "❞";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  font-size: 80px;
+  color: rgba(246, 233, 55, 0.2431372549);
 }
 
 body:has(.uscite-stampa) {
