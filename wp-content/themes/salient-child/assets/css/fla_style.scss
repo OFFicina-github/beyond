@@ -155,10 +155,10 @@ hana-viewer {
         &::before {
             content: '❞';
             position: absolute;
-            top: -20px;
-            left: - 20px;
+            top: 35px;
+            left: -25px;
             font-size: 80px;
-            color: #f6e9373e;
+            color: rgba(246, 233, 55, 0.5);
         }
     }
 }
