@@ -115,7 +115,8 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
 }
 @media (max-width: 767px) {
   .single-portfolio .quote {
-    padding: 24px 20px 20px 42px;
+    padding: 24px 36px 20px 42px;
+    text-align: justify;
   }
   .single-portfolio .quote h4 {
     font-size: 18px !important;
