@@ -112,6 +112,16 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
   width: fit-content;
   border-radius: 20px;
   padding: 22px 32px 16px 64px;
+}
+@media (max-width: 767px) {
+  .single-portfolio .quote {
+    padding: 24px 20px 20px 42px;
+  }
+  .single-portfolio .quote h4 {
+    font-size: 18px !important;
+  }
+}
+.single-portfolio .quote {
   position: relative;
 }
 .single-portfolio .quote h3 {
