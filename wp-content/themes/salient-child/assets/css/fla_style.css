@@ -111,7 +111,7 @@ body.home #header-outer.transparent[data-lhe=animated_underline] #top nav > ul >
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 20px;
-  padding: 16px 32px;
+  padding: 22px 32px 16px 64px;
   position: relative;
 }
 .single-portfolio .quote h3 {
