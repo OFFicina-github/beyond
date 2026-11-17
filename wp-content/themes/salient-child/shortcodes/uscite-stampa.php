@@ -4,9 +4,9 @@
  * Shortcode [uscite_stampa]
  *
  * Ripetitore ACF "uscite_stampa" — sotto-campi: immagine (url), titolo, data_uscita, link_uscita (link),
- * descrizione (wysiwyg), tipo_uscita (radio: servizio_tv / articolo / podcast).
+ * descrizione (wysiwyg), tipo_uscita (radio: servizio_tv / articolo / podcast / agenzie).
  * Layout: indice sticky a sinistra (1/4) + feed di card a destra (3/4).
- * Indice e feed divisi in gruppi: TV, Stampa (articoli e uscite senza tipo), Podcast.
+ * Indice e feed divisi in gruppi: TV, Stampa (articoli e uscite senza tipo), Podcast, Agenzie social.
  */
 
 add_shortcode('uscite_stampa', function () {
@@ -23,12 +23,14 @@ add_shortcode('uscite_stampa', function () {
         'servizio_tv' => ['label' => 'TV', 'acf' => 'TV', 'cta' => 'Guarda il servizio'],
         'articolo'    => ['label' => 'STAMPA', 'acf' => 'Stampa', 'cta' => "Leggi l'articolo"],
         'podcast'     => ['label' => 'PODCAST', 'acf' => 'Podcast', 'cta' => 'Ascolta il podcast'],
+        'agenzie'     => ['label' => 'AGENZIE SOCIAL', 'acf' => 'Agenzie social', 'cta' => 'Leggi la notizia'],
     ];
 
     $gruppi = [
         'tv'     => ['titolo' => 'TV', 'items' => []],
         'stampa'  => ['titolo' => 'Stampa', 'items' => []],
         'podcast' => ['titolo' => 'Podcast', 'items' => []],
+        'agenzie' => ['titolo' => 'Agenzie social', 'items' => []],
     ];
 
     // ── Normalizzo i dati e li divido nei gruppi (mantenendo l'ordine del backend) ──
@@ -66,14 +68,13 @@ add_shortcode('uscite_stampa', function () {
             'cta'         => $tipo ? $tipi[$tipo]['cta'] : "Leggi l'articolo",
         ];
 
-        if ($tipo === 'servizio_tv') {
-            $gruppo = 'tv';
-        } elseif ($tipo === 'podcast') {
-            $gruppo = 'podcast';
-        } else {
-            $gruppo = 'stampa';
-        }
-        $gruppi[$gruppo]['items'][] = $item;
+        // Tipo -> gruppo (articoli e uscite senza tipo vanno in Stampa)
+        $tipo_gruppo = [
+            'servizio_tv' => 'tv',
+            'podcast'     => 'podcast',
+            'agenzie'     => 'agenzie',
+        ];
+        $gruppi[$tipo_gruppo[$tipo] ?? 'stampa']['items'][] = $item;
     }
 
     $gruppi = array_filter($gruppi, function ($g) {
