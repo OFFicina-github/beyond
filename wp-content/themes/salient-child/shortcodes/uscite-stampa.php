@@ -174,7 +174,7 @@ add_shortcode('uscite_stampa', function () {
                             <?php elseif (!$item['link_url'] && $item['tipo'] == 'podcast') : ?>
                                 <span class="uscita-card__cta no_border">TRASMISSIONE RADIOFONICA/PODCAST</span>
                             <?php elseif (!$item['link_url'] && $item['tipo'] == 'agenzie') : ?>
-                                <span class="uscita-card__cta no_border">AGENZIE SOCIAL</span>
+                                <span class="uscita-card__cta no_border">ARTICOLO/POST</span>
                             <?php else : ?>
                                 <span class="uscita-card__cta no_border">ARTICOLO CARTACEO</span>
                             <?php endif; ?>
