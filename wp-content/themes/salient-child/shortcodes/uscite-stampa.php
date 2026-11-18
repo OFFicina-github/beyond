@@ -167,6 +167,8 @@ add_shortcode('uscite_stampa', function () {
 
                             <?php if ($item['link_url']) : ?>
                                 <span class="uscita-card__cta"><?php echo esc_html($item['cta']); ?></span>
+                            <?php elseif (!$item['link_url'] && $item['tipo'] != 'TV') : ?>
+                                <span class="uscita-card__cta no_border">SERVIZIO TV</span>
                             <?php else : ?>
                                 <span class="uscita-card__cta no_border">ARTICOLO CARTACEO</span>
                             <?php endif; ?>
