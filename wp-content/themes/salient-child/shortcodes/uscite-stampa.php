@@ -165,6 +165,7 @@ add_shortcode('uscite_stampa', function () {
                                 </div>
                             <?php endif; ?>
 
+                            <?php echo $item['tipo']; ?>
                             <?php if ($item['link_url']) : ?>
                                 <span class="uscita-card__cta"><?php echo esc_html($item['cta']); ?></span>
                             <?php elseif (!$item['link_url'] && $item['tipo'] == 'servizio_tv') : ?>
@@ -172,6 +173,8 @@ add_shortcode('uscite_stampa', function () {
                                 <span class="uscita-card__cta no_border">SERVIZIO TV</span>
                             <?php elseif (!$item['link_url'] && $item['tipo'] == 'podcast') : ?>
                                 <span class="uscita-card__cta no_border">TRASMISSIONE RADIOFONICA/PODCAST</span>
+                            <?php elseif (!$item['link_url'] && $item['tipo'] == 'agenzie_social') : ?>
+                                <span class="uscita-card__cta no_border">AGENZIE SOCIAL</span>
                             <?php else : ?>
                                 <span class="uscita-card__cta no_border">ARTICOLO CARTACEO</span>
                             <?php endif; ?>
