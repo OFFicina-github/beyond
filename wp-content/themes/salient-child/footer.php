@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer.
  *
@@ -23,13 +24,13 @@ nectar_hook_before_footer_open();
 	<?php
 
 	// nectar_hook_after_footer_open();
-	
+
 	// get_template_part('includes/partials/footer/call-to-action');
-	
+
 	// get_template_part('includes/partials/footer/main-widgets');
-	
+
 	// get_template_part('includes/partials/footer/copyright-bar');
-	
+
 	?>
 
 
@@ -61,7 +62,7 @@ nectar_hook_before_footer_open();
 			</div>
 			<div class="col-3 footer-info">
 				<strong>VICENZA</strong><br>
-				Contra Santa Barbara, 33<br>
+				Contrà Do Rode 14<br>
 				36100 - Vicenza<br>
 				<a href="mailto:media@beyondpress.it"> media@beyondpress.it</a>
 			</div>
@@ -71,7 +72,7 @@ nectar_hook_before_footer_open();
 			<div class="col-12">
 				<div class="row-info desk">
 					<div>
-						© 2025 BEYOND SRL - P.I. 04552790240 - CAPITALE SOCIALE € 10.000 I.V.
+						© <?php echo date('Y'); ?> BEYOND SRL - P.I. 04552790240 - CAPITALE SOCIALE € 10.000 I.V.
 					</div>
 
 
@@ -87,7 +88,7 @@ nectar_hook_before_footer_open();
 				</div>
 				<div class="row-info mob">
 					<div>
-						© 2025 BEYOND SRL - P.I. 04552790240 - CAPITALE SOCIALE € 10.000 I.V.
+						© <?php echo date('Y'); ?> BEYOND SRL - P.I. 04552790240 - CAPITALE SOCIALE € 10.000 I.V.
 						<a style="display:inline;" href="/privacy-policy">
 							- Privacy Policy
 						</a>
